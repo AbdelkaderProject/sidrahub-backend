@@ -1,0 +1,6 @@
+@SidraHub_Business_Platform_HostAddress = http://localhost:5182
+
+GET {{SidraHub_Business_Platform_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Platform" xml:space="preserve">
+    <value>SidraHub Business Platform</value>
+  </data>
+  <data name="Architecture" xml:space="preserve">
+    <value>Clean Architecture</value>
+  </data>
+  <data name="DatabaseApproach" xml:space="preserve">
+    <value>Entity Framework Core Code First</value>
+  </data>
+  <data name="Module.Authentication" xml:space="preserve">
+    <value>Authentication</value>
+  </data>
+  <data name="Module.Services" xml:space="preserve">
+    <value>Services</value>
+  </data>
+  <data name="Module.Orders" xml:space="preserve">
+    <value>Orders</value>
+  </data>
+  <data name="Module.Consultations" xml:space="preserve">
+    <value>Consultations</value>
+  </data>
+  <data name="Module.Blog" xml:space="preserve">
+    <value>Blog</value>
+  </data>
+  <data name="Module.Providers" xml:space="preserve">
+    <value>Providers</value>
+  </data>
+  <data name="Service.EconomicInvestmentConsultations" xml:space="preserve">
+    <value>Economic and Investment Consultations</value>
+  </data>
+  <data name="Service.LegalEconomicConsultations" xml:space="preserve">
+    <value>Legal and Economic Consultations</value>
+  </data>
+  <data name="Service.AccountingLegalConsultations" xml:space="preserve">
+    <value>Accounting and Legal Consultations</value>
+  </data>
+  <data name="Service.PrivateSectorHealthReports" xml:space="preserve">
+    <value>Referrals for Private Sector Health Reports - 3 Periods</value>
+  </data>
+  <data name="Service.ArabResearchComparativeStudies" xml:space="preserve">
+    <value>Arab Research Work and Comparative Studies for Companies</value>
+  </data>
+</root>

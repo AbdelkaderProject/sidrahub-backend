@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="src/SidraHub.Domain/SidraHub.Domain.csproj" />
+  <Project Path="src/SidraHub.Application/SidraHub.Application.csproj" />
+  <Project Path="src/SidraHub.Infrastructure/SidraHub.Infrastructure.csproj" />
+  <Project Path="src/SidraHub.Api/SidraHub.Api.csproj" />
+</Solution>
