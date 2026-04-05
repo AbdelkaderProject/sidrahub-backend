@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "pnaWnALpmnk=",
+  "dgSpecHash": "vMTeDHDn9I4=",
   "success": true,
-  "projectFilePath": "E:\\freelanser\\src\\SidraHub.Application\\SidraHub.Application.csproj",
+  "projectFilePath": "E:\\Sidrahub\\Sidrahub_Backend\\src\\SidraHub.Application\\SidraHub.Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\AbdelKader\\.nuget\\packages\\microsoft.entityframeworkcore\\10.0.4\\microsoft.entityframeworkcore.10.0.4.nupkg.sha512",
     "C:\\Users\\AbdelKader\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\10.0.4\\microsoft.entityframeworkcore.abstractions.10.0.4.nupkg.sha512",

@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\freelanser\\src\\SidraHub.Domain\\SidraHub.Domain.csproj",
+      "projectUniqueName": "E:\\Sidrahub\\Sidrahub_Backend\\src\\SidraHub.Domain\\SidraHub.Domain.csproj",
       "projectName": "SidraHub.Domain",
-      "projectPath": "E:\\freelanser\\src\\SidraHub.Domain\\SidraHub.Domain.csproj",
+      "projectPath": "E:\\Sidrahub\\Sidrahub_Backend\\src\\SidraHub.Domain\\SidraHub.Domain.csproj",
       "packagesPath": "C:\\Users\\AbdelKader\\.nuget\\packages\\",
-      "outputPath": "E:\\freelanser\\src\\SidraHub.Domain\\obj\\",
+      "outputPath": "E:\\Sidrahub\\Sidrahub_Backend\\src\\SidraHub.Domain\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

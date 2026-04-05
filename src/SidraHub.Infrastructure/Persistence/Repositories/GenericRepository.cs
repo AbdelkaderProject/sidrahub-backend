@@ -33,7 +33,7 @@ public sealed class GenericRepository<TEntity> : IGenericRepository<TEntity> whe
             .ToListAsync(cancellationToken);
     }
 
-    public async Task<TEntity?> GetByIdAsync(Guid id, CancellationToken cancellationToken = default)
+    public async Task<TEntity?> GetByIdAsync(int id, CancellationToken cancellationToken = default)
     {
         return await _dbSet.FirstOrDefaultAsync(entity => entity.Id == id, cancellationToken);
     }

@@ -7,13 +7,17 @@ public interface IApplicationDbContext
 {
     DbSet<ServiceCategory> ServiceCategories { get; }
     DbSet<Service> Services { get; }
-    DbSet<Order> Orders { get; }
-    DbSet<OrderService> OrderServices { get; }
-    DbSet<Provider> Providers { get; }
-    DbSet<ServiceProvider> ServiceProviders { get; }
-    DbSet<Consultation> Consultations { get; }
+    DbSet<ServicePackage> ServicePackages { get; }
     DbSet<Article> Articles { get; }
-    DbSet<Review> Reviews { get; }
+    DbSet<ArticleComment> ArticleComments { get; }
+    DbSet<Sidebar> Sidebars { get; }
+    DbSet<CompanyProfile> CompanyProfiles { get; }
+    DbSet<CustomerReview> CustomerReviews { get; }
     DbSet<Notification> Notifications { get; }
+    DbSet<Review> Reviews { get; }
+    DbSet<TeamMember> TeamMembers { get; }
+    DbSet<Partner> Partners { get; }
+    DbSet<Branch> Branches { get; }
+    DbSet<ServiceRequest> ServiceRequests { get; }
     Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
 }

@@ -1,0 +1,17 @@
+using SidraHub.Domain.Common;
+using SidraHub.Domain.Enums;
+
+namespace SidraHub.Domain.Entities;
+
+public sealed class ServiceRequest : BaseEntity
+{
+    public string Code { get; set; } = string.Empty;
+    public string UserId { get; set; } = string.Empty;
+    public int ServiceId { get; set; }
+    public string Description { get; set; } = string.Empty;
+    public DateOnly RequestDate { get; set; }
+    public TimeOnly RequestTime { get; set; }
+    public ServiceRequestStatus RequestStatus { get; set; } = ServiceRequestStatus.Submit;
+
+    public Service Service { get; set; } = null!;
+}

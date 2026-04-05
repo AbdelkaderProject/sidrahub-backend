@@ -1,6 +1,278 @@
 @SidraHub.Api_HostAddress = http://localhost:5210
 
-GET {{SidraHub.Api_HostAddress}}/weatherforecast/
+###
+# Service Categories
+GET {{SidraHub.Api_HostAddress}}/api/ServiceCategories
 Accept: application/json
 
 ###
+GET {{SidraHub.Api_HostAddress}}/api/ServiceCategories/1
+Accept: application/json
+
+###
+POST {{SidraHub.Api_HostAddress}}/api/ServiceCategories
+Content-Type: application/json
+
+{
+  "nameAr": "الاستشارات القانونية",
+  "nameEn": "Legal Consulting"
+}
+
+###
+PUT {{SidraHub.Api_HostAddress}}/api/ServiceCategories/1
+Content-Type: application/json
+
+{
+  "nameAr": "الخدمات القانونية",
+  "nameEn": "Legal Services"
+}
+
+###
+DELETE {{SidraHub.Api_HostAddress}}/api/ServiceCategories/1
+Accept: application/json
+
+###
+# Services
+GET {{SidraHub.Api_HostAddress}}/api/Services
+Accept: application/json
+
+###
+GET {{SidraHub.Api_HostAddress}}/api/Services/1
+Accept: application/json
+
+###
+POST {{SidraHub.Api_HostAddress}}/api/Services
+Content-Type: application/json
+
+{
+  "serviceCategoryId": 1,
+  "nameAr": "خدمة تأسيس الشركات",
+  "nameEn": "Company Formation",
+  "shortDescriptionAr": "تأسيس شركة بشكل قانوني",
+  "shortDescriptionEn": "Establish a company legally",
+  "descriptionAr": "وصف عربي كامل للخدمة",
+  "descriptionEn": "Full English description for the service",
+  "icon": "briefcase"
+}
+
+###
+PUT {{SidraHub.Api_HostAddress}}/api/Services/1
+Content-Type: application/json
+
+{
+  "serviceCategoryId": 1,
+  "nameAr": "خدمة تأسيس الشركات وتعديلها",
+  "nameEn": "Company Formation and Amendments",
+  "shortDescriptionAr": "تأسيس وتعديل الشركات",
+  "shortDescriptionEn": "Company formation and amendments",
+  "descriptionAr": "وصف عربي محدث للخدمة",
+  "descriptionEn": "Updated English description for the service",
+  "icon": "scale"
+}
+
+###
+DELETE {{SidraHub.Api_HostAddress}}/api/Services/1
+Accept: application/json
+
+###
+# Service Packages
+GET {{SidraHub.Api_HostAddress}}/api/ServicePackages
+Accept: application/json
+
+###
+GET {{SidraHub.Api_HostAddress}}/api/ServicePackages/1
+Accept: application/json
+
+###
+POST {{SidraHub.Api_HostAddress}}/api/ServicePackages
+Content-Type: application/json
+
+{
+  "serviceId": 1,
+  "nameAr": "الباقة الأساسية",
+  "nameEn": "Basic Package",
+  "icon": "package",
+  "costAmount": 5000
+}
+
+###
+PUT {{SidraHub.Api_HostAddress}}/api/ServicePackages/1
+Content-Type: application/json
+
+{
+  "serviceId": 1,
+  "nameAr": "الباقة المتقدمة",
+  "nameEn": "Advanced Package",
+  "icon": "star",
+  "costAmount": 8500
+}
+
+###
+DELETE {{SidraHub.Api_HostAddress}}/api/ServicePackages/1
+Accept: application/json
+
+###
+# Articles
+GET {{SidraHub.Api_HostAddress}}/api/Articles
+Accept: application/json
+
+###
+GET {{SidraHub.Api_HostAddress}}/api/Articles/1
+Accept: application/json
+
+###
+POST {{SidraHub.Api_HostAddress}}/api/Articles
+Content-Type: application/json
+
+{
+  "titleAr": "أهم التحديثات القانونية",
+  "titleEn": "Important Legal Updates",
+  "shortDescriptionAr": "ملخص سريع للمقال",
+  "shortDescriptionEn": "Short summary for the article",
+  "descriptionAr": "المحتوى العربي الكامل للمقال",
+  "descriptionEn": "Full English article content",
+  "image": "article-1.jpg"
+}
+
+###
+PUT {{SidraHub.Api_HostAddress}}/api/Articles/1
+Content-Type: application/json
+
+{
+  "titleAr": "أحدث التحديثات القانونية",
+  "titleEn": "Latest Legal Updates",
+  "shortDescriptionAr": "ملخص محدث للمقال",
+  "shortDescriptionEn": "Updated article summary",
+  "descriptionAr": "المحتوى العربي المحدث للمقال",
+  "descriptionEn": "Updated English article content",
+  "image": "article-1-updated.jpg"
+}
+
+###
+DELETE {{SidraHub.Api_HostAddress}}/api/Articles/1
+Accept: application/json
+
+###
+# Article Comments
+GET {{SidraHub.Api_HostAddress}}/api/ArticleComments
+Accept: application/json
+
+###
+GET {{SidraHub.Api_HostAddress}}/api/ArticleComments/1
+Accept: application/json
+
+###
+POST {{SidraHub.Api_HostAddress}}/api/ArticleComments
+Content-Type: application/json
+
+{
+  "articleId": 1,
+  "commentContent": "مقال ممتاز ومفيد جدا"
+}
+
+###
+PUT {{SidraHub.Api_HostAddress}}/api/ArticleComments/1
+Content-Type: application/json
+
+{
+  "articleId": 1,
+  "commentContent": "تم تحديث التعليق"
+}
+
+###
+DELETE {{SidraHub.Api_HostAddress}}/api/ArticleComments/1
+Accept: application/json
+
+###
+# Sidebars
+GET {{SidraHub.Api_HostAddress}}/api/Sidebars
+Accept: application/json
+
+###
+GET {{SidraHub.Api_HostAddress}}/api/Sidebars/1
+Accept: application/json
+
+###
+POST {{SidraHub.Api_HostAddress}}/api/Sidebars
+Content-Type: application/json
+
+{
+  "serviceId": 1,
+  "titleAr": "عنوان جانبي",
+  "titleEn": "Sidebar Title",
+  "descriptionAr": "وصف عربي للسايدبار",
+  "descriptionEn": "English sidebar description",
+  "image": "sidebar.jpg"
+}
+
+###
+PUT {{SidraHub.Api_HostAddress}}/api/Sidebars/1
+Content-Type: application/json
+
+{
+  "serviceId": 1,
+  "titleAr": "عنوان جانبي محدث",
+  "titleEn": "Updated Sidebar Title",
+  "descriptionAr": "وصف عربي محدث",
+  "descriptionEn": "Updated English description",
+  "image": "sidebar-updated.jpg"
+}
+
+###
+DELETE {{SidraHub.Api_HostAddress}}/api/Sidebars/1
+Accept: application/json
+
+###
+# Company Profiles
+GET {{SidraHub.Api_HostAddress}}/api/CompanyProfiles
+Accept: application/json
+
+###
+GET {{SidraHub.Api_HostAddress}}/api/CompanyProfiles/1
+Accept: application/json
+
+###
+POST {{SidraHub.Api_HostAddress}}/api/CompanyProfiles
+Content-Type: application/json
+
+{
+  "nameAr": "شركة سدره",
+  "nameEn": "Sidra Company",
+  "logo": "logo.png",
+  "descriptionAr": "نبذة عربية عن الشركة",
+  "descriptionEn": "English company overview",
+  "insgramLinkStr": "https://instagram.com/sidra",
+  "facebookLinkStr": "https://facebook.com/sidra",
+  "twitterLinkStr": "https://x.com/sidra",
+  "linkdInLinkStr": "https://linkedin.com/company/sidra",
+  "whatsApp": "+201000000000",
+  "yearExperienceNo": 10,
+  "successStoryNo": 120,
+  "happyCustomerNo": 500,
+  "teamMembersNo": 35
+}
+
+###
+PUT {{SidraHub.Api_HostAddress}}/api/CompanyProfiles/1
+Content-Type: application/json
+
+{
+  "nameAr": "شركة سدره المطورة",
+  "nameEn": "Sidra Company Updated",
+  "logo": "logo-updated.png",
+  "descriptionAr": "نبذة عربية محدثة",
+  "descriptionEn": "Updated English company overview",
+  "insgramLinkStr": "https://instagram.com/sidra.updated",
+  "facebookLinkStr": "https://facebook.com/sidra.updated",
+  "twitterLinkStr": "https://x.com/sidra.updated",
+  "linkdInLinkStr": "https://linkedin.com/company/sidra-updated",
+  "whatsApp": "+201111111111",
+  "yearExperienceNo": 12,
+  "successStoryNo": 150,
+  "happyCustomerNo": 650,
+  "teamMembersNo": 42
+}
+
+###
+DELETE {{SidraHub.Api_HostAddress}}/api/CompanyProfiles/1
+Accept: application/json

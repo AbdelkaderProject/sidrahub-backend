@@ -4,10 +4,13 @@ namespace SidraHub.Domain.Entities;
 
 public sealed class Article : BaseEntity
 {
-    public string TitleAr { get; set; } = string.Empty;
     public string TitleEn { get; set; } = string.Empty;
-    public string Content { get; set; } = string.Empty;
-    public string Slug { get; set; } = string.Empty;
-    public string? ImageUrl { get; set; }
-    public DateTime? PublishedAt { get; set; }
+    public string TitleAr { get; set; } = string.Empty;
+    public string ShortDescriptionEn { get; set; } = string.Empty;
+    public string ShortDescriptionAr { get; set; } = string.Empty;
+    public string DescriptionEn { get; set; } = string.Empty;
+    public string DescriptionAr { get; set; } = string.Empty;
+    public string? Image { get; set; }
+
+    public ICollection<ArticleComment> Comments { get; set; } = new List<ArticleComment>();
 }

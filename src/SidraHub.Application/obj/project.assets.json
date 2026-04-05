@@ -569,11 +569,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\freelanser\\src\\SidraHub.Application\\SidraHub.Application.csproj",
+      "projectUniqueName": "E:\\Sidrahub\\Sidrahub_Backend\\src\\SidraHub.Application\\SidraHub.Application.csproj",
       "projectName": "SidraHub.Application",
-      "projectPath": "E:\\freelanser\\src\\SidraHub.Application\\SidraHub.Application.csproj",
+      "projectPath": "E:\\Sidrahub\\Sidrahub_Backend\\src\\SidraHub.Application\\SidraHub.Application.csproj",
       "packagesPath": "C:\\Users\\AbdelKader\\.nuget\\packages\\",
-      "outputPath": "E:\\freelanser\\src\\SidraHub.Application\\obj\\",
+      "outputPath": "E:\\Sidrahub\\Sidrahub_Backend\\src\\SidraHub.Application\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -596,8 +596,8 @@
           "framework": "net10.0",
           "targetAlias": "net10.0",
           "projectReferences": {
-            "E:\\freelanser\\src\\SidraHub.Domain\\SidraHub.Domain.csproj": {
-              "projectPath": "E:\\freelanser\\src\\SidraHub.Domain\\SidraHub.Domain.csproj"
+            "E:\\Sidrahub\\Sidrahub_Backend\\src\\SidraHub.Domain\\SidraHub.Domain.csproj": {
+              "projectPath": "E:\\Sidrahub\\Sidrahub_Backend\\src\\SidraHub.Domain\\SidraHub.Domain.csproj"
             }
           }
         }

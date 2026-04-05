@@ -157,145 +157,406 @@ namespace SidraHub.Infrastructure.Migrations
 
             modelBuilder.Entity("SidraHub.Domain.Entities.Article", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("int");
 
-                    b.Property<string>("Content")
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("CreatedBy")
+                        .HasColumnType("int")
+                        .HasColumnName("CreateBy");
+
+                    b.Property<DateTime>("CreatedDateTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("CreatedDateTime");
+
+                    b.Property<int?>("DeletedBy")
+                        .HasColumnType("int")
+                        .HasColumnName("DeletedBy");
+
+                    b.Property<DateTime?>("DeletedDateTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("DeletedDatedTime");
+
+                    b.Property<string>("DescriptionAr")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ImageUrl")
+                    b.Property<string>("DescriptionEn")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Image")
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
 
-                    b.Property<DateTime?>("PublishedAt")
-                        .HasColumnType("datetime2");
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit")
+                        .HasColumnName("IsDetete");
 
-                    b.Property<string>("Slug")
+                    b.Property<string>("ShortDescriptionAr")
                         .IsRequired()
-                        .HasMaxLength(250)
-                        .HasColumnType("nvarchar(250)");
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<string>("ShortDescriptionEn")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
 
                     b.Property<string>("TitleAr")
                         .IsRequired()
-                        .HasMaxLength(250)
-                        .HasColumnType("nvarchar(250)");
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
 
                     b.Property<string>("TitleEn")
                         .IsRequired()
-                        .HasMaxLength(250)
-                        .HasColumnType("nvarchar(250)");
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<int>("UpdatedBy")
+                        .HasColumnType("int")
+                        .HasColumnName("UpdatedBy");
+
+                    b.Property<DateTime>("UpdatedDateTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("UpdatedDateTime");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("Slug")
-                        .IsUnique();
 
                     b.ToTable("Articles", (string)null);
                 });
 
-            modelBuilder.Entity("SidraHub.Domain.Entities.Consultation", b =>
+            modelBuilder.Entity("SidraHub.Domain.Entities.ArticleComment", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("int");
 
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("Email")
+                    b.Property<int>("ArticleId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("CommentContent")
                         .IsRequired()
-                        .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("FullName")
-                        .IsRequired()
-                        .HasMaxLength(200)
-                        .HasColumnType("nvarchar(200)");
+                    b.Property<int>("CreatedBy")
+                        .HasColumnType("int")
+                        .HasColumnName("CreateBy");
 
-                    b.Property<string>("Message")
-                        .IsRequired()
-                        .HasMaxLength(3000)
-                        .HasColumnType("nvarchar(3000)");
+                    b.Property<DateTime>("CreatedDateTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("CreatedDateTime");
 
-                    b.Property<string>("Phone")
-                        .IsRequired()
-                        .HasMaxLength(30)
-                        .HasColumnType("nvarchar(30)");
+                    b.Property<int?>("DeletedBy")
+                        .HasColumnType("int")
+                        .HasColumnName("DeletedBy");
 
-                    b.Property<Guid>("ServiceId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<DateTime?>("DeletedDateTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("DeletedDatedTime");
 
-                    b.Property<string>("Status")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit")
+                        .HasColumnName("IsDetete");
 
-                    b.Property<string>("UserId")
-                        .HasMaxLength(450)
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("UpdatedBy")
+                        .HasColumnType("int")
+                        .HasColumnName("UpdatedBy");
+
+                    b.Property<DateTime>("UpdatedDateTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("UpdatedDateTime");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ServiceId");
+                    b.HasIndex("ArticleId");
 
-                    b.ToTable("Consultations", (string)null);
+                    b.ToTable("ArticlesComment", (string)null);
                 });
 
-            modelBuilder.Entity("SidraHub.Domain.Entities.Invoice", b =>
+            modelBuilder.Entity("SidraHub.Domain.Entities.Branch", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("int");
 
-                    b.Property<decimal>("Amount")
-                        .HasPrecision(18, 2)
-                        .HasColumnType("decimal(18,2)");
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<DateTime>("DueDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("IssueDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<Guid>("OrderId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Status")
+                    b.Property<string>("AddressAr")
                         .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<string>("AddressEn")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<int>("CompanyProfileId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CreatedBy")
+                        .HasColumnType("int")
+                        .HasColumnName("CreateBy");
+
+                    b.Property<DateTime>("CreatedDateTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("CreatedDateTime");
+
+                    b.Property<int?>("DeletedBy")
+                        .HasColumnType("int")
+                        .HasColumnName("DeletedBy");
+
+                    b.Property<DateTime?>("DeletedDateTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("DeletedDatedTime");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit")
+                        .HasColumnName("IsDetete");
+
+                    b.Property<string>("NameAr")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<string>("NameEn")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<string>("PhoneNumber")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<int>("UpdatedBy")
+                        .HasColumnType("int")
+                        .HasColumnName("UpdatedBy");
+
+                    b.Property<DateTime>("UpdatedDateTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("UpdatedDateTime");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("OrderId")
-                        .IsUnique();
+                    b.HasIndex("CompanyProfileId");
 
-                    b.ToTable("Invoices", (string)null);
+                    b.ToTable("Branche", (string)null);
+                });
+
+            modelBuilder.Entity("SidraHub.Domain.Entities.CompanyProfile", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("CreatedBy")
+                        .HasColumnType("int")
+                        .HasColumnName("CreateBy");
+
+                    b.Property<DateTime>("CreatedDateTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("CreatedDateTime");
+
+                    b.Property<int?>("DeletedBy")
+                        .HasColumnType("int")
+                        .HasColumnName("DeletedBy");
+
+                    b.Property<DateTime?>("DeletedDateTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("DeletedDatedTime");
+
+                    b.Property<string>("DescriptionAr")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("DescriptionEn")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FacebookLinkStr")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<int>("HappyCustomerNo")
+                        .HasColumnType("int");
+
+                    b.Property<string>("InsgramLinkStr")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit")
+                        .HasColumnName("IsDetete");
+
+                    b.Property<string>("LinkdInLinkStr")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("Logo")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("NameAr")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<string>("NameEn")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<int>("SuccessStoryNo")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TeamMembersNo")
+                        .HasColumnType("int");
+
+                    b.Property<string>("TwitterLinkStr")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<int>("UpdatedBy")
+                        .HasColumnType("int")
+                        .HasColumnName("UpdatedBy");
+
+                    b.Property<DateTime>("UpdatedDateTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("UpdatedDateTime");
+
+                    b.Property<string>("WhatsApp")
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<int>("YearExperienceNo")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("CompanyProfile", (string)null);
+                });
+
+            modelBuilder.Entity("SidraHub.Domain.Entities.CustomerReview", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("CreatedBy")
+                        .HasColumnType("int")
+                        .HasColumnName("CreateBy");
+
+                    b.Property<DateTime>("CreatedDateTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("CreatedDateTime");
+
+                    b.Property<int?>("DeletedBy")
+                        .HasColumnType("int")
+                        .HasColumnName("DeletedBy");
+
+                    b.Property<DateTime?>("DeletedDateTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("DeletedDatedTime");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit")
+                        .HasColumnName("IsDetete");
+
+                    b.Property<string>("NameAr")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<string>("NameEn")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<string>("OpinionAr")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("OpinionEn")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("URLStr")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<int>("UpdatedBy")
+                        .HasColumnType("int")
+                        .HasColumnName("UpdatedBy");
+
+                    b.Property<DateTime>("UpdatedDateTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("UpdatedDateTime");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("CustomerReview", (string)null);
                 });
 
             modelBuilder.Entity("SidraHub.Domain.Entities.Notification", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
+
+                    b.Property<int>("CreatedBy")
+                        .HasColumnType("int")
+                        .HasColumnName("CreateBy");
+
+                    b.Property<DateTime>("CreatedDateTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("CreatedDateTime");
+
+                    b.Property<int?>("DeletedBy")
+                        .HasColumnType("int")
+                        .HasColumnName("DeletedBy");
+
+                    b.Property<DateTime?>("DeletedDateTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("DeletedDatedTime");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit")
+                        .HasColumnName("IsDetete");
 
                     b.Property<bool>("IsRead")
                         .HasColumnType("bit");
 
                     b.Property<string>("Message")
                         .IsRequired()
-                        .HasMaxLength(2000)
-                        .HasColumnType("nvarchar(2000)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Title")
                         .IsRequired()
-                        .HasMaxLength(250)
-                        .HasColumnType("nvarchar(250)");
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<int>("UpdatedBy")
+                        .HasColumnType("int")
+                        .HasColumnName("UpdatedBy");
+
+                    b.Property<DateTime>("UpdatedDateTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("UpdatedDateTime");
 
                     b.Property<string>("UserId")
                         .IsRequired()
@@ -303,30 +564,117 @@ namespace SidraHub.Infrastructure.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("Notifications", (string)null);
                 });
 
-            modelBuilder.Entity("SidraHub.Domain.Entities.Order", b =>
+            modelBuilder.Entity("SidraHub.Domain.Entities.Partner", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("int");
 
-                    b.Property<DateTime?>("CompletedAt")
-                        .HasColumnType("datetime2");
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("CompanyProfileId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CreatedBy")
+                        .HasColumnType("int")
+                        .HasColumnName("CreateBy");
+
+                    b.Property<DateTime>("CreatedDateTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("CreatedDateTime");
+
+                    b.Property<int?>("DeletedBy")
+                        .HasColumnType("int")
+                        .HasColumnName("DeletedBy");
+
+                    b.Property<DateTime?>("DeletedDateTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("DeletedDatedTime");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit")
+                        .HasColumnName("IsDetete");
+
+                    b.Property<string>("Logo")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("NameAr")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<string>("NameEn")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<int>("UpdatedBy")
+                        .HasColumnType("int")
+                        .HasColumnName("UpdatedBy");
+
+                    b.Property<DateTime>("UpdatedDateTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("UpdatedDateTime");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CompanyProfileId");
+
+                    b.ToTable("Partners", (string)null);
+                });
+
+            modelBuilder.Entity("SidraHub.Domain.Entities.Review", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Comment")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("Status")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                    b.Property<int>("CreatedBy")
+                        .HasColumnType("int")
+                        .HasColumnName("CreateBy");
 
-                    b.Property<decimal>("TotalAmount")
-                        .HasPrecision(18, 2)
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<DateTime>("CreatedDateTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("CreatedDateTime");
+
+                    b.Property<int?>("DeletedBy")
+                        .HasColumnType("int")
+                        .HasColumnName("DeletedBy");
+
+                    b.Property<DateTime?>("DeletedDateTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("DeletedDatedTime");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit")
+                        .HasColumnName("IsDetete");
+
+                    b.Property<int>("Rating")
+                        .HasColumnType("int");
+
+                    b.Property<int>("UpdatedBy")
+                        .HasColumnType("int")
+                        .HasColumnName("UpdatedBy");
+
+                    b.Property<DateTime>("UpdatedDateTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("UpdatedDateTime");
 
                     b.Property<string>("UserId")
                         .IsRequired()
@@ -335,121 +683,261 @@ namespace SidraHub.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Orders", (string)null);
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Reviews", (string)null);
                 });
 
-            modelBuilder.Entity("SidraHub.Domain.Entities.OrderService", b =>
+            modelBuilder.Entity("SidraHub.Domain.Entities.Service", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("int");
 
-                    b.Property<Guid>("OrderId")
-                        .HasColumnType("uniqueidentifier");
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<decimal>("PriceAtTime")
+                    b.Property<int>("CreatedBy")
+                        .HasColumnType("int")
+                        .HasColumnName("CreateBy");
+
+                    b.Property<DateTime>("CreatedDateTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("CreatedDateTime");
+
+                    b.Property<int?>("DeletedBy")
+                        .HasColumnType("int")
+                        .HasColumnName("DeletedBy");
+
+                    b.Property<DateTime?>("DeletedDateTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("DeletedDatedTime");
+
+                    b.Property<string>("DescriptionAr")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("DescriptionEn")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Icon")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit")
+                        .HasColumnName("IsDetete");
+
+                    b.Property<string>("NameAr")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<string>("NameEn")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<int>("ServiceCategoryId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ShortDescriptionAr")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<string>("ShortDescriptionEn")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<int>("UpdatedBy")
+                        .HasColumnType("int")
+                        .HasColumnName("UpdatedBy");
+
+                    b.Property<DateTime>("UpdatedDateTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("UpdatedDateTime");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ServiceCategoryId");
+
+                    b.ToTable("Service", (string)null);
+                });
+
+            modelBuilder.Entity("SidraHub.Domain.Entities.ServiceCategory", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("CreatedBy")
+                        .HasColumnType("int")
+                        .HasColumnName("CreateBy");
+
+                    b.Property<DateTime>("CreatedDateTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("CreatedDateTime");
+
+                    b.Property<int?>("DeletedBy")
+                        .HasColumnType("int")
+                        .HasColumnName("DeletedBy");
+
+                    b.Property<DateTime?>("DeletedDateTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("DeletedDatedTime");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit")
+                        .HasColumnName("IsDetete");
+
+                    b.Property<string>("NameAr")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<string>("NameEn")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<int>("UpdatedBy")
+                        .HasColumnType("int")
+                        .HasColumnName("UpdatedBy");
+
+                    b.Property<DateTime>("UpdatedDateTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("UpdatedDateTime");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ServiceCategory", (string)null);
+                });
+
+            modelBuilder.Entity("SidraHub.Domain.Entities.ServicePackage", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<decimal>("CostAmount")
                         .HasPrecision(18, 2)
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<int>("Quantity")
+                    b.Property<int>("CreatedBy")
+                        .HasColumnType("int")
+                        .HasColumnName("CreateBy");
+
+                    b.Property<DateTime>("CreatedDateTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("CreatedDateTime");
+
+                    b.Property<int?>("DeletedBy")
+                        .HasColumnType("int")
+                        .HasColumnName("DeletedBy");
+
+                    b.Property<DateTime?>("DeletedDateTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("DeletedDatedTime");
+
+                    b.Property<string>("Icon")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit")
+                        .HasColumnName("IsDetete");
+
+                    b.Property<string>("NameAr")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<string>("NameEn")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<int>("ServiceId")
                         .HasColumnType("int");
 
-                    b.Property<Guid>("ServiceId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<int>("UpdatedBy")
+                        .HasColumnType("int")
+                        .HasColumnName("UpdatedBy");
+
+                    b.Property<DateTime>("UpdatedDateTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("UpdatedDateTime");
 
                     b.HasKey("Id");
 
                     b.HasIndex("ServiceId");
 
-                    b.HasIndex("OrderId", "ServiceId")
-                        .IsUnique();
-
-                    b.ToTable("OrderServices", (string)null);
+                    b.ToTable("ServicePackage", (string)null);
                 });
 
-            modelBuilder.Entity("SidraHub.Domain.Entities.Payment", b =>
+            modelBuilder.Entity("SidraHub.Domain.Entities.ServiceRequest", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<decimal>("Amount")
-                        .HasPrecision(18, 2)
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<Guid>("InvoiceId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Method")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<DateTime?>("PaymentDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Status")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("InvoiceId");
-
-                    b.ToTable("Payments", (string)null);
-                });
-
-            modelBuilder.Entity("SidraHub.Domain.Entities.Provider", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(200)
-                        .HasColumnType("nvarchar(200)");
-
-                    b.Property<string>("Phone")
-                        .IsRequired()
-                        .HasMaxLength(30)
-                        .HasColumnType("nvarchar(30)");
-
-                    b.Property<string>("Type")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Providers", (string)null);
-                });
-
-            modelBuilder.Entity("SidraHub.Domain.Entities.Review", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Comment")
-                        .IsRequired()
-                        .HasMaxLength(1500)
-                        .HasColumnType("nvarchar(1500)");
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<Guid>("OrderId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<int>("Rating")
                         .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Code")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<int>("CreatedBy")
+                        .HasColumnType("int")
+                        .HasColumnName("CreateBy");
+
+                    b.Property<DateTime>("CreatedDateTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("CreatedDateTime");
+
+                    b.Property<int?>("DeletedBy")
+                        .HasColumnType("int")
+                        .HasColumnName("DeletedBy");
+
+                    b.Property<DateTime?>("DeletedDateTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("DeletedDatedTime");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("Descrption");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit")
+                        .HasColumnName("IsDetete");
+
+                    b.Property<DateOnly>("RequestDate")
+                        .HasColumnType("date");
+
+                    b.Property<int>("RequestStatus")
+                        .HasColumnType("int");
+
+                    b.Property<TimeOnly>("RequestTime")
+                        .HasColumnType("time");
+
+                    b.Property<int>("ServiceId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("UpdatedBy")
+                        .HasColumnType("int")
+                        .HasColumnName("UpdatedBy");
+
+                    b.Property<DateTime>("UpdatedDateTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("UpdatedDateTime");
 
                     b.Property<string>("UserId")
                         .IsRequired()
@@ -458,140 +946,163 @@ namespace SidraHub.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("OrderId");
+                    b.HasIndex("ServiceId");
 
-                    b.ToTable("Reviews", null, t =>
-                        {
-                            t.HasCheckConstraint("CK_Reviews_Rating", "[Rating] >= 1 AND [Rating] <= 5");
-                        });
+                    b.HasIndex("UserId");
+
+                    b.ToTable("ServiceRequest", (string)null);
                 });
 
-            modelBuilder.Entity("SidraHub.Domain.Entities.Service", b =>
+            modelBuilder.Entity("SidraHub.Domain.Entities.Sidebar", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<decimal>("BasePrice")
-                        .HasPrecision(18, 2)
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<Guid>("CategoryId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasMaxLength(4000)
-                        .HasColumnType("nvarchar(4000)");
-
-                    b.Property<int>("EstimatedDays")
                         .HasColumnType("int");
 
-                    b.Property<bool>("IsActive")
-                        .HasColumnType("bit");
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("CreatedBy")
+                        .HasColumnType("int")
+                        .HasColumnName("CreateBy");
+
+                    b.Property<DateTime>("CreatedDateTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("CreatedDateTime");
+
+                    b.Property<int?>("DeletedBy")
+                        .HasColumnType("int")
+                        .HasColumnName("DeletedBy");
+
+                    b.Property<DateTime?>("DeletedDateTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("DeletedDatedTime");
+
+                    b.Property<string>("DescriptionAr")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("DescriptionEn")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Image")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit")
+                        .HasColumnName("IsDetete");
+
+                    b.Property<int>("ServiceId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("TitleAr")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<string>("TitleEn")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<int>("UpdatedBy")
+                        .HasColumnType("int")
+                        .HasColumnName("UpdatedBy");
+
+                    b.Property<DateTime>("UpdatedDateTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("UpdatedDateTime");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ServiceId");
+
+                    b.ToTable("Sidebar", (string)null);
+                });
+
+            modelBuilder.Entity("SidraHub.Domain.Entities.TeamMember", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("CompanyProfileId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CreatedBy")
+                        .HasColumnType("int")
+                        .HasColumnName("CreateBy");
+
+                    b.Property<DateTime>("CreatedDateTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("CreatedDateTime");
+
+                    b.Property<int?>("DeletedBy")
+                        .HasColumnType("int")
+                        .HasColumnName("DeletedBy");
+
+                    b.Property<DateTime?>("DeletedDateTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("DeletedDatedTime");
+
+                    b.Property<string>("DescriptionAr")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("DescriptionEn")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FacebookLinkStr")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("InsgramLinkStr")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit")
+                        .HasColumnName("IsDetete");
+
+                    b.Property<string>("LinkdInLinkStr")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
 
                     b.Property<string>("NameAr")
                         .IsRequired()
-                        .HasMaxLength(200)
-                        .HasColumnType("nvarchar(200)");
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
 
                     b.Property<string>("NameEn")
                         .IsRequired()
-                        .HasMaxLength(200)
-                        .HasColumnType("nvarchar(200)");
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<string>("TwitterLinkStr")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<int>("UpdatedBy")
+                        .HasColumnType("int")
+                        .HasColumnName("UpdatedBy");
+
+                    b.Property<DateTime>("UpdatedDateTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("UpdatedDateTime");
+
+                    b.Property<string>("WhatsApp")
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CategoryId");
+                    b.HasIndex("CompanyProfileId");
 
-                    b.ToTable("Services", (string)null);
-                });
-
-            modelBuilder.Entity("SidraHub.Domain.Entities.ServiceCategory", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<int>("DisplayOrder")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Icon")
-                        .HasMaxLength(300)
-                        .HasColumnType("nvarchar(300)");
-
-                    b.Property<string>("NameAr")
-                        .IsRequired()
-                        .HasMaxLength(150)
-                        .HasColumnType("nvarchar(150)");
-
-                    b.Property<string>("NameEn")
-                        .IsRequired()
-                        .HasMaxLength(150)
-                        .HasColumnType("nvarchar(150)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("ServiceCategories", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("3efef08d-1f7d-4d45-9ccf-9b5dd20f35a1"),
-                            DisplayOrder = 1,
-                            NameAr = "تأسيس الشركات",
-                            NameEn = "Company Setup"
-                        },
-                        new
-                        {
-                            Id = new Guid("d936e779-4744-4c07-8eca-a911e60451c6"),
-                            DisplayOrder = 2,
-                            NameAr = "الاستشارات القانونية",
-                            NameEn = "Legal Services"
-                        },
-                        new
-                        {
-                            Id = new Guid("f245a143-d4a1-4768-bfd2-d9d28ec2a60d"),
-                            DisplayOrder = 3,
-                            NameAr = "الخدمات المحاسبية والضريبية",
-                            NameEn = "Accounting & Tax"
-                        },
-                        new
-                        {
-                            Id = new Guid("c29563dc-d0e5-4a29-8440-017b57d5287e"),
-                            DisplayOrder = 4,
-                            NameAr = "خدمات الموارد البشرية",
-                            NameEn = "HR Services"
-                        },
-                        new
-                        {
-                            Id = new Guid("e38f4998-3140-4135-940b-ec7d59811f5c"),
-                            DisplayOrder = 5,
-                            NameAr = "مساحات العمل",
-                            NameEn = "Workspaces"
-                        });
-                });
-
-            modelBuilder.Entity("SidraHub.Domain.Entities.ServiceProvider", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("ProviderId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("ServiceId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ProviderId");
-
-                    b.HasIndex("ServiceId", "ProviderId")
-                        .IsUnique();
-
-                    b.ToTable("ServiceProviders", (string)null);
+                    b.ToTable("TeamMember", (string)null);
                 });
 
             modelBuilder.Entity("SidraHub.Infrastructure.Identity.ApplicationUser", b =>
@@ -616,6 +1127,10 @@ namespace SidraHub.Infrastructure.Migrations
                     b.Property<string>("FullName")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("FullNameAr")
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("bit");
 
@@ -629,6 +1144,9 @@ namespace SidraHub.Infrastructure.Migrations
                     b.Property<string>("NormalizedUserName")
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("Note")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PasswordHash")
                         .HasColumnType("nvarchar(max)");
@@ -659,7 +1177,7 @@ namespace SidraHub.Infrastructure.Migrations
                         .HasDatabaseName("UserNameIndex")
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
-                    b.ToTable("AspNetUsers", (string)null);
+                    b.ToTable("Users", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -713,125 +1231,139 @@ namespace SidraHub.Infrastructure.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("SidraHub.Domain.Entities.Consultation", b =>
+            modelBuilder.Entity("SidraHub.Domain.Entities.ArticleComment", b =>
                 {
-                    b.HasOne("SidraHub.Domain.Entities.Service", "Service")
-                        .WithMany("Consultations")
-                        .HasForeignKey("ServiceId")
+                    b.HasOne("SidraHub.Domain.Entities.Article", "Article")
+                        .WithMany("Comments")
+                        .HasForeignKey("ArticleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Article");
+                });
+
+            modelBuilder.Entity("SidraHub.Domain.Entities.Branch", b =>
+                {
+                    b.HasOne("SidraHub.Domain.Entities.CompanyProfile", "CompanyProfile")
+                        .WithMany("Branches")
+                        .HasForeignKey("CompanyProfileId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.Navigation("Service");
+                    b.Navigation("CompanyProfile");
                 });
 
-            modelBuilder.Entity("SidraHub.Domain.Entities.Invoice", b =>
+            modelBuilder.Entity("SidraHub.Domain.Entities.Notification", b =>
                 {
-                    b.HasOne("SidraHub.Domain.Entities.Order", "Order")
-                        .WithOne("Invoice")
-                        .HasForeignKey("SidraHub.Domain.Entities.Invoice", "OrderId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                    b.HasOne("SidraHub.Infrastructure.Identity.ApplicationUser", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
-
-                    b.Navigation("Order");
                 });
 
-            modelBuilder.Entity("SidraHub.Domain.Entities.OrderService", b =>
+            modelBuilder.Entity("SidraHub.Domain.Entities.Partner", b =>
                 {
-                    b.HasOne("SidraHub.Domain.Entities.Order", "Order")
-                        .WithMany("OrderServices")
-                        .HasForeignKey("OrderId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("SidraHub.Domain.Entities.Service", "Service")
-                        .WithMany("OrderServices")
-                        .HasForeignKey("ServiceId")
+                    b.HasOne("SidraHub.Domain.Entities.CompanyProfile", "CompanyProfile")
+                        .WithMany("Partners")
+                        .HasForeignKey("CompanyProfileId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.Navigation("Order");
-
-                    b.Navigation("Service");
-                });
-
-            modelBuilder.Entity("SidraHub.Domain.Entities.Payment", b =>
-                {
-                    b.HasOne("SidraHub.Domain.Entities.Invoice", "Invoice")
-                        .WithMany("Payments")
-                        .HasForeignKey("InvoiceId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Invoice");
+                    b.Navigation("CompanyProfile");
                 });
 
             modelBuilder.Entity("SidraHub.Domain.Entities.Review", b =>
                 {
-                    b.HasOne("SidraHub.Domain.Entities.Order", "Order")
-                        .WithMany("Reviews")
-                        .HasForeignKey("OrderId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                    b.HasOne("SidraHub.Infrastructure.Identity.ApplicationUser", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
-
-                    b.Navigation("Order");
                 });
 
             modelBuilder.Entity("SidraHub.Domain.Entities.Service", b =>
                 {
-                    b.HasOne("SidraHub.Domain.Entities.ServiceCategory", "Category")
+                    b.HasOne("SidraHub.Domain.Entities.ServiceCategory", "ServiceCategory")
                         .WithMany("Services")
-                        .HasForeignKey("CategoryId")
+                        .HasForeignKey("ServiceCategoryId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.Navigation("Category");
+                    b.Navigation("ServiceCategory");
                 });
 
-            modelBuilder.Entity("SidraHub.Domain.Entities.ServiceProvider", b =>
+            modelBuilder.Entity("SidraHub.Domain.Entities.ServicePackage", b =>
                 {
-                    b.HasOne("SidraHub.Domain.Entities.Provider", "Provider")
-                        .WithMany("ServiceProviders")
-                        .HasForeignKey("ProviderId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("SidraHub.Domain.Entities.Service", "Service")
-                        .WithMany("ServiceProviders")
+                        .WithMany("ServicePackages")
                         .HasForeignKey("ServiceId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
-
-                    b.Navigation("Provider");
 
                     b.Navigation("Service");
                 });
 
-            modelBuilder.Entity("SidraHub.Domain.Entities.Invoice", b =>
+            modelBuilder.Entity("SidraHub.Domain.Entities.ServiceRequest", b =>
                 {
-                    b.Navigation("Payments");
+                    b.HasOne("SidraHub.Domain.Entities.Service", "Service")
+                        .WithMany("ServiceRequests")
+                        .HasForeignKey("ServiceId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("SidraHub.Infrastructure.Identity.ApplicationUser", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Service");
                 });
 
-            modelBuilder.Entity("SidraHub.Domain.Entities.Order", b =>
+            modelBuilder.Entity("SidraHub.Domain.Entities.Sidebar", b =>
                 {
-                    b.Navigation("Invoice");
+                    b.HasOne("SidraHub.Domain.Entities.Service", "Service")
+                        .WithMany("Sidebars")
+                        .HasForeignKey("ServiceId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
 
-                    b.Navigation("OrderServices");
-
-                    b.Navigation("Reviews");
+                    b.Navigation("Service");
                 });
 
-            modelBuilder.Entity("SidraHub.Domain.Entities.Provider", b =>
+            modelBuilder.Entity("SidraHub.Domain.Entities.TeamMember", b =>
                 {
-                    b.Navigation("ServiceProviders");
+                    b.HasOne("SidraHub.Domain.Entities.CompanyProfile", "CompanyProfile")
+                        .WithMany("TeamMembers")
+                        .HasForeignKey("CompanyProfileId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("CompanyProfile");
+                });
+
+            modelBuilder.Entity("SidraHub.Domain.Entities.Article", b =>
+                {
+                    b.Navigation("Comments");
+                });
+
+            modelBuilder.Entity("SidraHub.Domain.Entities.CompanyProfile", b =>
+                {
+                    b.Navigation("Branches");
+
+                    b.Navigation("Partners");
+
+                    b.Navigation("TeamMembers");
                 });
 
             modelBuilder.Entity("SidraHub.Domain.Entities.Service", b =>
                 {
-                    b.Navigation("Consultations");
+                    b.Navigation("ServicePackages");
 
-                    b.Navigation("OrderServices");
+                    b.Navigation("ServiceRequests");
 
-                    b.Navigation("ServiceProviders");
+                    b.Navigation("Sidebars");
                 });
 
             modelBuilder.Entity("SidraHub.Domain.Entities.ServiceCategory", b =>

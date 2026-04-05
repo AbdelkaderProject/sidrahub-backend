@@ -4,16 +4,17 @@ namespace SidraHub.Domain.Entities;
 
 public sealed class Service : BaseEntity
 {
-    public Guid CategoryId { get; set; }
-    public string NameAr { get; set; } = string.Empty;
+    public int ServiceCategoryId { get; set; }
     public string NameEn { get; set; } = string.Empty;
-    public string Description { get; set; } = string.Empty;
-    public decimal BasePrice { get; set; }
-    public int EstimatedDays { get; set; }
-    public bool IsActive { get; set; } = true;
+    public string NameAr { get; set; } = string.Empty;
+    public string ShortDescriptionEn { get; set; } = string.Empty;
+    public string ShortDescriptionAr { get; set; } = string.Empty;
+    public string DescriptionEn { get; set; } = string.Empty;
+    public string DescriptionAr { get; set; } = string.Empty;
+    public string? Icon { get; set; }
 
-    public ServiceCategory Category { get; set; } = null!;
-    public ICollection<OrderService> OrderServices { get; set; } = new List<OrderService>();
-    public ICollection<ServiceProvider> ServiceProviders { get; set; } = new List<ServiceProvider>();
-    public ICollection<Consultation> Consultations { get; set; } = new List<Consultation>();
+    public ServiceCategory ServiceCategory { get; set; } = null!;
+    public ICollection<Sidebar> Sidebars { get; set; } = new List<Sidebar>();
+    public ICollection<ServicePackage> ServicePackages { get; set; } = new List<ServicePackage>();
+    public ICollection<ServiceRequest> ServiceRequests { get; set; } = new List<ServiceRequest>();
 }
