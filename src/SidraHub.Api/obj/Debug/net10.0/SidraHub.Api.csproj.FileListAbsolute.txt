@@ -370,4 +370,14 @@ e:\Sidrahub\temp-api-build\SidraHub.Api.dll
 e:\Sidrahub\temp-api-build\SidraHub.Api.pdb
 e:\Sidrahub\temp-api-build\ar\SidraHub.Api.resources.dll
 e:\Sidrahub\temp-api-build\en\SidraHub.Api.resources.dll
+E:\Sidrahub\artifacts\api-build\appsettings.Development.json
+E:\Sidrahub\artifacts\api-build\appsettings.json
+E:\Sidrahub\artifacts\api-build\SidraHub.Api.staticwebassets.endpoints.json
+E:\Sidrahub\artifacts\api-build\SidraHub.Api.exe
+E:\Sidrahub\artifacts\api-build\SidraHub.Api.deps.json
+E:\Sidrahub\artifacts\api-build\SidraHub.Api.runtimeconfig.json
+E:\Sidrahub\artifacts\api-build\SidraHub.Api.dll
+E:\Sidrahub\artifacts\api-build\SidraHub.Api.pdb
+E:\Sidrahub\artifacts\api-build\ar\SidraHub.Api.resources.dll
+E:\Sidrahub\artifacts\api-build\en\SidraHub.Api.resources.dll
 E:\Sidrahub\Sidrahub_Backend\src\SidraHub.Api\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt

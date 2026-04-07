@@ -6,6 +6,7 @@ using SidraHub.Application;
 using SidraHub.Infrastructure;
 using SidraHub.Infrastructure.Extensions;
 using System.Globalization;
+using System.IO;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -61,6 +62,8 @@ builder.Services.Configure<RequestLocalizationOptions>(options =>
 builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
 
 var app = builder.Build();
+var webRootPath = app.Environment.WebRootPath ?? Path.Combine(app.Environment.ContentRootPath, "wwwroot");
+Directory.CreateDirectory(Path.Combine(webRootPath, "uploads"));
 
 await app.SeedIdentityAsync();
 
@@ -72,6 +75,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseExceptionHandler();
 app.UseHttpsRedirection();
+app.UseStaticFiles();
 app.UseCors("FrontendDev");
 app.UseRequestLocalization();
 app.UseAuthentication();

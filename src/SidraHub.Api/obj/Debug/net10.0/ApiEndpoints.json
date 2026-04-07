@@ -846,5 +846,26 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SidraHub.Api.Controllers.UploadsController",
+    "Method": "Upload",
+    "RelativePath": "api/Uploads",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "File",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      },
+      {
+        "Name": "Folder",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
   }
 ]

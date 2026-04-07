@@ -7,16 +7,48 @@
       "RelativeMoniker": "D:0:0:{9DC2CFC8-0CC0-D52D-B4DD-854A49C718F9}|src\\SidraHub.Api\\SidraHub.Api.csproj|solutionrelative:src\\sidrahub.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5BB18EB7-C90E-147B-861A-E7A3FC96D4EF}|src\\SidraHub.Infrastructure\\SidraHub.Infrastructure.csproj|e:\\sidrahub\\sidrahub_backend\\src\\sidrahub.infrastructure\\persistence\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5BB18EB7-C90E-147B-861A-E7A3FC96D4EF}|src\\SidraHub.Infrastructure\\SidraHub.Infrastructure.csproj|solutionrelative:src\\sidrahub.infrastructure\\persistence\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5BB18EB7-C90E-147B-861A-E7A3FC96D4EF}|src\\SidraHub.Infrastructure\\SidraHub.Infrastructure.csproj|e:\\sidrahub\\sidrahub_backend\\src\\sidrahub.infrastructure\\extensions\\webapplicationextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5BB18EB7-C90E-147B-861A-E7A3FC96D4EF}|src\\SidraHub.Infrastructure\\SidraHub.Infrastructure.csproj|solutionrelative:src\\sidrahub.infrastructure\\extensions\\webapplicationextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{52068D39-2203-B455-43C1-9572124C05C8}|src\\SidraHub.Application\\SidraHub.Application.csproj|e:\\sidrahub\\sidrahub_backend\\src\\sidrahub.application\\services\\articlecomments\\articlecommentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52068D39-2203-B455-43C1-9572124C05C8}|src\\SidraHub.Application\\SidraHub.Application.csproj|solutionrelative:src\\sidrahub.application\\services\\articlecomments\\articlecommentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9DC2CFC8-0CC0-D52D-B4DD-854A49C718F9}|src\\SidraHub.Api\\SidraHub.Api.csproj|e:\\sidrahub\\sidrahub_backend\\src\\sidrahub.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9DC2CFC8-0CC0-D52D-B4DD-854A49C718F9}|src\\SidraHub.Api\\SidraHub.Api.csproj|solutionrelative:src\\sidrahub.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5BB18EB7-C90E-147B-861A-E7A3FC96D4EF}|src\\SidraHub.Infrastructure\\SidraHub.Infrastructure.csproj|e:\\sidrahub\\sidrahub_backend\\src\\sidrahub.infrastructure\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5BB18EB7-C90E-147B-861A-E7A3FC96D4EF}|src\\SidraHub.Infrastructure\\SidraHub.Infrastructure.csproj|solutionrelative:src\\sidrahub.infrastructure\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5BB18EB7-C90E-147B-861A-E7A3FC96D4EF}|src\\SidraHub.Infrastructure\\SidraHub.Infrastructure.csproj|e:\\sidrahub\\sidrahub_backend\\src\\sidrahub.infrastructure\\persistence\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5BB18EB7-C90E-147B-861A-E7A3FC96D4EF}|src\\SidraHub.Infrastructure\\SidraHub.Infrastructure.csproj|solutionrelative:src\\sidrahub.infrastructure\\persistence\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5BB18EB7-C90E-147B-861A-E7A3FC96D4EF}|src\\SidraHub.Infrastructure\\SidraHub.Infrastructure.csproj|e:\\sidrahub\\sidrahub_backend\\src\\sidrahub.infrastructure\\persistence\\repositories\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5BB18EB7-C90E-147B-861A-E7A3FC96D4EF}|src\\SidraHub.Infrastructure\\SidraHub.Infrastructure.csproj|solutionrelative:src\\sidrahub.infrastructure\\persistence\\repositories\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52068D39-2203-B455-43C1-9572124C05C8}|src\\SidraHub.Application\\SidraHub.Application.csproj|e:\\sidrahub\\sidrahub_backend\\src\\sidrahub.application\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52068D39-2203-B455-43C1-9572124C05C8}|src\\SidraHub.Application\\SidraHub.Application.csproj|solutionrelative:src\\sidrahub.application\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52068D39-2203-B455-43C1-9572124C05C8}|src\\SidraHub.Application\\SidraHub.Application.csproj|e:\\sidrahub\\sidrahub_backend\\src\\sidrahub.application\\services\\auth\\models\\authresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52068D39-2203-B455-43C1-9572124C05C8}|src\\SidraHub.Application\\SidraHub.Application.csproj|solutionrelative:src\\sidrahub.application\\services\\auth\\models\\authresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52068D39-2203-B455-43C1-9572124C05C8}|src\\SidraHub.Application\\SidraHub.Application.csproj|e:\\sidrahub\\sidrahub_backend\\src\\sidrahub.application\\services\\auth\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52068D39-2203-B455-43C1-9572124C05C8}|src\\SidraHub.Application\\SidraHub.Application.csproj|solutionrelative:src\\sidrahub.application\\services\\auth\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52068D39-2203-B455-43C1-9572124C05C8}|src\\SidraHub.Application\\SidraHub.Application.csproj|e:\\sidrahub\\sidrahub_backend\\src\\sidrahub.application\\services\\articles\\upsertarticlerequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52068D39-2203-B455-43C1-9572124C05C8}|src\\SidraHub.Application\\SidraHub.Application.csproj|solutionrelative:src\\sidrahub.application\\services\\articles\\upsertarticlerequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52068D39-2203-B455-43C1-9572124C05C8}|src\\SidraHub.Application\\SidraHub.Application.csproj|e:\\sidrahub\\sidrahub_backend\\src\\sidrahub.application\\services\\articlecomments\\upsertarticlecommentrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52068D39-2203-B455-43C1-9572124C05C8}|src\\SidraHub.Application\\SidraHub.Application.csproj|solutionrelative:src\\sidrahub.application\\services\\articlecomments\\upsertarticlecommentrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52068D39-2203-B455-43C1-9572124C05C8}|src\\SidraHub.Application\\SidraHub.Application.csproj|e:\\sidrahub\\sidrahub_backend\\src\\sidrahub.application\\services\\articlecomments\\articlecommentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52068D39-2203-B455-43C1-9572124C05C8}|src\\SidraHub.Application\\SidraHub.Application.csproj|solutionrelative:src\\sidrahub.application\\services\\articlecomments\\articlecommentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{52068D39-2203-B455-43C1-9572124C05C8}|src\\SidraHub.Application\\SidraHub.Application.csproj|e:\\sidrahub\\sidrahub_backend\\src\\sidrahub.application\\services\\articlecomments\\iarticlecommentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -111,10 +143,6 @@
       "RelativeMoniker": "D:0:0:{5BB18EB7-C90E-147B-861A-E7A3FC96D4EF}|src\\SidraHub.Infrastructure\\SidraHub.Infrastructure.csproj|solutionrelative:src\\sidrahub.infrastructure\\persistence\\sidrahubdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5BB18EB7-C90E-147B-861A-E7A3FC96D4EF}|src\\SidraHub.Infrastructure\\SidraHub.Infrastructure.csproj|e:\\sidrahub\\sidrahub_backend\\src\\sidrahub.infrastructure\\extensions\\webapplicationextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5BB18EB7-C90E-147B-861A-E7A3FC96D4EF}|src\\SidraHub.Infrastructure\\SidraHub.Infrastructure.csproj|solutionrelative:src\\sidrahub.infrastructure\\extensions\\webapplicationextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{5BB18EB7-C90E-147B-861A-E7A3FC96D4EF}|src\\SidraHub.Infrastructure\\SidraHub.Infrastructure.csproj|e:\\sidrahub\\sidrahub_backend\\src\\sidrahub.infrastructure\\migrations\\20260404231837_editdatabase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5BB18EB7-C90E-147B-861A-E7A3FC96D4EF}|src\\SidraHub.Infrastructure\\SidraHub.Infrastructure.csproj|solutionrelative:src\\sidrahub.infrastructure\\migrations\\20260404231837_editdatabase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -130,8 +158,44 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "DependencyInjection.cs",
+              "DocumentMoniker": "E:\\Sidrahub\\Sidrahub_Backend\\src\\SidraHub.Application\\DependencyInjection.cs",
+              "RelativeDocumentMoniker": "src\\SidraHub.Application\\DependencyInjection.cs",
+              "ToolTip": "E:\\Sidrahub\\Sidrahub_Backend\\src\\SidraHub.Application\\DependencyInjection.cs",
+              "RelativeToolTip": "src\\SidraHub.Application\\DependencyInjection.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-05T20:51:14.124Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UnitOfWork.cs",
+              "DocumentMoniker": "E:\\Sidrahub\\Sidrahub_Backend\\src\\SidraHub.Infrastructure\\Persistence\\UnitOfWork.cs",
+              "RelativeDocumentMoniker": "src\\SidraHub.Infrastructure\\Persistence\\UnitOfWork.cs",
+              "ToolTip": "E:\\Sidrahub\\Sidrahub_Backend\\src\\SidraHub.Infrastructure\\Persistence\\UnitOfWork.cs",
+              "RelativeToolTip": "src\\SidraHub.Infrastructure\\Persistence\\UnitOfWork.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAqwCQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-05T14:39:29.88Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "WebApplicationExtensions.cs",
+              "DocumentMoniker": "E:\\Sidrahub\\Sidrahub_Backend\\src\\SidraHub.Infrastructure\\Extensions\\WebApplicationExtensions.cs",
+              "RelativeDocumentMoniker": "src\\SidraHub.Infrastructure\\Extensions\\WebApplicationExtensions.cs",
+              "ToolTip": "E:\\Sidrahub\\Sidrahub_Backend\\src\\SidraHub.Infrastructure\\Extensions\\WebApplicationExtensions.cs",
+              "RelativeToolTip": "src\\SidraHub.Infrastructure\\Extensions\\WebApplicationExtensions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAABQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-04T22:44:42.533Z"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -147,19 +211,91 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "UnitOfWork.cs",
-              "DocumentMoniker": "E:\\Sidrahub\\Sidrahub_Backend\\src\\SidraHub.Infrastructure\\Persistence\\UnitOfWork.cs",
-              "RelativeDocumentMoniker": "src\\SidraHub.Infrastructure\\Persistence\\UnitOfWork.cs",
-              "ToolTip": "E:\\Sidrahub\\Sidrahub_Backend\\src\\SidraHub.Infrastructure\\Persistence\\UnitOfWork.cs",
-              "RelativeToolTip": "src\\SidraHub.Infrastructure\\Persistence\\UnitOfWork.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 5,
+              "Title": "GenericRepository.cs",
+              "DocumentMoniker": "E:\\Sidrahub\\Sidrahub_Backend\\src\\SidraHub.Infrastructure\\Persistence\\Repositories\\GenericRepository.cs",
+              "RelativeDocumentMoniker": "src\\SidraHub.Infrastructure\\Persistence\\Repositories\\GenericRepository.cs",
+              "ToolTip": "E:\\Sidrahub\\Sidrahub_Backend\\src\\SidraHub.Infrastructure\\Persistence\\Repositories\\GenericRepository.cs",
+              "RelativeToolTip": "src\\SidraHub.Infrastructure\\Persistence\\Repositories\\GenericRepository.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAqwC0AAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-05T14:39:29.88Z"
+              "WhenOpened": "2026-04-05T20:51:36.425Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\Sidrahub\\Sidrahub_Backend\\src\\SidraHub.Api\\Program.cs",
+              "RelativeDocumentMoniker": "src\\SidraHub.Api\\Program.cs",
+              "ToolTip": "E:\\Sidrahub\\Sidrahub_Backend\\src\\SidraHub.Api\\Program.cs",
+              "RelativeToolTip": "src\\SidraHub.Api\\Program.cs",
+              "ViewState": "AgIAADUAAAAAAAAAAAAQwEAAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-05T20:53:43.384Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DependencyInjection.cs",
+              "DocumentMoniker": "E:\\Sidrahub\\Sidrahub_Backend\\src\\SidraHub.Infrastructure\\DependencyInjection.cs",
+              "RelativeDocumentMoniker": "src\\SidraHub.Infrastructure\\DependencyInjection.cs",
+              "ToolTip": "E:\\Sidrahub\\Sidrahub_Backend\\src\\SidraHub.Infrastructure\\DependencyInjection.cs",
+              "RelativeToolTip": "src\\SidraHub.Infrastructure\\DependencyInjection.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAQwDMAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-04T22:43:40.542Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "AuthResponse.cs",
+              "DocumentMoniker": "E:\\Sidrahub\\Sidrahub_Backend\\src\\SidraHub.Application\\Services\\Auth\\Models\\AuthResponse.cs",
+              "RelativeDocumentMoniker": "src\\SidraHub.Application\\Services\\Auth\\Models\\AuthResponse.cs",
+              "ToolTip": "E:\\Sidrahub\\Sidrahub_Backend\\src\\SidraHub.Application\\Services\\Auth\\Models\\AuthResponse.cs",
+              "RelativeToolTip": "src\\SidraHub.Application\\Services\\Auth\\Models\\AuthResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-05T20:50:02.967Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "IAuthService.cs",
+              "DocumentMoniker": "E:\\Sidrahub\\Sidrahub_Backend\\src\\SidraHub.Application\\Services\\Auth\\IAuthService.cs",
+              "RelativeDocumentMoniker": "src\\SidraHub.Application\\Services\\Auth\\IAuthService.cs",
+              "ToolTip": "E:\\Sidrahub\\Sidrahub_Backend\\src\\SidraHub.Application\\Services\\Auth\\IAuthService.cs",
+              "RelativeToolTip": "src\\SidraHub.Application\\Services\\Auth\\IAuthService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-05T20:50:30.204Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "UpsertArticleRequest.cs",
+              "DocumentMoniker": "E:\\Sidrahub\\Sidrahub_Backend\\src\\SidraHub.Application\\Services\\Articles\\UpsertArticleRequest.cs",
+              "RelativeDocumentMoniker": "src\\SidraHub.Application\\Services\\Articles\\UpsertArticleRequest.cs",
+              "ToolTip": "E:\\Sidrahub\\Sidrahub_Backend\\src\\SidraHub.Application\\Services\\Articles\\UpsertArticleRequest.cs",
+              "RelativeToolTip": "src\\SidraHub.Application\\Services\\Articles\\UpsertArticleRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-05T20:49:51.781Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "UpsertArticleCommentRequest.cs",
+              "DocumentMoniker": "E:\\Sidrahub\\Sidrahub_Backend\\src\\SidraHub.Application\\Services\\ArticleComments\\UpsertArticleCommentRequest.cs",
+              "RelativeDocumentMoniker": "src\\SidraHub.Application\\Services\\ArticleComments\\UpsertArticleCommentRequest.cs",
+              "ToolTip": "E:\\Sidrahub\\Sidrahub_Backend\\src\\SidraHub.Application\\Services\\ArticleComments\\UpsertArticleCommentRequest.cs",
+              "RelativeToolTip": "src\\SidraHub.Application\\Services\\ArticleComments\\UpsertArticleCommentRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-05T20:49:29.374Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "ArticleCommentService.cs",
               "DocumentMoniker": "E:\\Sidrahub\\Sidrahub_Backend\\src\\SidraHub.Application\\Services\\ArticleComments\\ArticleCommentService.cs",
               "RelativeDocumentMoniker": "src\\SidraHub.Application\\Services\\ArticleComments\\ArticleCommentService.cs",
@@ -171,7 +307,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 12,
               "Title": "IArticleCommentService.cs",
               "DocumentMoniker": "E:\\Sidrahub\\Sidrahub_Backend\\src\\SidraHub.Application\\Services\\ArticleComments\\IArticleCommentService.cs",
               "RelativeDocumentMoniker": "src\\SidraHub.Application\\Services\\ArticleComments\\IArticleCommentService.cs",
@@ -183,7 +319,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 13,
               "Title": "ArticleCommentDto.cs",
               "DocumentMoniker": "E:\\Sidrahub\\Sidrahub_Backend\\src\\SidraHub.Application\\Services\\ArticleComments\\ArticleCommentDto.cs",
               "RelativeDocumentMoniker": "src\\SidraHub.Application\\Services\\ArticleComments\\ArticleCommentDto.cs",
@@ -195,7 +331,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 14,
               "Title": "CompanyProfile.cs",
               "DocumentMoniker": "E:\\Sidrahub\\Sidrahub_Backend\\src\\SidraHub.Domain\\Entities\\CompanyProfile.cs",
               "RelativeDocumentMoniker": "src\\SidraHub.Domain\\Entities\\CompanyProfile.cs",
@@ -207,7 +343,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 18,
               "Title": "Notification.cs",
               "DocumentMoniker": "E:\\Sidrahub\\Sidrahub_Backend\\src\\SidraHub.Domain\\Entities\\Notification.cs",
               "RelativeDocumentMoniker": "src\\SidraHub.Domain\\Entities\\Notification.cs",
@@ -219,19 +355,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "DependencyInjection.cs",
-              "DocumentMoniker": "E:\\Sidrahub\\Sidrahub_Backend\\src\\SidraHub.Infrastructure\\DependencyInjection.cs",
-              "RelativeDocumentMoniker": "src\\SidraHub.Infrastructure\\DependencyInjection.cs",
-              "ToolTip": "E:\\Sidrahub\\Sidrahub_Backend\\src\\SidraHub.Infrastructure\\DependencyInjection.cs",
-              "RelativeToolTip": "src\\SidraHub.Infrastructure\\DependencyInjection.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-04T22:43:40.542Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 21,
               "Title": "AuthService.cs",
               "DocumentMoniker": "E:\\Sidrahub\\Sidrahub_Backend\\src\\SidraHub.Infrastructure\\Identity\\AuthService.cs",
               "RelativeDocumentMoniker": "src\\SidraHub.Infrastructure\\Identity\\AuthService.cs",
@@ -243,7 +367,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 20,
               "Title": "ApplicationUser.cs",
               "DocumentMoniker": "E:\\Sidrahub\\Sidrahub_Backend\\src\\SidraHub.Infrastructure\\Identity\\ApplicationUser.cs",
               "RelativeDocumentMoniker": "src\\SidraHub.Infrastructure\\Identity\\ApplicationUser.cs",
@@ -255,7 +379,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 17,
               "Title": "Partner.cs",
               "DocumentMoniker": "E:\\Sidrahub\\Sidrahub_Backend\\src\\SidraHub.Domain\\Entities\\Partner.cs",
               "RelativeDocumentMoniker": "src\\SidraHub.Domain\\Entities\\Partner.cs",
@@ -267,7 +391,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 16,
               "Title": "Review.cs",
               "DocumentMoniker": "E:\\Sidrahub\\Sidrahub_Backend\\src\\SidraHub.Domain\\Entities\\Review.cs",
               "RelativeDocumentMoniker": "src\\SidraHub.Domain\\Entities\\Review.cs",
@@ -279,7 +403,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 15,
               "Title": "Service.cs",
               "DocumentMoniker": "E:\\Sidrahub\\Sidrahub_Backend\\src\\SidraHub.Domain\\Entities\\Service.cs",
               "RelativeDocumentMoniker": "src\\SidraHub.Domain\\Entities\\Service.cs",
@@ -291,7 +415,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 22,
               "Title": "IdentityRoles.cs",
               "DocumentMoniker": "E:\\Sidrahub\\Sidrahub_Backend\\src\\SidraHub.Infrastructure\\Identity\\IdentityRoles.cs",
               "RelativeDocumentMoniker": "src\\SidraHub.Infrastructure\\Identity\\IdentityRoles.cs",
@@ -303,7 +427,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 23,
               "Title": "ServiceRequest.cs",
               "DocumentMoniker": "E:\\Sidrahub\\Sidrahub_Backend\\src\\SidraHub.Domain\\Entities\\ServiceRequest.cs",
               "RelativeDocumentMoniker": "src\\SidraHub.Domain\\Entities\\ServiceRequest.cs",
@@ -315,7 +439,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 19,
               "Title": "Branch.cs",
               "DocumentMoniker": "E:\\Sidrahub\\Sidrahub_Backend\\src\\SidraHub.Domain\\Entities\\Branch.cs",
               "RelativeDocumentMoniker": "src\\SidraHub.Domain\\Entities\\Branch.cs",
@@ -327,7 +451,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 35,
               "Title": "20260404231837_editdatabase.cs",
               "DocumentMoniker": "E:\\Sidrahub\\Sidrahub_Backend\\src\\SidraHub.Infrastructure\\Migrations\\20260404231837_editdatabase.cs",
               "RelativeDocumentMoniker": "src\\SidraHub.Infrastructure\\Migrations\\20260404231837_editdatabase.cs",
@@ -339,7 +463,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 36,
               "Title": "20260404230343_init.cs",
               "DocumentMoniker": "E:\\Sidrahub\\Sidrahub_Backend\\src\\SidraHub.Infrastructure\\Migrations\\20260404230343_init.cs",
               "RelativeDocumentMoniker": "src\\SidraHub.Infrastructure\\Migrations\\20260404230343_init.cs",
@@ -351,7 +475,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 24,
               "Title": "SidraHub.Infrastructure.csproj",
               "DocumentMoniker": "E:\\Sidrahub\\Sidrahub_Backend\\src\\SidraHub.Infrastructure\\SidraHub.Infrastructure.csproj",
               "RelativeDocumentMoniker": "src\\SidraHub.Infrastructure\\SidraHub.Infrastructure.csproj",
@@ -363,7 +487,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 34,
               "Title": "SidraHubDbContext.cs",
               "DocumentMoniker": "E:\\Sidrahub\\Sidrahub_Backend\\src\\SidraHub.Infrastructure\\Persistence\\SidraHubDbContext.cs",
               "RelativeDocumentMoniker": "src\\SidraHub.Infrastructure\\Persistence\\SidraHubDbContext.cs",
@@ -375,19 +499,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "WebApplicationExtensions.cs",
-              "DocumentMoniker": "E:\\Sidrahub\\Sidrahub_Backend\\src\\SidraHub.Infrastructure\\Extensions\\WebApplicationExtensions.cs",
-              "RelativeDocumentMoniker": "src\\SidraHub.Infrastructure\\Extensions\\WebApplicationExtensions.cs",
-              "ToolTip": "E:\\Sidrahub\\Sidrahub_Backend\\src\\SidraHub.Infrastructure\\Extensions\\WebApplicationExtensions.cs",
-              "RelativeToolTip": "src\\SidraHub.Infrastructure\\Extensions\\WebApplicationExtensions.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-04T22:44:42.533Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 25,
               "Title": "ServiceRequestStatus.cs",
               "DocumentMoniker": "E:\\Sidrahub\\Sidrahub_Backend\\src\\SidraHub.Domain\\Enums\\ServiceRequestStatus.cs",
               "RelativeDocumentMoniker": "src\\SidraHub.Domain\\Enums\\ServiceRequestStatus.cs",
@@ -399,7 +511,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 26,
               "Title": "BaseEntity.cs",
               "DocumentMoniker": "E:\\Sidrahub\\Sidrahub_Backend\\src\\SidraHub.Domain\\Common\\BaseEntity.cs",
               "RelativeDocumentMoniker": "src\\SidraHub.Domain\\Common\\BaseEntity.cs",
@@ -411,7 +523,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 32,
               "Title": "Consultation.cs",
               "DocumentMoniker": "E:\\Sidrahub\\Sidrahub_Backend\\src\\SidraHub.Domain\\Entities\\Consultation.cs",
               "RelativeDocumentMoniker": "src\\SidraHub.Domain\\Entities\\Consultation.cs",
@@ -422,7 +534,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 33,
               "Title": "Order.cs",
               "DocumentMoniker": "E:\\Sidrahub\\Sidrahub_Backend\\src\\SidraHub.Domain\\Entities\\Order.cs",
               "RelativeDocumentMoniker": "src\\SidraHub.Domain\\Entities\\Order.cs",
@@ -433,7 +545,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 28,
               "Title": "TeamMember.cs",
               "DocumentMoniker": "E:\\Sidrahub\\Sidrahub_Backend\\src\\SidraHub.Domain\\Entities\\TeamMember.cs",
               "RelativeDocumentMoniker": "src\\SidraHub.Domain\\Entities\\TeamMember.cs",
@@ -445,7 +557,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 27,
               "Title": "ServiceCategory.cs",
               "DocumentMoniker": "E:\\Sidrahub\\Sidrahub_Backend\\src\\SidraHub.Domain\\Entities\\ServiceCategory.cs",
               "RelativeDocumentMoniker": "src\\SidraHub.Domain\\Entities\\ServiceCategory.cs",
@@ -457,7 +569,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 29,
               "Title": "ServicePackage.cs",
               "DocumentMoniker": "E:\\Sidrahub\\Sidrahub_Backend\\src\\SidraHub.Domain\\Entities\\ServicePackage.cs",
               "RelativeDocumentMoniker": "src\\SidraHub.Domain\\Entities\\ServicePackage.cs",
@@ -469,7 +581,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 30,
               "Title": "Sidebar.cs",
               "DocumentMoniker": "E:\\Sidrahub\\Sidrahub_Backend\\src\\SidraHub.Domain\\Entities\\Sidebar.cs",
               "RelativeDocumentMoniker": "src\\SidraHub.Domain\\Entities\\Sidebar.cs",
@@ -481,7 +593,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 31,
               "Title": "ArticleComment.cs",
               "DocumentMoniker": "E:\\Sidrahub\\Sidrahub_Backend\\src\\SidraHub.Domain\\Entities\\ArticleComment.cs",
               "RelativeDocumentMoniker": "src\\SidraHub.Domain\\Entities\\ArticleComment.cs",

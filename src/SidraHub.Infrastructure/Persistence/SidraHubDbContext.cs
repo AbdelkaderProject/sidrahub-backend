@@ -1,3 +1,4 @@
+using System.Reflection;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
@@ -30,6 +31,18 @@ public sealed class SidraHubDbContext : IdentityDbContext<ApplicationUser>, IApp
     public DbSet<Partner> Partners => Set<Partner>();
     public DbSet<Branch> Branches => Set<Branch>();
     public DbSet<ServiceRequest> ServiceRequests => Set<ServiceRequest>();
+
+    public override int SaveChanges()
+    {
+        ApplySoftDeleteRules();
+        return base.SaveChanges();
+    }
+
+    public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
+    {
+        ApplySoftDeleteRules();
+        return base.SaveChangesAsync(cancellationToken);
+    }
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
@@ -240,6 +253,8 @@ public sealed class SidraHubDbContext : IdentityDbContext<ApplicationUser>, IApp
                 .HasForeignKey(x => x.ServiceId)
                 .OnDelete(DeleteBehavior.Restrict);
         });
+
+        ApplySoftDeleteQueryFilters(builder);
     }
 
     private static void ConfigureAuditableEntity<TEntity>(EntityTypeBuilder<TEntity> entity)
@@ -254,5 +269,40 @@ public sealed class SidraHubDbContext : IdentityDbContext<ApplicationUser>, IApp
         entity.Property(x => x.IsDeleted).HasColumnName("IsDetete");
         entity.Property(x => x.DeletedBy).HasColumnName("DeletedBy");
         entity.Property(x => x.DeletedDateTime).HasColumnName("DeletedDatedTime");
+    }
+
+    private void ApplySoftDeleteRules()
+    {
+        ChangeTracker.DetectChanges();
+
+        foreach (var entry in ChangeTracker.Entries<BaseEntity>().Where(entry => entry.State == EntityState.Deleted))
+        {
+            entry.State = EntityState.Modified;
+            entry.Entity.IsDeleted = true;
+            entry.Entity.DeletedDateTime ??= DateTime.UtcNow;
+        }
+    }
+
+    private static void ApplySoftDeleteQueryFilters(ModelBuilder builder)
+    {
+        foreach (var entityType in builder.Model.GetEntityTypes())
+        {
+            if (!typeof(BaseEntity).IsAssignableFrom(entityType.ClrType))
+            {
+                continue;
+            }
+
+            var method = typeof(SidraHubDbContext)
+                .GetMethod(nameof(SetSoftDeleteQueryFilter), BindingFlags.NonPublic | BindingFlags.Static)!
+                .MakeGenericMethod(entityType.ClrType);
+
+            method.Invoke(null, [builder]);
+        }
+    }
+
+    private static void SetSoftDeleteQueryFilter<TEntity>(ModelBuilder builder)
+        where TEntity : BaseEntity
+    {
+        builder.Entity<TEntity>().HasQueryFilter(entity => !entity.IsDeleted);
     }
 }
