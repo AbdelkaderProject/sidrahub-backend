@@ -4196,7 +4196,6 @@
       },
       "frameworks": {
         "net10.0": {
-          "framework": "net10.0",
           "targetAlias": "net10.0",
           "projectReferences": {
             "E:\\Sidrahub\\Sidrahub_Backend\\src\\SidraHub.Application\\SidraHub.Application.csproj": {
@@ -4222,7 +4221,6 @@
     },
     "frameworks": {
       "net10.0": {
-        "framework": "net10.0",
         "targetAlias": "net10.0",
         "dependencies": {
           "Microsoft.AspNetCore.Authentication.JwtBearer": {

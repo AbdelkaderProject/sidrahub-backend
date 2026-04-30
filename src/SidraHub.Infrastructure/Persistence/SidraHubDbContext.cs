@@ -20,6 +20,7 @@ public sealed class SidraHubDbContext : IdentityDbContext<ApplicationUser>, IApp
     public DbSet<ServiceCategory> ServiceCategories => Set<ServiceCategory>();
     public DbSet<Service> Services => Set<Service>();
     public DbSet<ServicePackage> ServicePackages => Set<ServicePackage>();
+    public DbSet<ServiceSlot> ServiceSlots => Set<ServiceSlot>();
     public DbSet<Article> Articles => Set<Article>();
     public DbSet<ArticleComment> ArticleComments => Set<ArticleComment>();
     public DbSet<Sidebar> Sidebars => Set<Sidebar>();
@@ -90,6 +91,19 @@ public sealed class SidraHubDbContext : IdentityDbContext<ApplicationUser>, IApp
             entity.Property(x => x.CostAmount).HasPrecision(18, 2);
             entity.HasOne(x => x.Service)
                 .WithMany(x => x.ServicePackages)
+                .HasForeignKey(x => x.ServiceId)
+                .OnDelete(DeleteBehavior.Restrict);
+        });
+
+        builder.Entity<ServiceSlot>(entity =>
+        {
+            entity.ToTable("ServiceSlot");
+            ConfigureAuditableEntity(entity);
+            entity.Property(x => x.Day).HasColumnType("date");
+            entity.Property(x => x.TimeFrom).HasColumnType("time");
+            entity.Property(x => x.TimeTo).HasColumnType("time");
+            entity.HasOne(x => x.Service)
+                .WithMany(x => x.ServiceSlots)
                 .HasForeignKey(x => x.ServiceId)
                 .OnDelete(DeleteBehavior.Restrict);
         });

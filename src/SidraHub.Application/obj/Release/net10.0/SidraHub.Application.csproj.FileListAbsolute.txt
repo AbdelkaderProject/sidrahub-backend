@@ -1,0 +1,16 @@
+E:\Sidrahub\Sidrahub_Backend\src\SidraHub.Application\bin\Release\net10.0\SidraHub.Application.deps.json
+E:\Sidrahub\Sidrahub_Backend\src\SidraHub.Application\bin\Release\net10.0\SidraHub.Application.dll
+E:\Sidrahub\Sidrahub_Backend\src\SidraHub.Application\bin\Release\net10.0\SidraHub.Application.pdb
+E:\Sidrahub\Sidrahub_Backend\src\SidraHub.Application\bin\Release\net10.0\SidraHub.Domain.dll
+E:\Sidrahub\Sidrahub_Backend\src\SidraHub.Application\bin\Release\net10.0\SidraHub.Domain.pdb
+E:\Sidrahub\Sidrahub_Backend\src\SidraHub.Application\obj\Release\net10.0\SidraHub.Application.csproj.AssemblyReference.cache
+E:\Sidrahub\Sidrahub_Backend\src\SidraHub.Application\obj\Release\net10.0\SidraHub.Application.GeneratedMSBuildEditorConfig.editorconfig
+E:\Sidrahub\Sidrahub_Backend\src\SidraHub.Application\obj\Release\net10.0\SidraHub.Application.AssemblyInfoInputs.cache
+E:\Sidrahub\Sidrahub_Backend\src\SidraHub.Application\obj\Release\net10.0\SidraHub.Application.AssemblyInfo.cs
+E:\Sidrahub\Sidrahub_Backend\src\SidraHub.Application\obj\Release\net10.0\SidraHub.Application.csproj.CoreCompileInputs.cache
+E:\Sidrahub\Sidrahub_Backend\src\SidraHub.Application\obj\Release\net10.0\SidraHub.Application.sourcelink.json
+E:\Sidrahub\Sidrahub_Backend\src\SidraHub.Application\obj\Release\net10.0\SidraHub.212948AB.Up2Date
+E:\Sidrahub\Sidrahub_Backend\src\SidraHub.Application\obj\Release\net10.0\SidraHub.Application.dll
+E:\Sidrahub\Sidrahub_Backend\src\SidraHub.Application\obj\Release\net10.0\refint\SidraHub.Application.dll
+E:\Sidrahub\Sidrahub_Backend\src\SidraHub.Application\obj\Release\net10.0\SidraHub.Application.pdb
+E:\Sidrahub\Sidrahub_Backend\src\SidraHub.Application\obj\Release\net10.0\ref\SidraHub.Application.dll

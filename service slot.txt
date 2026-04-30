@@ -1,0 +1,8 @@
+service slot
+serviceid
+day
+timeform
+time to
+status(on/off)متاح ولا لا 
+لو معاد عدي متحجزش فيه service 
+auto update unavilale slot

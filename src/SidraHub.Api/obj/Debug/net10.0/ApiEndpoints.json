@@ -680,6 +680,85 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "SidraHub.Api.Controllers.ServiceSlotsController",
+    "Method": "GetAll",
+    "RelativePath": "api/ServiceSlots",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SidraHub.Api.Controllers.ServiceSlotsController",
+    "Method": "Create",
+    "RelativePath": "api/ServiceSlots",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "SidraHub.Application.Services.ServiceSlots.UpsertServiceSlotRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SidraHub.Api.Controllers.ServiceSlotsController",
+    "Method": "GetById",
+    "RelativePath": "api/ServiceSlots/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SidraHub.Api.Controllers.ServiceSlotsController",
+    "Method": "Update",
+    "RelativePath": "api/ServiceSlots/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "SidraHub.Application.Services.ServiceSlots.UpsertServiceSlotRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SidraHub.Api.Controllers.ServiceSlotsController",
+    "Method": "Delete",
+    "RelativePath": "api/ServiceSlots/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "SidraHub.Api.Controllers.SetupController",
     "Method": "GetModules",
     "RelativePath": "api/Setup/modules",

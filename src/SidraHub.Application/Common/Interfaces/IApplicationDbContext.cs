@@ -8,6 +8,7 @@ public interface IApplicationDbContext
     DbSet<ServiceCategory> ServiceCategories { get; }
     DbSet<Service> Services { get; }
     DbSet<ServicePackage> ServicePackages { get; }
+    DbSet<ServiceSlot> ServiceSlots { get; }
     DbSet<Article> Articles { get; }
     DbSet<ArticleComment> ArticleComments { get; }
     DbSet<Sidebar> Sidebars { get; }

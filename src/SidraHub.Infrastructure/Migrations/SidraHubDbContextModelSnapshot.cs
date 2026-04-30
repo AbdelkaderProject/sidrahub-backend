@@ -953,6 +953,64 @@ namespace SidraHub.Infrastructure.Migrations
                     b.ToTable("ServiceRequest", (string)null);
                 });
 
+            modelBuilder.Entity("SidraHub.Domain.Entities.ServiceSlot", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("CreatedBy")
+                        .HasColumnType("int")
+                        .HasColumnName("CreateBy");
+
+                    b.Property<DateTime>("CreatedDateTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("CreatedDateTime");
+
+                    b.Property<DateOnly>("Day")
+                        .HasColumnType("date");
+
+                    b.Property<int?>("DeletedBy")
+                        .HasColumnType("int")
+                        .HasColumnName("DeletedBy");
+
+                    b.Property<DateTime?>("DeletedDateTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("DeletedDatedTime");
+
+                    b.Property<bool>("IsAvailable")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit")
+                        .HasColumnName("IsDetete");
+
+                    b.Property<int>("ServiceId")
+                        .HasColumnType("int");
+
+                    b.Property<TimeOnly>("TimeFrom")
+                        .HasColumnType("time");
+
+                    b.Property<TimeOnly>("TimeTo")
+                        .HasColumnType("time");
+
+                    b.Property<int>("UpdatedBy")
+                        .HasColumnType("int")
+                        .HasColumnName("UpdatedBy");
+
+                    b.Property<DateTime>("UpdatedDateTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("UpdatedDateTime");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ServiceId");
+
+                    b.ToTable("ServiceSlot", (string)null);
+                });
+
             modelBuilder.Entity("SidraHub.Domain.Entities.Sidebar", b =>
                 {
                     b.Property<int>("Id")
@@ -1321,6 +1379,17 @@ namespace SidraHub.Infrastructure.Migrations
                     b.Navigation("Service");
                 });
 
+            modelBuilder.Entity("SidraHub.Domain.Entities.ServiceSlot", b =>
+                {
+                    b.HasOne("SidraHub.Domain.Entities.Service", "Service")
+                        .WithMany("ServiceSlots")
+                        .HasForeignKey("ServiceId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Service");
+                });
+
             modelBuilder.Entity("SidraHub.Domain.Entities.Sidebar", b =>
                 {
                     b.HasOne("SidraHub.Domain.Entities.Service", "Service")
@@ -1362,6 +1431,8 @@ namespace SidraHub.Infrastructure.Migrations
                     b.Navigation("ServicePackages");
 
                     b.Navigation("ServiceRequests");
+
+                    b.Navigation("ServiceSlots");
 
                     b.Navigation("Sidebars");
                 });

@@ -16,5 +16,6 @@ public sealed class Service : BaseEntity
     public ServiceCategory ServiceCategory { get; set; } = null!;
     public ICollection<Sidebar> Sidebars { get; set; } = new List<Sidebar>();
     public ICollection<ServicePackage> ServicePackages { get; set; } = new List<ServicePackage>();
+    public ICollection<ServiceSlot> ServiceSlots { get; set; } = new List<ServiceSlot>();
     public ICollection<ServiceRequest> ServiceRequests { get; set; } = new List<ServiceRequest>();
 }
