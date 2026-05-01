@@ -22,3 +22,4 @@ public interface IApplicationDbContext
     DbSet<ServiceRequest> ServiceRequests { get; }
     Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
 }
+

@@ -65,3 +65,15 @@ e:\Sidrahub\_buildcheck\api2\SidraHub.Infrastructure.deps.json
 e:\Sidrahub\_buildcheck\api2\SidraHub.Infrastructure.runtimeconfig.json
 e:\Sidrahub\_buildcheck\api2\SidraHub.Infrastructure.dll
 e:\Sidrahub\_buildcheck\api2\SidraHub.Infrastructure.pdb
+e:\Sidrahub\_buildcheck\api-slider\SidraHub.Infrastructure.deps.json
+e:\Sidrahub\_buildcheck\api-slider\SidraHub.Infrastructure.runtimeconfig.json
+e:\Sidrahub\_buildcheck\api-slider\SidraHub.Infrastructure.dll
+e:\Sidrahub\_buildcheck\api-slider\SidraHub.Infrastructure.pdb
+e:\Sidrahub\_buildcheck\api-noslider\SidraHub.Infrastructure.deps.json
+e:\Sidrahub\_buildcheck\api-noslider\SidraHub.Infrastructure.runtimeconfig.json
+e:\Sidrahub\_buildcheck\api-noslider\SidraHub.Infrastructure.dll
+e:\Sidrahub\_buildcheck\api-noslider\SidraHub.Infrastructure.pdb
+e:\Sidrahub\_buildcheck\api-noslider-2\SidraHub.Infrastructure.deps.json
+e:\Sidrahub\_buildcheck\api-noslider-2\SidraHub.Infrastructure.runtimeconfig.json
+e:\Sidrahub\_buildcheck\api-noslider-2\SidraHub.Infrastructure.dll
+e:\Sidrahub\_buildcheck\api-noslider-2\SidraHub.Infrastructure.pdb

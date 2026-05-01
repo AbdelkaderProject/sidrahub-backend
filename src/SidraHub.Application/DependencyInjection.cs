@@ -3,6 +3,7 @@ using SidraHub.Application.Services.ArticleComments;
 using SidraHub.Application.Services.Articles;
 using SidraHub.Application.Services.Branches;
 using SidraHub.Application.Services.CompanyProfiles;
+using SidraHub.Application.Services.CustomerReviews;
 using SidraHub.Application.Services.Partners;
 using SidraHub.Application.Services.ServicePackages;
 using SidraHub.Application.Services.ServiceSlots;
@@ -25,6 +26,7 @@ public static class DependencyInjection
         services.AddScoped<IArticleCommentService, ArticleCommentService>();
         services.AddScoped<ISidebarService, SidebarService>();
         services.AddScoped<ICompanyProfileService, CompanyProfileService>();
+        services.AddScoped<ICustomerReviewService, CustomerReviewService>();
         services.AddScoped<ITeamMemberService, TeamMemberService>();
         services.AddScoped<IPartnerService, PartnerService>();
         services.AddScoped<IBranchService, BranchService>();
@@ -32,3 +34,4 @@ public static class DependencyInjection
         return services;
     }
 }
+

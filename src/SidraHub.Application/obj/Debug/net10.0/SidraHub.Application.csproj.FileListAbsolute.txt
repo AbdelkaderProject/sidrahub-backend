@@ -50,3 +50,12 @@ e:\Sidrahub\_buildcheck\api\SidraHub.Application.pdb
 e:\Sidrahub\_buildcheck\api2\SidraHub.Application.deps.json
 e:\Sidrahub\_buildcheck\api2\SidraHub.Application.dll
 e:\Sidrahub\_buildcheck\api2\SidraHub.Application.pdb
+e:\Sidrahub\_buildcheck\api-slider\SidraHub.Application.deps.json
+e:\Sidrahub\_buildcheck\api-slider\SidraHub.Application.dll
+e:\Sidrahub\_buildcheck\api-slider\SidraHub.Application.pdb
+e:\Sidrahub\_buildcheck\api-noslider\SidraHub.Application.deps.json
+e:\Sidrahub\_buildcheck\api-noslider\SidraHub.Application.dll
+e:\Sidrahub\_buildcheck\api-noslider\SidraHub.Application.pdb
+e:\Sidrahub\_buildcheck\api-noslider-2\SidraHub.Application.deps.json
+e:\Sidrahub\_buildcheck\api-noslider-2\SidraHub.Application.dll
+e:\Sidrahub\_buildcheck\api-noslider-2\SidraHub.Application.pdb
