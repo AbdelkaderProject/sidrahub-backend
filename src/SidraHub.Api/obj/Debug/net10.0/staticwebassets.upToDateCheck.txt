@@ -1,4 +1,6 @@
+wwwroot\uploads\articles\4e3160101645495c8e9ba9bb9b4e409c.jpg
 wwwroot\uploads\articles\9669c7aaf7e74463813502cc2873982f.png
+wwwroot\uploads\articles\a2d941ee681b4038b17045862136b22e.jpg
 wwwroot\uploads\company-profiles\127eb6340b664df9b69229f0666675b6.png
 wwwroot\uploads\company-profiles\f42e2c41166d4cc3b492a6b93815e077.png
 wwwroot\uploads\partners\0523128eb80842cfb60cdf2d01e89f71.png
@@ -14,6 +16,10 @@ wwwroot\uploads\partners\bf05186a976b45ee8a7e802461cb7dd6.png
 wwwroot\uploads\partners\c22109e23a6649b0beb6eb45e543c650.png
 wwwroot\uploads\partners\d747fd3e0132400ab2d6037313783da1.jpg
 wwwroot\uploads\service-packages\0682c6eaee6b489996e5f5f3655707ca.png
+wwwroot\uploads\services\11c70ab5b9e64483960b490cd42616d4.jpg
 wwwroot\uploads\services\5be25fcc9fdc425e9bad4c1259d5f70b.png
+wwwroot\uploads\services\b9bf72623dc8483b87c133ed7f344787.jpeg
 wwwroot\uploads\services\ba0c1533acba4ac3b9d3cd191601701a.png
+wwwroot\uploads\services\e84d20cf9cc24a89b4634db49dd036a5.jpeg
+wwwroot\uploads\services\fe742840ff4c49c9baf9e09acb96f2bb.jpg
 wwwroot\uploads\sidebars\800ebe85919546f58cf919132081672d.png

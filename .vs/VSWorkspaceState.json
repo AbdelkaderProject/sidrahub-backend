@@ -1,0 +1,11 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\docs",
+    "\\src",
+    "\\src\\SidraHub.Api",
+    "\\src\\SidraHub.Api\\Controllers",
+    "\\src\\SidraHub.Api\\Localization"
+  ],
+  "PreviewInSolutionExplorer": false
+}

@@ -4166,23 +4166,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\AbdelKader\\.nuget\\packages\\": {},
+    "C:\\Users\\infotech\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Sidrahub\\Sidrahub_Backend\\src\\SidraHub.Infrastructure\\SidraHub.Infrastructure.csproj",
+      "projectUniqueName": "C:\\Users\\infotech\\sidra-hub\\sidrahub-backend\\src\\SidraHub.Infrastructure\\SidraHub.Infrastructure.csproj",
       "projectName": "SidraHub.Infrastructure",
-      "projectPath": "E:\\Sidrahub\\Sidrahub_Backend\\src\\SidraHub.Infrastructure\\SidraHub.Infrastructure.csproj",
-      "packagesPath": "C:\\Users\\AbdelKader\\.nuget\\packages\\",
-      "outputPath": "E:\\Sidrahub\\Sidrahub_Backend\\src\\SidraHub.Infrastructure\\obj\\",
+      "projectPath": "C:\\Users\\infotech\\sidra-hub\\sidrahub-backend\\src\\SidraHub.Infrastructure\\SidraHub.Infrastructure.csproj",
+      "packagesPath": "C:\\Users\\infotech\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\infotech\\sidra-hub\\sidrahub-backend\\src\\SidraHub.Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\AbdelKader\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\infotech\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -4198,11 +4198,11 @@
         "net10.0": {
           "targetAlias": "net10.0",
           "projectReferences": {
-            "E:\\Sidrahub\\Sidrahub_Backend\\src\\SidraHub.Application\\SidraHub.Application.csproj": {
-              "projectPath": "E:\\Sidrahub\\Sidrahub_Backend\\src\\SidraHub.Application\\SidraHub.Application.csproj"
+            "C:\\Users\\infotech\\sidra-hub\\sidrahub-backend\\src\\SidraHub.Application\\SidraHub.Application.csproj": {
+              "projectPath": "C:\\Users\\infotech\\sidra-hub\\sidrahub-backend\\src\\SidraHub.Application\\SidraHub.Application.csproj"
             },
-            "E:\\Sidrahub\\Sidrahub_Backend\\src\\SidraHub.Domain\\SidraHub.Domain.csproj": {
-              "projectPath": "E:\\Sidrahub\\Sidrahub_Backend\\src\\SidraHub.Domain\\SidraHub.Domain.csproj"
+            "C:\\Users\\infotech\\sidra-hub\\sidrahub-backend\\src\\SidraHub.Domain\\SidraHub.Domain.csproj": {
+              "projectPath": "C:\\Users\\infotech\\sidra-hub\\sidrahub-backend\\src\\SidraHub.Domain\\SidraHub.Domain.csproj"
             }
           }
         }
@@ -4268,7 +4268,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.200/PortableRuntimeIdentifierGraph.json",
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.203/PortableRuntimeIdentifierGraph.json",
         "packagesToPrune": {
           "Microsoft.CSharp": "(,4.7.32767]",
           "Microsoft.VisualBasic": "(,10.4.32767]",
