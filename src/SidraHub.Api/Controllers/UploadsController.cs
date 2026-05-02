@@ -17,13 +17,21 @@ public sealed class UploadsController : ControllerBase
         ".bmp"
     };
 
+    private static readonly HashSet<string> AllowedVideoExtensions = new(StringComparer.OrdinalIgnoreCase)
+    {
+        ".mp4",
+        ".webm",
+        ".ogg",
+        ".mov"
+    };
+
     public UploadsController(IWebHostEnvironment environment)
     {
         _environment = environment;
     }
 
     [HttpPost]
-    [RequestSizeLimit(10 * 1024 * 1024)]
+    [RequestSizeLimit(100 * 1024 * 1024)]
     public async Task<IActionResult> Upload([FromForm] UploadFileRequest request, CancellationToken cancellationToken)
     {
         if (request.File is null || request.File.Length == 0)
@@ -32,9 +40,9 @@ public sealed class UploadsController : ControllerBase
         }
 
         var extension = Path.GetExtension(request.File.FileName);
-        if (string.IsNullOrWhiteSpace(extension) || !AllowedImageExtensions.Contains(extension))
+        if (string.IsNullOrWhiteSpace(extension) || (!AllowedImageExtensions.Contains(extension) && !AllowedVideoExtensions.Contains(extension)))
         {
-            return BadRequest(new { message = "Only image files are allowed." });
+            return BadRequest(new { message = "Only image and video files are allowed." });
         }
 
         var folder = SanitizeFolder(request.Folder);
