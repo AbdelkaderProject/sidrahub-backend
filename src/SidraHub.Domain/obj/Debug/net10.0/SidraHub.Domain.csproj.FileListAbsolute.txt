@@ -42,6 +42,7 @@ e:\Sidrahub\_buildcheck\api\SidraHub.Domain.pdb
 e:\Sidrahub\_buildcheck\api2\SidraHub.Domain.deps.json
 e:\Sidrahub\_buildcheck\api2\SidraHub.Domain.dll
 e:\Sidrahub\_buildcheck\api2\SidraHub.Domain.pdb
+<<<<<<< HEAD
 C:\Users\infotech\sidrahub-backend\src\SidraHub.Domain\bin\Debug\net10.0\SidraHub.Domain.deps.json
 C:\Users\infotech\sidrahub-backend\src\SidraHub.Domain\bin\Debug\net10.0\SidraHub.Domain.dll
 C:\Users\infotech\sidrahub-backend\src\SidraHub.Domain\bin\Debug\net10.0\SidraHub.Domain.pdb
@@ -66,3 +67,14 @@ C:\Users\infotech\sidra-hub\sidrahub-backend\src\SidraHub.Domain\obj\Debug\net10
 C:\Users\infotech\sidra-hub\sidrahub-backend\src\SidraHub.Domain\obj\Debug\net10.0\refint\SidraHub.Domain.dll
 C:\Users\infotech\sidra-hub\sidrahub-backend\src\SidraHub.Domain\obj\Debug\net10.0\SidraHub.Domain.pdb
 C:\Users\infotech\sidra-hub\sidrahub-backend\src\SidraHub.Domain\obj\Debug\net10.0\ref\SidraHub.Domain.dll
+=======
+e:\Sidrahub\_buildcheck\api-slider\SidraHub.Domain.deps.json
+e:\Sidrahub\_buildcheck\api-slider\SidraHub.Domain.dll
+e:\Sidrahub\_buildcheck\api-slider\SidraHub.Domain.pdb
+e:\Sidrahub\_buildcheck\api-noslider\SidraHub.Domain.deps.json
+e:\Sidrahub\_buildcheck\api-noslider\SidraHub.Domain.dll
+e:\Sidrahub\_buildcheck\api-noslider\SidraHub.Domain.pdb
+e:\Sidrahub\_buildcheck\api-noslider-2\SidraHub.Domain.deps.json
+e:\Sidrahub\_buildcheck\api-noslider-2\SidraHub.Domain.dll
+e:\Sidrahub\_buildcheck\api-noslider-2\SidraHub.Domain.pdb
+>>>>>>> da5d874ae9f3a490bf339328b810a26d9d15f108

@@ -107,7 +107,6 @@ public sealed class SidraHubDbContext : IdentityDbContext<ApplicationUser>, IApp
                 .HasForeignKey(x => x.ServiceId)
                 .OnDelete(DeleteBehavior.Restrict);
         });
-
         builder.Entity<Article>(entity =>
         {
             entity.ToTable("Articles");
@@ -320,3 +319,4 @@ public sealed class SidraHubDbContext : IdentityDbContext<ApplicationUser>, IApp
         builder.Entity<TEntity>().HasQueryFilter(entity => !entity.IsDeleted);
     }
 }
+

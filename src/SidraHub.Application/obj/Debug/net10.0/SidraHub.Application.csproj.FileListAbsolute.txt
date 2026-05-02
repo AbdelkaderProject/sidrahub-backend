@@ -50,6 +50,7 @@ e:\Sidrahub\_buildcheck\api\SidraHub.Application.pdb
 e:\Sidrahub\_buildcheck\api2\SidraHub.Application.deps.json
 e:\Sidrahub\_buildcheck\api2\SidraHub.Application.dll
 e:\Sidrahub\_buildcheck\api2\SidraHub.Application.pdb
+<<<<<<< HEAD
 C:\Users\infotech\sidrahub-backend\src\SidraHub.Application\bin\Debug\net10.0\SidraHub.Application.deps.json
 C:\Users\infotech\sidrahub-backend\src\SidraHub.Application\bin\Debug\net10.0\SidraHub.Application.dll
 C:\Users\infotech\sidrahub-backend\src\SidraHub.Application\bin\Debug\net10.0\SidraHub.Application.pdb
@@ -82,3 +83,14 @@ C:\Users\infotech\sidra-hub\sidrahub-backend\src\SidraHub.Application\obj\Debug\
 C:\Users\infotech\sidra-hub\sidrahub-backend\src\SidraHub.Application\obj\Debug\net10.0\refint\SidraHub.Application.dll
 C:\Users\infotech\sidra-hub\sidrahub-backend\src\SidraHub.Application\obj\Debug\net10.0\SidraHub.Application.pdb
 C:\Users\infotech\sidra-hub\sidrahub-backend\src\SidraHub.Application\obj\Debug\net10.0\ref\SidraHub.Application.dll
+=======
+e:\Sidrahub\_buildcheck\api-slider\SidraHub.Application.deps.json
+e:\Sidrahub\_buildcheck\api-slider\SidraHub.Application.dll
+e:\Sidrahub\_buildcheck\api-slider\SidraHub.Application.pdb
+e:\Sidrahub\_buildcheck\api-noslider\SidraHub.Application.deps.json
+e:\Sidrahub\_buildcheck\api-noslider\SidraHub.Application.dll
+e:\Sidrahub\_buildcheck\api-noslider\SidraHub.Application.pdb
+e:\Sidrahub\_buildcheck\api-noslider-2\SidraHub.Application.deps.json
+e:\Sidrahub\_buildcheck\api-noslider-2\SidraHub.Application.dll
+e:\Sidrahub\_buildcheck\api-noslider-2\SidraHub.Application.pdb
+>>>>>>> da5d874ae9f3a490bf339328b810a26d9d15f108
