@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SidraHub.Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+28c8ab5da8b5089d4ca3b6b44f905b862f18c31b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a7eb14c14606462f3a9aef8012475525e2107ae1")]
 [assembly: System.Reflection.AssemblyProductAttribute("SidraHub.Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SidraHub.Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

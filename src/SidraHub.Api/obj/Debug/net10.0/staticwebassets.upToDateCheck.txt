@@ -3,6 +3,7 @@ wwwroot\uploads\articles\9669c7aaf7e74463813502cc2873982f.png
 wwwroot\uploads\articles\a2d941ee681b4038b17045862136b22e.jpg
 wwwroot\uploads\company-profiles\127eb6340b664df9b69229f0666675b6.png
 wwwroot\uploads\company-profiles\f42e2c41166d4cc3b492a6b93815e077.png
+wwwroot\uploads\customer-reviews\1a1cc752aa044393bb93fc7da5ee9b07.mp4
 wwwroot\uploads\customer-reviews\b9c1c08db1354030bbb4e18ccb542fca.png
 wwwroot\uploads\partners\0523128eb80842cfb60cdf2d01e89f71.png
 wwwroot\uploads\partners\28a6a62bc3a14ec8b074b349e3c141f7.png
