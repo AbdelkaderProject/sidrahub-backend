@@ -20,8 +20,14 @@ wwwroot\uploads\partners\d747fd3e0132400ab2d6037313783da1.jpg
 wwwroot\uploads\service-packages\0682c6eaee6b489996e5f5f3655707ca.png
 wwwroot\uploads\services\11c70ab5b9e64483960b490cd42616d4.jpg
 wwwroot\uploads\services\5be25fcc9fdc425e9bad4c1259d5f70b.png
+wwwroot\uploads\services\a10f67d0663641b4a7d9bdbccaeaad98.png
 wwwroot\uploads\services\b9bf72623dc8483b87c133ed7f344787.jpeg
 wwwroot\uploads\services\ba0c1533acba4ac3b9d3cd191601701a.png
 wwwroot\uploads\services\e84d20cf9cc24a89b4634db49dd036a5.jpeg
 wwwroot\uploads\services\fe742840ff4c49c9baf9e09acb96f2bb.jpg
+wwwroot\uploads\sidebars\080c696132144a16abe1620c51e39911.png
+wwwroot\uploads\sidebars\142ac59174d64d148ebb18cf29f5f1a0.png
+wwwroot\uploads\sidebars\4a6108a1a7434a1abfc68372118d11a6.png
 wwwroot\uploads\sidebars\800ebe85919546f58cf919132081672d.png
+wwwroot\uploads\sidebars\a6f51de43f904427ad36ea6020c5e2db.png
+wwwroot\uploads\sidebars\ec0b51d1a8fc4ac0b560a2bc178813b5.png
