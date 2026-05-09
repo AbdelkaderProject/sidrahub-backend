@@ -26,15 +26,8 @@ public sealed class PartnerService : IPartnerService
 
     public async Task<PartnerDto?> CreateAsync(UpsertPartnerRequest request, CancellationToken cancellationToken = default)
     {
-        var companyProfile = await _unitOfWork.Repository<CompanyProfile>().GetByIdAsync(request.CompanyProfileId, cancellationToken);
-        if (companyProfile is null)
-        {
-            return null;
-        }
-
         var partner = new Partner
         {
-            CompanyProfileId = request.CompanyProfileId,
             NameEn = request.NameEn,
             NameAr = request.NameAr,
             Logo = request.Logo
@@ -53,14 +46,6 @@ public sealed class PartnerService : IPartnerService
         {
             return false;
         }
-
-        var companyProfile = await _unitOfWork.Repository<CompanyProfile>().GetByIdAsync(request.CompanyProfileId, cancellationToken);
-        if (companyProfile is null)
-        {
-            return false;
-        }
-
-        partner.CompanyProfileId = request.CompanyProfileId;
         partner.NameEn = request.NameEn;
         partner.NameAr = request.NameAr;
         partner.Logo = request.Logo;
@@ -89,7 +74,6 @@ public sealed class PartnerService : IPartnerService
     {
         return new PartnerDto(
             entity.Id,
-            entity.CompanyProfileId,
             entity.NameEn,
             entity.NameAr,
             entity.Logo);

@@ -2,6 +2,7 @@ namespace SidraHub.Application.Services.Articles;
 
 public sealed class UpsertArticleRequest
 {
+    public int? ServiceCategoryId { get; set; }
     public string TitleAr { get; set; } = string.Empty;
     public string TitleEn { get; set; } = string.Empty;
     public string ShortDescriptionAr { get; set; } = string.Empty;

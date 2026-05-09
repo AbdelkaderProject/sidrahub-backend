@@ -12,9 +12,11 @@ public sealed class ServiceService : IServiceService
         _unitOfWork = unitOfWork;
     }
 
-    public async Task<IReadOnlyList<ServiceDto>> GetAllAsync(CancellationToken cancellationToken = default)
+    public async Task<IReadOnlyList<ServiceDto>> GetAllAsync(bool includeDeleted = false, CancellationToken cancellationToken = default)
     {
-        var services = await _unitOfWork.Repository<Service>().GetAllAsync(cancellationToken);
+        var services = includeDeleted
+            ? await _unitOfWork.Repository<Service>().GetAllIncludingDeletedAsync(cancellationToken)
+            : await _unitOfWork.Repository<Service>().GetAllAsync(cancellationToken);
 
         return services.OrderBy(service => service.Id).Select(Map).ToList();
     }
@@ -94,6 +96,24 @@ public sealed class ServiceService : IServiceService
         return true;
     }
 
+    public async Task<ServiceDto?> RestoreAsync(int id, CancellationToken cancellationToken = default)
+    {
+        var service = await _unitOfWork.Repository<Service>().GetByIdIncludingDeletedAsync(id, cancellationToken);
+        if (service is null || !service.IsDeleted)
+        {
+            return null;
+        }
+
+        service.IsDeleted = false;
+        service.DeletedBy = null;
+        service.DeletedDateTime = null;
+
+        _unitOfWork.Repository<Service>().Update(service);
+        await _unitOfWork.SaveChangesAsync(cancellationToken);
+
+        return Map(service);
+    }
+
     private static ServiceDto Map(Service service)
     {
         return new ServiceDto(
@@ -105,6 +125,7 @@ public sealed class ServiceService : IServiceService
             service.ShortDescriptionEn,
             service.DescriptionAr,
             service.DescriptionEn,
-            service.Icon);
+            service.Icon,
+            service.IsDeleted);
     }
 }

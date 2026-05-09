@@ -6,6 +6,7 @@ namespace SidraHub.Infrastructure.Identity;
 
 public sealed class AuthService : IAuthService
 {
+    private const string DeletedUserMarker = "__DELETED_USER__";
     private readonly UserManager<ApplicationUser> _userManager;
     private readonly IJwtTokenGenerator _jwtTokenGenerator;
 
@@ -54,6 +55,11 @@ public sealed class AuthService : IAuthService
         if (user is null)
         {
             return AuthResult.Failure("Invalid email or password.");
+        }
+
+        if (user.Note?.Contains(DeletedUserMarker, StringComparison.Ordinal) == true)
+        {
+            return AuthResult.Failure("This account is no longer available.");
         }
 
         var isPasswordValid = await _userManager.CheckPasswordAsync(user, request.Password);

@@ -18,9 +18,11 @@ public sealed class ServiceCategoryService : IServiceCategoryService
         return category is null ? null : Map(category);
     }
 
-    public async Task<IReadOnlyList<ServiceCategoryDto>> GetAllAsync(CancellationToken cancellationToken = default)
+    public async Task<IReadOnlyList<ServiceCategoryDto>> GetAllAsync(bool includeDeleted = false, CancellationToken cancellationToken = default)
     {
-        var categories = await _unitOfWork.ServiceCategories.GetAllAsync(cancellationToken);
+        var categories = includeDeleted
+            ? await _unitOfWork.ServiceCategories.GetAllIncludingDeletedAsync(cancellationToken)
+            : await _unitOfWork.ServiceCategories.GetAllAsync(cancellationToken);
 
         return categories
             .OrderBy(category => category.Id)
@@ -73,11 +75,30 @@ public sealed class ServiceCategoryService : IServiceCategoryService
         return true;
     }
 
+    public async Task<ServiceCategoryDto?> RestoreAsync(int id, CancellationToken cancellationToken = default)
+    {
+        var category = await _unitOfWork.ServiceCategories.GetByIdIncludingDeletedAsync(id, cancellationToken);
+        if (category is null || !category.IsDeleted)
+        {
+            return null;
+        }
+
+        category.IsDeleted = false;
+        category.DeletedBy = null;
+        category.DeletedDateTime = null;
+
+        _unitOfWork.ServiceCategories.Update(category);
+        await _unitOfWork.SaveChangesAsync(cancellationToken);
+
+        return Map(category);
+    }
+
     private static ServiceCategoryDto Map(ServiceCategory category)
     {
         return new ServiceCategoryDto(
             category.Id,
             category.NameAr,
-            category.NameEn);
+            category.NameEn,
+            category.IsDeleted);
     }
 }

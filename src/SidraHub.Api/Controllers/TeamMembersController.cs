@@ -32,14 +32,14 @@ public sealed class TeamMembersController : ControllerBase
     public async Task<IActionResult> Create(UpsertTeamMemberRequest request, CancellationToken cancellationToken)
     {
         var teamMember = await _teamMemberService.CreateAsync(request, cancellationToken);
-        return teamMember is null ? BadRequest("Invalid CompanyProfileId.") : CreatedAtAction(nameof(GetById), new { id = teamMember.Id }, teamMember);
+        return teamMember is null ? BadRequest() : CreatedAtAction(nameof(GetById), new { id = teamMember.Id }, teamMember);
     }
 
     [HttpPut("{id:int}")]
     public async Task<IActionResult> Update(int id, UpsertTeamMemberRequest request, CancellationToken cancellationToken)
     {
         var updated = await _teamMemberService.UpdateAsync(id, request, cancellationToken);
-        return updated ? NoContent() : BadRequest("Entity not found or invalid CompanyProfileId.");
+        return updated ? NoContent() : BadRequest("Entity not found.");
     }
 
     [HttpDelete("{id:int}")]

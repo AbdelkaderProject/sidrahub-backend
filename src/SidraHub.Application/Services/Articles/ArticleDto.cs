@@ -2,6 +2,7 @@ namespace SidraHub.Application.Services.Articles;
 
 public sealed record ArticleDto(
     int Id,
+    int? ServiceCategoryId,
     string TitleAr,
     string TitleEn,
     string ShortDescriptionAr,

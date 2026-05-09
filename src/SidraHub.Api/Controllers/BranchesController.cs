@@ -32,14 +32,14 @@ public sealed class BranchesController : ControllerBase
     public async Task<IActionResult> Create(UpsertBranchRequest request, CancellationToken cancellationToken)
     {
         var branch = await _branchService.CreateAsync(request, cancellationToken);
-        return branch is null ? BadRequest("Invalid CompanyProfileId.") : CreatedAtAction(nameof(GetById), new { id = branch.Id }, branch);
+        return branch is null ? BadRequest() : CreatedAtAction(nameof(GetById), new { id = branch.Id }, branch);
     }
 
     [HttpPut("{id:int}")]
     public async Task<IActionResult> Update(int id, UpsertBranchRequest request, CancellationToken cancellationToken)
     {
         var updated = await _branchService.UpdateAsync(id, request, cancellationToken);
-        return updated ? NoContent() : BadRequest("Entity not found or invalid CompanyProfileId.");
+        return updated ? NoContent() : BadRequest("Entity not found.");
     }
 
     [HttpDelete("{id:int}")]

@@ -23,6 +23,14 @@ public sealed class GenericRepository<TEntity> : IGenericRepository<TEntity> whe
             .ToListAsync(cancellationToken);
     }
 
+    public async Task<IReadOnlyList<TEntity>> GetAllIncludingDeletedAsync(CancellationToken cancellationToken = default)
+    {
+        return await _dbSet
+            .IgnoreQueryFilters()
+            .AsNoTracking()
+            .ToListAsync(cancellationToken);
+    }
+
     public async Task<IReadOnlyList<TEntity>> FindAsync(
         Expression<Func<TEntity, bool>> predicate,
         CancellationToken cancellationToken = default)
@@ -36,6 +44,13 @@ public sealed class GenericRepository<TEntity> : IGenericRepository<TEntity> whe
     public async Task<TEntity?> GetByIdAsync(int id, CancellationToken cancellationToken = default)
     {
         return await _dbSet.FirstOrDefaultAsync(entity => entity.Id == id, cancellationToken);
+    }
+
+    public async Task<TEntity?> GetByIdIncludingDeletedAsync(int id, CancellationToken cancellationToken = default)
+    {
+        return await _dbSet
+            .IgnoreQueryFilters()
+            .FirstOrDefaultAsync(entity => entity.Id == id, cancellationToken);
     }
 
     public async Task AddAsync(TEntity entity, CancellationToken cancellationToken = default)

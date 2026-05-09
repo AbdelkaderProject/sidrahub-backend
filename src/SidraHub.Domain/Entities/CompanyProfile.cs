@@ -19,7 +19,4 @@ public sealed class CompanyProfile : BaseEntity
     public int HappyCustomerNo { get; set; }
     public int TeamMembersNo { get; set; }
 
-    public ICollection<Branch> Branches { get; set; } = new List<Branch>();
-    public ICollection<TeamMember> TeamMembers { get; set; } = new List<TeamMember>();
-    public ICollection<Partner> Partners { get; set; } = new List<Partner>();
 }

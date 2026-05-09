@@ -13,6 +13,7 @@ public interface IApplicationDbContext
     DbSet<ArticleComment> ArticleComments { get; }
     DbSet<Sidebar> Sidebars { get; }
     DbSet<CompanyProfile> CompanyProfiles { get; }
+    DbSet<Customer> Customers { get; }
     DbSet<CustomerReview> CustomerReviews { get; }
     DbSet<Notification> Notifications { get; }
     DbSet<Review> Reviews { get; }

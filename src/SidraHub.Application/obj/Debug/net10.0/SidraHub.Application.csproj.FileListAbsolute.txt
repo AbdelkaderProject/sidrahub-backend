@@ -46,3 +46,6 @@ C:\Users\AbdelKader\Downloads\app\sidrahub-backend\src\SidraHub.Application\obj\
 C:\Users\AbdelKader\Downloads\app\sidrahub-backend\src\SidraHub.Application\obj\Debug\net10.0\refint\SidraHub.Application.dll
 C:\Users\AbdelKader\Downloads\app\sidrahub-backend\src\SidraHub.Application\obj\Debug\net10.0\SidraHub.Application.pdb
 C:\Users\AbdelKader\Downloads\app\sidrahub-backend\src\SidraHub.Application\obj\Debug\net10.0\ref\SidraHub.Application.dll
+e:\Sidrahub\_buildcheck\api-slider\SidraHub.Application.deps.json
+e:\Sidrahub\_buildcheck\api-slider\SidraHub.Application.dll
+e:\Sidrahub\_buildcheck\api-slider\SidraHub.Application.pdb

@@ -32,14 +32,14 @@ public sealed class PartnersController : ControllerBase
     public async Task<IActionResult> Create(UpsertPartnerRequest request, CancellationToken cancellationToken)
     {
         var partner = await _partnerService.CreateAsync(request, cancellationToken);
-        return partner is null ? BadRequest("Invalid CompanyProfileId.") : CreatedAtAction(nameof(GetById), new { id = partner.Id }, partner);
+        return partner is null ? BadRequest() : CreatedAtAction(nameof(GetById), new { id = partner.Id }, partner);
     }
 
     [HttpPut("{id:int}")]
     public async Task<IActionResult> Update(int id, UpsertPartnerRequest request, CancellationToken cancellationToken)
     {
         var updated = await _partnerService.UpdateAsync(id, request, cancellationToken);
-        return updated ? NoContent() : BadRequest("Entity not found or invalid CompanyProfileId.");
+        return updated ? NoContent() : BadRequest("Entity not found.");
     }
 
     [HttpDelete("{id:int}")]

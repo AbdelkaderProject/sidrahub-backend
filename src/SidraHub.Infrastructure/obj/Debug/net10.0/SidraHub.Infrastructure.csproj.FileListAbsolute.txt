@@ -58,3 +58,7 @@ C:\Users\AbdelKader\Downloads\app\sidrahub-backend\src\SidraHub.Infrastructure\o
 C:\Users\AbdelKader\Downloads\app\sidrahub-backend\src\SidraHub.Infrastructure\obj\Debug\net10.0\SidraHub.Infrastructure.pdb
 C:\Users\AbdelKader\Downloads\app\sidrahub-backend\src\SidraHub.Infrastructure\obj\Debug\net10.0\SidraHub.Infrastructure.genruntimeconfig.cache
 C:\Users\AbdelKader\Downloads\app\sidrahub-backend\src\SidraHub.Infrastructure\obj\Debug\net10.0\ref\SidraHub.Infrastructure.dll
+e:\Sidrahub\_buildcheck\api-slider\SidraHub.Infrastructure.deps.json
+e:\Sidrahub\_buildcheck\api-slider\SidraHub.Infrastructure.runtimeconfig.json
+e:\Sidrahub\_buildcheck\api-slider\SidraHub.Infrastructure.dll
+e:\Sidrahub\_buildcheck\api-slider\SidraHub.Infrastructure.pdb

@@ -23,6 +23,7 @@ public static class DependencyInjection
         var audience = configuration["Jwt:Audience"] ?? throw new InvalidOperationException("Jwt audience was not configured.");
         var key = configuration["Jwt:Key"] ?? throw new InvalidOperationException("Jwt key was not configured.");
 
+        services.AddHttpContextAccessor();
         services.AddDbContext<SidraHubDbContext>(options =>
             options.UseSqlServer(connectionString, sqlOptions =>
                 sqlOptions.EnableRetryOnFailure()));

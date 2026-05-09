@@ -26,15 +26,8 @@ public sealed class BranchService : IBranchService
 
     public async Task<BranchDto?> CreateAsync(UpsertBranchRequest request, CancellationToken cancellationToken = default)
     {
-        var companyProfile = await _unitOfWork.Repository<CompanyProfile>().GetByIdAsync(request.CompanyProfileId, cancellationToken);
-        if (companyProfile is null)
-        {
-            return null;
-        }
-
         var branch = new Branch
         {
-            CompanyProfileId = request.CompanyProfileId,
             NameEn = request.NameEn,
             NameAr = request.NameAr,
             AddressEn = request.AddressEn,
@@ -55,14 +48,6 @@ public sealed class BranchService : IBranchService
         {
             return false;
         }
-
-        var companyProfile = await _unitOfWork.Repository<CompanyProfile>().GetByIdAsync(request.CompanyProfileId, cancellationToken);
-        if (companyProfile is null)
-        {
-            return false;
-        }
-
-        branch.CompanyProfileId = request.CompanyProfileId;
         branch.NameEn = request.NameEn;
         branch.NameAr = request.NameAr;
         branch.AddressEn = request.AddressEn;
@@ -93,7 +78,6 @@ public sealed class BranchService : IBranchService
     {
         return new BranchDto(
             entity.Id,
-            entity.CompanyProfileId,
             entity.NameEn,
             entity.NameAr,
             entity.AddressEn,

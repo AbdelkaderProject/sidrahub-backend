@@ -9,4 +9,5 @@ public sealed record ServiceDto(
     string ShortDescriptionEn,
     string DescriptionAr,
     string DescriptionEn,
-    string? Icon);
+    string? Icon,
+    bool IsDeleted);

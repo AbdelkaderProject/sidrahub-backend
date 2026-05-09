@@ -28,6 +28,7 @@ public sealed class ArticleService : IArticleService
     {
         var article = new Article
         {
+            ServiceCategoryId = request.ServiceCategoryId,
             TitleAr = request.TitleAr,
             TitleEn = request.TitleEn,
             ShortDescriptionAr = request.ShortDescriptionAr,
@@ -51,6 +52,7 @@ public sealed class ArticleService : IArticleService
             return false;
         }
 
+        article.ServiceCategoryId = request.ServiceCategoryId;
         article.TitleAr = request.TitleAr;
         article.TitleEn = request.TitleEn;
         article.ShortDescriptionAr = request.ShortDescriptionAr;
@@ -83,6 +85,7 @@ public sealed class ArticleService : IArticleService
     {
         return new ArticleDto(
             article.Id,
+            article.ServiceCategoryId,
             article.TitleAr,
             article.TitleEn,
             article.ShortDescriptionAr,

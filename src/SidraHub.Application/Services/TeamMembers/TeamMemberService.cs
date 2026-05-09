@@ -26,19 +26,13 @@ public sealed class TeamMemberService : ITeamMemberService
 
     public async Task<TeamMemberDto?> CreateAsync(UpsertTeamMemberRequest request, CancellationToken cancellationToken = default)
     {
-        var companyProfile = await _unitOfWork.Repository<CompanyProfile>().GetByIdAsync(request.CompanyProfileId, cancellationToken);
-        if (companyProfile is null)
-        {
-            return null;
-        }
-
         var teamMember = new TeamMember
         {
-            CompanyProfileId = request.CompanyProfileId,
             NameEn = request.NameEn,
             NameAr = request.NameAr,
             DescriptionEn = request.DescriptionEn,
             DescriptionAr = request.DescriptionAr,
+            Image = request.Image,
             InsgramLinkStr = request.InsgramLinkStr,
             FacebookLinkStr = request.FacebookLinkStr,
             TwitterLinkStr = request.TwitterLinkStr,
@@ -59,18 +53,11 @@ public sealed class TeamMemberService : ITeamMemberService
         {
             return false;
         }
-
-        var companyProfile = await _unitOfWork.Repository<CompanyProfile>().GetByIdAsync(request.CompanyProfileId, cancellationToken);
-        if (companyProfile is null)
-        {
-            return false;
-        }
-
-        teamMember.CompanyProfileId = request.CompanyProfileId;
         teamMember.NameEn = request.NameEn;
         teamMember.NameAr = request.NameAr;
         teamMember.DescriptionEn = request.DescriptionEn;
         teamMember.DescriptionAr = request.DescriptionAr;
+        teamMember.Image = request.Image;
         teamMember.InsgramLinkStr = request.InsgramLinkStr;
         teamMember.FacebookLinkStr = request.FacebookLinkStr;
         teamMember.TwitterLinkStr = request.TwitterLinkStr;
@@ -101,11 +88,11 @@ public sealed class TeamMemberService : ITeamMemberService
     {
         return new TeamMemberDto(
             entity.Id,
-            entity.CompanyProfileId,
             entity.NameEn,
             entity.NameAr,
             entity.DescriptionEn,
             entity.DescriptionAr,
+            entity.Image,
             entity.InsgramLinkStr,
             entity.FacebookLinkStr,
             entity.TwitterLinkStr,

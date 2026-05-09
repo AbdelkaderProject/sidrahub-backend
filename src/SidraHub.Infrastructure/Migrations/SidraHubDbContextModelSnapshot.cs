@@ -163,16 +163,18 @@ namespace SidraHub.Infrastructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("CreatedBy")
-                        .HasColumnType("int")
+                    b.Property<string>("CreatedBy")
+                        .HasMaxLength(450)
+                        .HasColumnType("nvarchar(450)")
                         .HasColumnName("CreateBy");
 
                     b.Property<DateTime>("CreatedDateTime")
                         .HasColumnType("datetime2")
                         .HasColumnName("CreatedDateTime");
 
-                    b.Property<int?>("DeletedBy")
-                        .HasColumnType("int")
+                    b.Property<string>("DeletedBy")
+                        .HasMaxLength(450)
+                        .HasColumnType("nvarchar(450)")
                         .HasColumnName("DeletedBy");
 
                     b.Property<DateTime?>("DeletedDateTime")
@@ -195,6 +197,9 @@ namespace SidraHub.Infrastructure.Migrations
                         .HasColumnType("bit")
                         .HasColumnName("IsDetete");
 
+                    b.Property<int?>("ServiceCategoryId")
+                        .HasColumnType("int");
+
                     b.Property<string>("ShortDescriptionAr")
                         .IsRequired()
                         .HasMaxLength(255)
@@ -215,15 +220,18 @@ namespace SidraHub.Infrastructure.Migrations
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)");
 
-                    b.Property<int>("UpdatedBy")
-                        .HasColumnType("int")
+                    b.Property<string>("UpdatedBy")
+                        .HasMaxLength(450)
+                        .HasColumnType("nvarchar(450)")
                         .HasColumnName("UpdatedBy");
 
-                    b.Property<DateTime>("UpdatedDateTime")
+                    b.Property<DateTime?>("UpdatedDateTime")
                         .HasColumnType("datetime2")
                         .HasColumnName("UpdatedDateTime");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("ServiceCategoryId");
 
                     b.ToTable("Articles", (string)null);
                 });
@@ -243,16 +251,18 @@ namespace SidraHub.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("CreatedBy")
-                        .HasColumnType("int")
+                    b.Property<string>("CreatedBy")
+                        .HasMaxLength(450)
+                        .HasColumnType("nvarchar(450)")
                         .HasColumnName("CreateBy");
 
                     b.Property<DateTime>("CreatedDateTime")
                         .HasColumnType("datetime2")
                         .HasColumnName("CreatedDateTime");
 
-                    b.Property<int?>("DeletedBy")
-                        .HasColumnType("int")
+                    b.Property<string>("DeletedBy")
+                        .HasMaxLength(450)
+                        .HasColumnType("nvarchar(450)")
                         .HasColumnName("DeletedBy");
 
                     b.Property<DateTime?>("DeletedDateTime")
@@ -263,11 +273,12 @@ namespace SidraHub.Infrastructure.Migrations
                         .HasColumnType("bit")
                         .HasColumnName("IsDetete");
 
-                    b.Property<int>("UpdatedBy")
-                        .HasColumnType("int")
+                    b.Property<string>("UpdatedBy")
+                        .HasMaxLength(450)
+                        .HasColumnType("nvarchar(450)")
                         .HasColumnName("UpdatedBy");
 
-                    b.Property<DateTime>("UpdatedDateTime")
+                    b.Property<DateTime?>("UpdatedDateTime")
                         .HasColumnType("datetime2")
                         .HasColumnName("UpdatedDateTime");
 
@@ -296,19 +307,18 @@ namespace SidraHub.Infrastructure.Migrations
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)");
 
-                    b.Property<int>("CompanyProfileId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("CreatedBy")
-                        .HasColumnType("int")
+                    b.Property<string>("CreatedBy")
+                        .HasMaxLength(450)
+                        .HasColumnType("nvarchar(450)")
                         .HasColumnName("CreateBy");
 
                     b.Property<DateTime>("CreatedDateTime")
                         .HasColumnType("datetime2")
                         .HasColumnName("CreatedDateTime");
 
-                    b.Property<int?>("DeletedBy")
-                        .HasColumnType("int")
+                    b.Property<string>("DeletedBy")
+                        .HasMaxLength(450)
+                        .HasColumnType("nvarchar(450)")
                         .HasColumnName("DeletedBy");
 
                     b.Property<DateTime?>("DeletedDateTime")
@@ -334,17 +344,16 @@ namespace SidraHub.Infrastructure.Migrations
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)");
 
-                    b.Property<int>("UpdatedBy")
-                        .HasColumnType("int")
+                    b.Property<string>("UpdatedBy")
+                        .HasMaxLength(450)
+                        .HasColumnType("nvarchar(450)")
                         .HasColumnName("UpdatedBy");
 
-                    b.Property<DateTime>("UpdatedDateTime")
+                    b.Property<DateTime?>("UpdatedDateTime")
                         .HasColumnType("datetime2")
                         .HasColumnName("UpdatedDateTime");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("CompanyProfileId");
 
                     b.ToTable("Branche", (string)null);
                 });
@@ -357,16 +366,18 @@ namespace SidraHub.Infrastructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("CreatedBy")
-                        .HasColumnType("int")
+                    b.Property<string>("CreatedBy")
+                        .HasMaxLength(450)
+                        .HasColumnType("nvarchar(450)")
                         .HasColumnName("CreateBy");
 
                     b.Property<DateTime>("CreatedDateTime")
                         .HasColumnType("datetime2")
                         .HasColumnName("CreatedDateTime");
 
-                    b.Property<int?>("DeletedBy")
-                        .HasColumnType("int")
+                    b.Property<string>("DeletedBy")
+                        .HasMaxLength(450)
+                        .HasColumnType("nvarchar(450)")
                         .HasColumnName("DeletedBy");
 
                     b.Property<DateTime?>("DeletedDateTime")
@@ -424,11 +435,12 @@ namespace SidraHub.Infrastructure.Migrations
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
 
-                    b.Property<int>("UpdatedBy")
-                        .HasColumnType("int")
+                    b.Property<string>("UpdatedBy")
+                        .HasMaxLength(450)
+                        .HasColumnType("nvarchar(450)")
                         .HasColumnName("UpdatedBy");
 
-                    b.Property<DateTime>("UpdatedDateTime")
+                    b.Property<DateTime?>("UpdatedDateTime")
                         .HasColumnType("datetime2")
                         .HasColumnName("UpdatedDateTime");
 
@@ -444,6 +456,64 @@ namespace SidraHub.Infrastructure.Migrations
                     b.ToTable("CompanyProfile", (string)null);
                 });
 
+            modelBuilder.Entity("SidraHub.Domain.Entities.Customer", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("CreatedBy")
+                        .HasMaxLength(450)
+                        .HasColumnType("nvarchar(450)")
+                        .HasColumnName("CreateBy");
+
+                    b.Property<DateTime>("CreatedDateTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("CreatedDateTime");
+
+                    b.Property<string>("DeletedBy")
+                        .HasMaxLength(450)
+                        .HasColumnType("nvarchar(450)")
+                        .HasColumnName("DeletedBy");
+
+                    b.Property<DateTime?>("DeletedDateTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("DeletedDatedTime");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit")
+                        .HasColumnName("IsDetete");
+
+                    b.Property<string>("Logo")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("NameAr")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<string>("NameEn")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<string>("UpdatedBy")
+                        .HasMaxLength(450)
+                        .HasColumnType("nvarchar(450)")
+                        .HasColumnName("UpdatedBy");
+
+                    b.Property<DateTime?>("UpdatedDateTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("UpdatedDateTime");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Customers", (string)null);
+                });
+
             modelBuilder.Entity("SidraHub.Domain.Entities.CustomerReview", b =>
                 {
                     b.Property<int>("Id")
@@ -452,16 +522,18 @@ namespace SidraHub.Infrastructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("CreatedBy")
-                        .HasColumnType("int")
+                    b.Property<string>("CreatedBy")
+                        .HasMaxLength(450)
+                        .HasColumnType("nvarchar(450)")
                         .HasColumnName("CreateBy");
 
                     b.Property<DateTime>("CreatedDateTime")
                         .HasColumnType("datetime2")
                         .HasColumnName("CreatedDateTime");
 
-                    b.Property<int?>("DeletedBy")
-                        .HasColumnType("int")
+                    b.Property<string>("DeletedBy")
+                        .HasMaxLength(450)
+                        .HasColumnType("nvarchar(450)")
                         .HasColumnName("DeletedBy");
 
                     b.Property<DateTime?>("DeletedDateTime")
@@ -494,11 +566,12 @@ namespace SidraHub.Infrastructure.Migrations
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
 
-                    b.Property<int>("UpdatedBy")
-                        .HasColumnType("int")
+                    b.Property<string>("UpdatedBy")
+                        .HasMaxLength(450)
+                        .HasColumnType("nvarchar(450)")
                         .HasColumnName("UpdatedBy");
 
-                    b.Property<DateTime>("UpdatedDateTime")
+                    b.Property<DateTime?>("UpdatedDateTime")
                         .HasColumnType("datetime2")
                         .HasColumnName("UpdatedDateTime");
 
@@ -518,16 +591,18 @@ namespace SidraHub.Infrastructure.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("CreatedBy")
-                        .HasColumnType("int")
+                    b.Property<string>("CreatedBy")
+                        .HasMaxLength(450)
+                        .HasColumnType("nvarchar(450)")
                         .HasColumnName("CreateBy");
 
                     b.Property<DateTime>("CreatedDateTime")
                         .HasColumnType("datetime2")
                         .HasColumnName("CreatedDateTime");
 
-                    b.Property<int?>("DeletedBy")
-                        .HasColumnType("int")
+                    b.Property<string>("DeletedBy")
+                        .HasMaxLength(450)
+                        .HasColumnType("nvarchar(450)")
                         .HasColumnName("DeletedBy");
 
                     b.Property<DateTime?>("DeletedDateTime")
@@ -550,11 +625,12 @@ namespace SidraHub.Infrastructure.Migrations
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)");
 
-                    b.Property<int>("UpdatedBy")
-                        .HasColumnType("int")
+                    b.Property<string>("UpdatedBy")
+                        .HasMaxLength(450)
+                        .HasColumnType("nvarchar(450)")
                         .HasColumnName("UpdatedBy");
 
-                    b.Property<DateTime>("UpdatedDateTime")
+                    b.Property<DateTime?>("UpdatedDateTime")
                         .HasColumnType("datetime2")
                         .HasColumnName("UpdatedDateTime");
 
@@ -578,19 +654,18 @@ namespace SidraHub.Infrastructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("CompanyProfileId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("CreatedBy")
-                        .HasColumnType("int")
+                    b.Property<string>("CreatedBy")
+                        .HasMaxLength(450)
+                        .HasColumnType("nvarchar(450)")
                         .HasColumnName("CreateBy");
 
                     b.Property<DateTime>("CreatedDateTime")
                         .HasColumnType("datetime2")
                         .HasColumnName("CreatedDateTime");
 
-                    b.Property<int?>("DeletedBy")
-                        .HasColumnType("int")
+                    b.Property<string>("DeletedBy")
+                        .HasMaxLength(450)
+                        .HasColumnType("nvarchar(450)")
                         .HasColumnName("DeletedBy");
 
                     b.Property<DateTime?>("DeletedDateTime")
@@ -615,17 +690,16 @@ namespace SidraHub.Infrastructure.Migrations
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)");
 
-                    b.Property<int>("UpdatedBy")
-                        .HasColumnType("int")
+                    b.Property<string>("UpdatedBy")
+                        .HasMaxLength(450)
+                        .HasColumnType("nvarchar(450)")
                         .HasColumnName("UpdatedBy");
 
-                    b.Property<DateTime>("UpdatedDateTime")
+                    b.Property<DateTime?>("UpdatedDateTime")
                         .HasColumnType("datetime2")
                         .HasColumnName("UpdatedDateTime");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("CompanyProfileId");
 
                     b.ToTable("Partners", (string)null);
                 });
@@ -645,16 +719,18 @@ namespace SidraHub.Infrastructure.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("CreatedBy")
-                        .HasColumnType("int")
+                    b.Property<string>("CreatedBy")
+                        .HasMaxLength(450)
+                        .HasColumnType("nvarchar(450)")
                         .HasColumnName("CreateBy");
 
                     b.Property<DateTime>("CreatedDateTime")
                         .HasColumnType("datetime2")
                         .HasColumnName("CreatedDateTime");
 
-                    b.Property<int?>("DeletedBy")
-                        .HasColumnType("int")
+                    b.Property<string>("DeletedBy")
+                        .HasMaxLength(450)
+                        .HasColumnType("nvarchar(450)")
                         .HasColumnName("DeletedBy");
 
                     b.Property<DateTime?>("DeletedDateTime")
@@ -668,11 +744,12 @@ namespace SidraHub.Infrastructure.Migrations
                     b.Property<int>("Rating")
                         .HasColumnType("int");
 
-                    b.Property<int>("UpdatedBy")
-                        .HasColumnType("int")
+                    b.Property<string>("UpdatedBy")
+                        .HasMaxLength(450)
+                        .HasColumnType("nvarchar(450)")
                         .HasColumnName("UpdatedBy");
 
-                    b.Property<DateTime>("UpdatedDateTime")
+                    b.Property<DateTime?>("UpdatedDateTime")
                         .HasColumnType("datetime2")
                         .HasColumnName("UpdatedDateTime");
 
@@ -696,16 +773,18 @@ namespace SidraHub.Infrastructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("CreatedBy")
-                        .HasColumnType("int")
+                    b.Property<string>("CreatedBy")
+                        .HasMaxLength(450)
+                        .HasColumnType("nvarchar(450)")
                         .HasColumnName("CreateBy");
 
                     b.Property<DateTime>("CreatedDateTime")
                         .HasColumnType("datetime2")
                         .HasColumnName("CreatedDateTime");
 
-                    b.Property<int?>("DeletedBy")
-                        .HasColumnType("int")
+                    b.Property<string>("DeletedBy")
+                        .HasMaxLength(450)
+                        .HasColumnType("nvarchar(450)")
                         .HasColumnName("DeletedBy");
 
                     b.Property<DateTime?>("DeletedDateTime")
@@ -751,11 +830,12 @@ namespace SidraHub.Infrastructure.Migrations
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)");
 
-                    b.Property<int>("UpdatedBy")
-                        .HasColumnType("int")
+                    b.Property<string>("UpdatedBy")
+                        .HasMaxLength(450)
+                        .HasColumnType("nvarchar(450)")
                         .HasColumnName("UpdatedBy");
 
-                    b.Property<DateTime>("UpdatedDateTime")
+                    b.Property<DateTime?>("UpdatedDateTime")
                         .HasColumnType("datetime2")
                         .HasColumnName("UpdatedDateTime");
 
@@ -774,16 +854,18 @@ namespace SidraHub.Infrastructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("CreatedBy")
-                        .HasColumnType("int")
+                    b.Property<string>("CreatedBy")
+                        .HasMaxLength(450)
+                        .HasColumnType("nvarchar(450)")
                         .HasColumnName("CreateBy");
 
                     b.Property<DateTime>("CreatedDateTime")
                         .HasColumnType("datetime2")
                         .HasColumnName("CreatedDateTime");
 
-                    b.Property<int?>("DeletedBy")
-                        .HasColumnType("int")
+                    b.Property<string>("DeletedBy")
+                        .HasMaxLength(450)
+                        .HasColumnType("nvarchar(450)")
                         .HasColumnName("DeletedBy");
 
                     b.Property<DateTime?>("DeletedDateTime")
@@ -804,11 +886,12 @@ namespace SidraHub.Infrastructure.Migrations
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)");
 
-                    b.Property<int>("UpdatedBy")
-                        .HasColumnType("int")
+                    b.Property<string>("UpdatedBy")
+                        .HasMaxLength(450)
+                        .HasColumnType("nvarchar(450)")
                         .HasColumnName("UpdatedBy");
 
-                    b.Property<DateTime>("UpdatedDateTime")
+                    b.Property<DateTime?>("UpdatedDateTime")
                         .HasColumnType("datetime2")
                         .HasColumnName("UpdatedDateTime");
 
@@ -829,16 +912,18 @@ namespace SidraHub.Infrastructure.Migrations
                         .HasPrecision(18, 2)
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<int>("CreatedBy")
-                        .HasColumnType("int")
+                    b.Property<string>("CreatedBy")
+                        .HasMaxLength(450)
+                        .HasColumnType("nvarchar(450)")
                         .HasColumnName("CreateBy");
 
                     b.Property<DateTime>("CreatedDateTime")
                         .HasColumnType("datetime2")
                         .HasColumnName("CreatedDateTime");
 
-                    b.Property<int?>("DeletedBy")
-                        .HasColumnType("int")
+                    b.Property<string>("DeletedBy")
+                        .HasMaxLength(450)
+                        .HasColumnType("nvarchar(450)")
                         .HasColumnName("DeletedBy");
 
                     b.Property<DateTime?>("DeletedDateTime")
@@ -866,11 +951,12 @@ namespace SidraHub.Infrastructure.Migrations
                     b.Property<int>("ServiceId")
                         .HasColumnType("int");
 
-                    b.Property<int>("UpdatedBy")
-                        .HasColumnType("int")
+                    b.Property<string>("UpdatedBy")
+                        .HasMaxLength(450)
+                        .HasColumnType("nvarchar(450)")
                         .HasColumnName("UpdatedBy");
 
-                    b.Property<DateTime>("UpdatedDateTime")
+                    b.Property<DateTime?>("UpdatedDateTime")
                         .HasColumnType("datetime2")
                         .HasColumnName("UpdatedDateTime");
 
@@ -894,16 +980,33 @@ namespace SidraHub.Infrastructure.Migrations
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)");
 
-                    b.Property<int>("CreatedBy")
-                        .HasColumnType("int")
+                    b.Property<string>("CreatedBy")
+                        .HasMaxLength(450)
+                        .HasColumnType("nvarchar(450)")
                         .HasColumnName("CreateBy");
 
                     b.Property<DateTime>("CreatedDateTime")
                         .HasColumnType("datetime2")
                         .HasColumnName("CreatedDateTime");
 
-                    b.Property<int?>("DeletedBy")
-                        .HasColumnType("int")
+                    b.Property<string>("CustomerEmail")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<string>("CustomerName")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<string>("CustomerPhone")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<string>("DeletedBy")
+                        .HasMaxLength(450)
+                        .HasColumnType("nvarchar(450)")
                         .HasColumnName("DeletedBy");
 
                     b.Property<DateTime?>("DeletedDateTime")
@@ -931,22 +1034,27 @@ namespace SidraHub.Infrastructure.Migrations
                     b.Property<int>("ServiceId")
                         .HasColumnType("int");
 
-                    b.Property<int>("UpdatedBy")
-                        .HasColumnType("int")
+                    b.Property<int>("ServiceSlotId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UpdatedBy")
+                        .HasMaxLength(450)
+                        .HasColumnType("nvarchar(450)")
                         .HasColumnName("UpdatedBy");
 
-                    b.Property<DateTime>("UpdatedDateTime")
+                    b.Property<DateTime?>("UpdatedDateTime")
                         .HasColumnType("datetime2")
                         .HasColumnName("UpdatedDateTime");
 
                     b.Property<string>("UserId")
-                        .IsRequired()
                         .HasMaxLength(450)
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
 
                     b.HasIndex("ServiceId");
+
+                    b.HasIndex("ServiceSlotId");
 
                     b.HasIndex("UserId");
 
@@ -961,8 +1069,9 @@ namespace SidraHub.Infrastructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("CreatedBy")
-                        .HasColumnType("int")
+                    b.Property<string>("CreatedBy")
+                        .HasMaxLength(450)
+                        .HasColumnType("nvarchar(450)")
                         .HasColumnName("CreateBy");
 
                     b.Property<DateTime>("CreatedDateTime")
@@ -972,8 +1081,9 @@ namespace SidraHub.Infrastructure.Migrations
                     b.Property<DateOnly>("Day")
                         .HasColumnType("date");
 
-                    b.Property<int?>("DeletedBy")
-                        .HasColumnType("int")
+                    b.Property<string>("DeletedBy")
+                        .HasMaxLength(450)
+                        .HasColumnType("nvarchar(450)")
                         .HasColumnName("DeletedBy");
 
                     b.Property<DateTime?>("DeletedDateTime")
@@ -996,11 +1106,12 @@ namespace SidraHub.Infrastructure.Migrations
                     b.Property<TimeOnly>("TimeTo")
                         .HasColumnType("time");
 
-                    b.Property<int>("UpdatedBy")
-                        .HasColumnType("int")
+                    b.Property<string>("UpdatedBy")
+                        .HasMaxLength(450)
+                        .HasColumnType("nvarchar(450)")
                         .HasColumnName("UpdatedBy");
 
-                    b.Property<DateTime>("UpdatedDateTime")
+                    b.Property<DateTime?>("UpdatedDateTime")
                         .HasColumnType("datetime2")
                         .HasColumnName("UpdatedDateTime");
 
@@ -1019,16 +1130,18 @@ namespace SidraHub.Infrastructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("CreatedBy")
-                        .HasColumnType("int")
+                    b.Property<string>("CreatedBy")
+                        .HasMaxLength(450)
+                        .HasColumnType("nvarchar(450)")
                         .HasColumnName("CreateBy");
 
                     b.Property<DateTime>("CreatedDateTime")
                         .HasColumnType("datetime2")
                         .HasColumnName("CreatedDateTime");
 
-                    b.Property<int?>("DeletedBy")
-                        .HasColumnType("int")
+                    b.Property<string>("DeletedBy")
+                        .HasMaxLength(450)
+                        .HasColumnType("nvarchar(450)")
                         .HasColumnName("DeletedBy");
 
                     b.Property<DateTime?>("DeletedDateTime")
@@ -1064,11 +1177,12 @@ namespace SidraHub.Infrastructure.Migrations
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)");
 
-                    b.Property<int>("UpdatedBy")
-                        .HasColumnType("int")
+                    b.Property<string>("UpdatedBy")
+                        .HasMaxLength(450)
+                        .HasColumnType("nvarchar(450)")
                         .HasColumnName("UpdatedBy");
 
-                    b.Property<DateTime>("UpdatedDateTime")
+                    b.Property<DateTime?>("UpdatedDateTime")
                         .HasColumnType("datetime2")
                         .HasColumnName("UpdatedDateTime");
 
@@ -1087,19 +1201,18 @@ namespace SidraHub.Infrastructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("CompanyProfileId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("CreatedBy")
-                        .HasColumnType("int")
+                    b.Property<string>("CreatedBy")
+                        .HasMaxLength(450)
+                        .HasColumnType("nvarchar(450)")
                         .HasColumnName("CreateBy");
 
                     b.Property<DateTime>("CreatedDateTime")
                         .HasColumnType("datetime2")
                         .HasColumnName("CreatedDateTime");
 
-                    b.Property<int?>("DeletedBy")
-                        .HasColumnType("int")
+                    b.Property<string>("DeletedBy")
+                        .HasMaxLength(450)
+                        .HasColumnType("nvarchar(450)")
                         .HasColumnName("DeletedBy");
 
                     b.Property<DateTime?>("DeletedDateTime")
@@ -1115,6 +1228,10 @@ namespace SidraHub.Infrastructure.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FacebookLinkStr")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("Image")
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
 
@@ -1144,11 +1261,12 @@ namespace SidraHub.Infrastructure.Migrations
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
 
-                    b.Property<int>("UpdatedBy")
-                        .HasColumnType("int")
+                    b.Property<string>("UpdatedBy")
+                        .HasMaxLength(450)
+                        .HasColumnType("nvarchar(450)")
                         .HasColumnName("UpdatedBy");
 
-                    b.Property<DateTime>("UpdatedDateTime")
+                    b.Property<DateTime?>("UpdatedDateTime")
                         .HasColumnType("datetime2")
                         .HasColumnName("UpdatedDateTime");
 
@@ -1157,8 +1275,6 @@ namespace SidraHub.Infrastructure.Migrations
                         .HasColumnType("nvarchar(255)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("CompanyProfileId");
 
                     b.ToTable("TeamMember", (string)null);
                 });
@@ -1289,6 +1405,16 @@ namespace SidraHub.Infrastructure.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("SidraHub.Domain.Entities.Article", b =>
+                {
+                    b.HasOne("SidraHub.Domain.Entities.ServiceCategory", "ServiceCategory")
+                        .WithMany()
+                        .HasForeignKey("ServiceCategoryId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.Navigation("ServiceCategory");
+                });
+
             modelBuilder.Entity("SidraHub.Domain.Entities.ArticleComment", b =>
                 {
                     b.HasOne("SidraHub.Domain.Entities.Article", "Article")
@@ -1300,17 +1426,6 @@ namespace SidraHub.Infrastructure.Migrations
                     b.Navigation("Article");
                 });
 
-            modelBuilder.Entity("SidraHub.Domain.Entities.Branch", b =>
-                {
-                    b.HasOne("SidraHub.Domain.Entities.CompanyProfile", "CompanyProfile")
-                        .WithMany("Branches")
-                        .HasForeignKey("CompanyProfileId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.Navigation("CompanyProfile");
-                });
-
             modelBuilder.Entity("SidraHub.Domain.Entities.Notification", b =>
                 {
                     b.HasOne("SidraHub.Infrastructure.Identity.ApplicationUser", null)
@@ -1318,17 +1433,6 @@ namespace SidraHub.Infrastructure.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("SidraHub.Domain.Entities.Partner", b =>
-                {
-                    b.HasOne("SidraHub.Domain.Entities.CompanyProfile", "CompanyProfile")
-                        .WithMany("Partners")
-                        .HasForeignKey("CompanyProfileId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.Navigation("CompanyProfile");
                 });
 
             modelBuilder.Entity("SidraHub.Domain.Entities.Review", b =>
@@ -1370,13 +1474,20 @@ namespace SidraHub.Infrastructure.Migrations
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("SidraHub.Infrastructure.Identity.ApplicationUser", null)
+                    b.HasOne("SidraHub.Domain.Entities.ServiceSlot", "ServiceSlot")
                         .WithMany()
-                        .HasForeignKey("UserId")
+                        .HasForeignKey("ServiceSlotId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
+                    b.HasOne("SidraHub.Infrastructure.Identity.ApplicationUser", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
                     b.Navigation("Service");
+
+                    b.Navigation("ServiceSlot");
                 });
 
             modelBuilder.Entity("SidraHub.Domain.Entities.ServiceSlot", b =>
@@ -1401,29 +1512,9 @@ namespace SidraHub.Infrastructure.Migrations
                     b.Navigation("Service");
                 });
 
-            modelBuilder.Entity("SidraHub.Domain.Entities.TeamMember", b =>
-                {
-                    b.HasOne("SidraHub.Domain.Entities.CompanyProfile", "CompanyProfile")
-                        .WithMany("TeamMembers")
-                        .HasForeignKey("CompanyProfileId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.Navigation("CompanyProfile");
-                });
-
             modelBuilder.Entity("SidraHub.Domain.Entities.Article", b =>
                 {
                     b.Navigation("Comments");
-                });
-
-            modelBuilder.Entity("SidraHub.Domain.Entities.CompanyProfile", b =>
-                {
-                    b.Navigation("Branches");
-
-                    b.Navigation("Partners");
-
-                    b.Navigation("TeamMembers");
                 });
 
             modelBuilder.Entity("SidraHub.Domain.Entities.Service", b =>

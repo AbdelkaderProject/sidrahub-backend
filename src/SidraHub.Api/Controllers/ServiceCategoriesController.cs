@@ -15,9 +15,9 @@ public sealed class ServiceCategoriesController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<IActionResult> GetAll(CancellationToken cancellationToken)
+    public async Task<IActionResult> GetAll([FromQuery] bool includeDeleted = false, CancellationToken cancellationToken = default)
     {
-        var categories = await _serviceCategoryService.GetAllAsync(cancellationToken);
+        var categories = await _serviceCategoryService.GetAllAsync(includeDeleted, cancellationToken);
         return Ok(categories);
     }
 
@@ -47,5 +47,12 @@ public sealed class ServiceCategoriesController : ControllerBase
     {
         var deleted = await _serviceCategoryService.DeleteAsync(id, cancellationToken);
         return deleted ? NoContent() : NotFound();
+    }
+
+    [HttpPost("{id:int}/restore")]
+    public async Task<IActionResult> Restore(int id, CancellationToken cancellationToken)
+    {
+        var restored = await _serviceCategoryService.RestoreAsync(id, cancellationToken);
+        return restored is null ? NotFound() : Ok(restored);
     }
 }

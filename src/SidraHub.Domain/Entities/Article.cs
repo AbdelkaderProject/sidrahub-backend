@@ -4,6 +4,7 @@ namespace SidraHub.Domain.Entities;
 
 public sealed class Article : BaseEntity
 {
+    public int? ServiceCategoryId { get; set; }
     public string TitleEn { get; set; } = string.Empty;
     public string TitleAr { get; set; } = string.Empty;
     public string ShortDescriptionEn { get; set; } = string.Empty;
@@ -12,5 +13,6 @@ public sealed class Article : BaseEntity
     public string DescriptionAr { get; set; } = string.Empty;
     public string? Image { get; set; }
 
+    public ServiceCategory? ServiceCategory { get; set; }
     public ICollection<ArticleComment> Comments { get; set; } = new List<ArticleComment>();
 }
