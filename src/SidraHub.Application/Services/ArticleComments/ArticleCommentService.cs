@@ -18,13 +18,23 @@ public sealed class ArticleCommentService : IArticleCommentService
         return comments.OrderBy(comment => comment.Id).Select(Map).ToList();
     }
 
+    public async Task<IReadOnlyList<ArticleCommentDto>> GetByArticleIdAsync(int articleId, CancellationToken cancellationToken = default)
+    {
+        var comments = await _unitOfWork.Repository<ArticleComment>().FindAsync(comment => comment.ArticleId == articleId, cancellationToken);
+        return comments.OrderBy(comment => comment.Id).Select(Map).ToList();
+    }
+
     public async Task<ArticleCommentDto?> GetByIdAsync(int id, CancellationToken cancellationToken = default)
     {
         var comment = await _unitOfWork.Repository<ArticleComment>().GetByIdAsync(id, cancellationToken);
         return comment is null ? null : Map(comment);
     }
 
-    public async Task<ArticleCommentDto?> CreateAsync(UpsertArticleCommentRequest request, CancellationToken cancellationToken = default)
+    public async Task<ArticleCommentDto?> CreateAsync(
+        UpsertArticleCommentRequest request,
+        string userId,
+        string userName,
+        CancellationToken cancellationToken = default)
     {
         var article = await _unitOfWork.Repository<Article>().GetByIdAsync(request.ArticleId, cancellationToken);
         if (article is null)
@@ -35,7 +45,9 @@ public sealed class ArticleCommentService : IArticleCommentService
         var comment = new ArticleComment
         {
             ArticleId = request.ArticleId,
-            CommentContent = request.CommentContent
+            CommentContent = request.CommentContent,
+            UserId = userId,
+            UserName = userName
         };
 
         await _unitOfWork.Repository<ArticleComment>().AddAsync(comment, cancellationToken);
@@ -44,10 +56,10 @@ public sealed class ArticleCommentService : IArticleCommentService
         return Map(comment);
     }
 
-    public async Task<bool> UpdateAsync(int id, UpsertArticleCommentRequest request, CancellationToken cancellationToken = default)
+    public async Task<bool> UpdateAsync(int id, UpsertArticleCommentRequest request, string userId, CancellationToken cancellationToken = default)
     {
         var comment = await _unitOfWork.Repository<ArticleComment>().GetByIdAsync(id, cancellationToken);
-        if (comment is null)
+        if (comment is null || !string.Equals(comment.UserId, userId, StringComparison.Ordinal))
         {
             return false;
         }
@@ -67,10 +79,10 @@ public sealed class ArticleCommentService : IArticleCommentService
         return true;
     }
 
-    public async Task<bool> DeleteAsync(int id, CancellationToken cancellationToken = default)
+    public async Task<bool> DeleteAsync(int id, string userId, CancellationToken cancellationToken = default)
     {
         var comment = await _unitOfWork.Repository<ArticleComment>().GetByIdAsync(id, cancellationToken);
-        if (comment is null)
+        if (comment is null || !string.Equals(comment.UserId, userId, StringComparison.Ordinal))
         {
             return false;
         }
@@ -83,6 +95,6 @@ public sealed class ArticleCommentService : IArticleCommentService
 
     private static ArticleCommentDto Map(ArticleComment comment)
     {
-        return new ArticleCommentDto(comment.Id, comment.ArticleId, comment.CommentContent);
+        return new ArticleCommentDto(comment.Id, comment.ArticleId, comment.CommentContent, comment.UserId, comment.UserName);
     }
 }
