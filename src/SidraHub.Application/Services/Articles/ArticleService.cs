@@ -52,9 +52,9 @@ public sealed class ArticleService : IArticleService
             return false;
         }
 
-        article.ServiceCategoryId = request.ServiceCategoryId;
         article.TitleAr = request.TitleAr;
         article.TitleEn = request.TitleEn;
+        article.ServiceCategoryId = request.ServiceCategoryId;
         article.ShortDescriptionAr = request.ShortDescriptionAr;
         article.ShortDescriptionEn = request.ShortDescriptionEn;
         article.DescriptionAr = request.DescriptionAr;
