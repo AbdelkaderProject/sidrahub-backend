@@ -1,4 +1,5 @@
 using Microsoft.Extensions.DependencyInjection;
+using SidraHub.Application.Services.AboutPageContents;
 using SidraHub.Application.Services.ArticleComments;
 using SidraHub.Application.Services.Articles;
 using SidraHub.Application.Services.Branches;
@@ -25,6 +26,7 @@ public static class DependencyInjection
         services.AddScoped<IServicePackageService, ServicePackageService>();
         services.AddScoped<IServiceRequestService, ServiceRequestService>();
         services.AddScoped<IServiceSlotService, ServiceSlotService>();
+        services.AddScoped<IAboutPageContentService, AboutPageContentService>();
         services.AddScoped<IArticleService, ArticleService>();
         services.AddScoped<IArticleCommentService, ArticleCommentService>();
         services.AddScoped<ISidebarService, SidebarService>();

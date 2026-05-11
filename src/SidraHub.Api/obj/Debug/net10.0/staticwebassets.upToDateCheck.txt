@@ -1,15 +1,20 @@
 wwwroot\uploads\articles\4e3160101645495c8e9ba9bb9b4e409c.jpg
 wwwroot\uploads\articles\9669c7aaf7e74463813502cc2873982f.png
 wwwroot\uploads\articles\9736a807e5f74fd7b452b5ae123994ff.jpeg
+wwwroot\uploads\articles\a28bf29494dd4651afdc60dda687c717.jpeg
 wwwroot\uploads\articles\a2d941ee681b4038b17045862136b22e.jpg
 wwwroot\uploads\company-profiles\127eb6340b664df9b69229f0666675b6.png
 wwwroot\uploads\company-profiles\508d4db7a7154a2fabaf6e6b0a994763.jpeg
+wwwroot\uploads\company-profiles\9dd7c71eb3544c969bd3a54fbf24a0cf.jpeg
 wwwroot\uploads\company-profiles\f42e2c41166d4cc3b492a6b93815e077.png
 wwwroot\uploads\company-profiles\f45c7eaf49584e5e9512f66744e7aa40.jpeg
 wwwroot\uploads\customer-reviews\1a1cc752aa044393bb93fc7da5ee9b07.mp4
 wwwroot\uploads\customer-reviews\b9c1c08db1354030bbb4e18ccb542fca.png
 wwwroot\uploads\customers\7d69f2b4a96d433e902c290c20cf26cb.jpeg
 wwwroot\uploads\customers\9c5159927f61464692063ac577272db9.jpeg
+wwwroot\uploads\customers\c1ef612d729e4a568ea46d0d3a2a1533.jpeg
+wwwroot\uploads\customers\d23d2e38da8b47f58b35fccb7e198e11.jpeg
+wwwroot\uploads\customers\f5d3fa111f884bc5bc46673bddb44887.jpeg
 wwwroot\uploads\partners\0523128eb80842cfb60cdf2d01e89f71.png
 wwwroot\uploads\partners\27125e74f24744c49528432adb53a26f.jpeg
 wwwroot\uploads\partners\28a6a62bc3a14ec8b074b349e3c141f7.png
@@ -33,6 +38,7 @@ wwwroot\uploads\services\a10f67d0663641b4a7d9bdbccaeaad98.png
 wwwroot\uploads\services\b9bf72623dc8483b87c133ed7f344787.jpeg
 wwwroot\uploads\services\ba0c1533acba4ac3b9d3cd191601701a.png
 wwwroot\uploads\services\d44f70c1e87345249d7d5274d820299d.jpeg
+wwwroot\uploads\services\dbc19df98faa436a9e1c305eb95e8463.jpeg
 wwwroot\uploads\services\e84d20cf9cc24a89b4634db49dd036a5.jpeg
 wwwroot\uploads\services\fe742840ff4c49c9baf9e09acb96f2bb.jpg
 wwwroot\uploads\sidebars\080c696132144a16abe1620c51e39911.png
@@ -46,4 +52,5 @@ wwwroot\uploads\sidebars\a6f51de43f904427ad36ea6020c5e2db.png
 wwwroot\uploads\sidebars\aa65146cbd0446a88c27a618bb1ca779.png
 wwwroot\uploads\sidebars\c7e4ef046020447e9fad6a0b1af6e24a.png
 wwwroot\uploads\sidebars\ec0b51d1a8fc4ac0b560a2bc178813b5.png
+wwwroot\uploads\team-members\258ee2a0313b48379d91f94271d20db0.jpeg
 wwwroot\uploads\team-members\dea11c39caea466daf6b17797c6fe89f.jpeg

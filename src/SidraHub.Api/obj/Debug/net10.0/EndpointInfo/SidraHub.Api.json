@@ -5,6 +5,131 @@
     "version": "v1"
   },
   "paths": {
+    "/api/AboutPageContents": {
+      "get": {
+        "tags": [
+          "AboutPageContents"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "AboutPageContents"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpsertAboutPageContentRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpsertAboutPageContentRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpsertAboutPageContentRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/AboutPageContents/{id}": {
+      "get": {
+        "tags": [
+          "AboutPageContents"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "AboutPageContents"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpsertAboutPageContentRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpsertAboutPageContentRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpsertAboutPageContentRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "AboutPageContents"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/ArticleComments": {
       "get": {
         "tags": [
@@ -2180,6 +2305,104 @@
         },
         "additionalProperties": false
       },
+      "UpsertAboutPageContentRequest": {
+        "type": "object",
+        "properties": {
+          "mainTitleAr": {
+            "type": "string",
+            "nullable": true
+          },
+          "mainTitleEn": {
+            "type": "string",
+            "nullable": true
+          },
+          "subTitleAr": {
+            "type": "string",
+            "nullable": true
+          },
+          "subTitleEn": {
+            "type": "string",
+            "nullable": true
+          },
+          "introTextAr": {
+            "type": "string",
+            "nullable": true
+          },
+          "introTextEn": {
+            "type": "string",
+            "nullable": true
+          },
+          "whyChooseTitleAr": {
+            "type": "string",
+            "nullable": true
+          },
+          "whyChooseTitleEn": {
+            "type": "string",
+            "nullable": true
+          },
+          "whyChooseDescriptionAr": {
+            "type": "string",
+            "nullable": true
+          },
+          "whyChooseDescriptionEn": {
+            "type": "string",
+            "nullable": true
+          },
+          "whatWeOfferTitleAr": {
+            "type": "string",
+            "nullable": true
+          },
+          "whatWeOfferTitleEn": {
+            "type": "string",
+            "nullable": true
+          },
+          "whatWeOfferDescriptionAr": {
+            "type": "string",
+            "nullable": true
+          },
+          "whatWeOfferDescriptionEn": {
+            "type": "string",
+            "nullable": true
+          },
+          "missionTitleAr": {
+            "type": "string",
+            "nullable": true
+          },
+          "missionTitleEn": {
+            "type": "string",
+            "nullable": true
+          },
+          "missionDescriptionAr": {
+            "type": "string",
+            "nullable": true
+          },
+          "missionDescriptionEn": {
+            "type": "string",
+            "nullable": true
+          },
+          "whereWeWorkTitleAr": {
+            "type": "string",
+            "nullable": true
+          },
+          "whereWeWorkTitleEn": {
+            "type": "string",
+            "nullable": true
+          },
+          "whereWeWorkDescriptionAr": {
+            "type": "string",
+            "nullable": true
+          },
+          "whereWeWorkDescriptionEn": {
+            "type": "string",
+            "nullable": true
+          },
+          "image": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "UpsertArticleCommentRequest": {
         "type": "object",
         "properties": {
@@ -2620,6 +2843,9 @@
     }
   },
   "tags": [
+    {
+      "name": "AboutPageContents"
+    },
     {
       "name": "ArticleComments"
     },

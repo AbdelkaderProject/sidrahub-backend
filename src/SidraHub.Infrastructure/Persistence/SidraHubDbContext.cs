@@ -33,6 +33,7 @@ public sealed class SidraHubDbContext : IdentityDbContext<ApplicationUser>, IApp
     public DbSet<Service> Services => Set<Service>();
     public DbSet<ServicePackage> ServicePackages => Set<ServicePackage>();
     public DbSet<ServiceSlot> ServiceSlots => Set<ServiceSlot>();
+    public DbSet<AboutPageContent> AboutPageContents => Set<AboutPageContent>();
     public DbSet<Article> Articles => Set<Article>();
     public DbSet<ArticleComment> ArticleComments => Set<ArticleComment>();
     public DbSet<Sidebar> Sidebars => Set<Sidebar>();
@@ -121,6 +122,35 @@ public sealed class SidraHubDbContext : IdentityDbContext<ApplicationUser>, IApp
                 .WithMany(x => x.ServiceSlots)
                 .HasForeignKey(x => x.ServiceId)
                 .OnDelete(DeleteBehavior.Restrict);
+        });
+
+        builder.Entity<AboutPageContent>(entity =>
+        {
+            entity.ToTable("AboutPageContent");
+            ConfigureAuditableEntity(entity);
+            entity.Property(x => x.MainTitleAr).HasMaxLength(255).IsRequired();
+            entity.Property(x => x.MainTitleEn).HasMaxLength(255).IsRequired();
+            entity.Property(x => x.SubTitleAr).HasMaxLength(255).IsRequired();
+            entity.Property(x => x.SubTitleEn).HasMaxLength(255).IsRequired();
+            entity.Property(x => x.IntroTextAr).HasColumnType("nvarchar(max)").IsRequired();
+            entity.Property(x => x.IntroTextEn).HasColumnType("nvarchar(max)").IsRequired();
+            entity.Property(x => x.WhyChooseTitleAr).HasMaxLength(255).IsRequired();
+            entity.Property(x => x.WhyChooseTitleEn).HasMaxLength(255).IsRequired();
+            entity.Property(x => x.WhyChooseDescriptionAr).HasColumnType("nvarchar(max)").IsRequired();
+            entity.Property(x => x.WhyChooseDescriptionEn).HasColumnType("nvarchar(max)").IsRequired();
+            entity.Property(x => x.WhatWeOfferTitleAr).HasMaxLength(255).IsRequired();
+            entity.Property(x => x.WhatWeOfferTitleEn).HasMaxLength(255).IsRequired();
+            entity.Property(x => x.WhatWeOfferDescriptionAr).HasColumnType("nvarchar(max)").IsRequired();
+            entity.Property(x => x.WhatWeOfferDescriptionEn).HasColumnType("nvarchar(max)").IsRequired();
+            entity.Property(x => x.MissionTitleAr).HasMaxLength(255).IsRequired();
+            entity.Property(x => x.MissionTitleEn).HasMaxLength(255).IsRequired();
+            entity.Property(x => x.MissionDescriptionAr).HasColumnType("nvarchar(max)").IsRequired();
+            entity.Property(x => x.MissionDescriptionEn).HasColumnType("nvarchar(max)").IsRequired();
+            entity.Property(x => x.WhereWeWorkTitleAr).HasMaxLength(255).IsRequired();
+            entity.Property(x => x.WhereWeWorkTitleEn).HasMaxLength(255).IsRequired();
+            entity.Property(x => x.WhereWeWorkDescriptionAr).HasColumnType("nvarchar(max)").IsRequired();
+            entity.Property(x => x.WhereWeWorkDescriptionEn).HasColumnType("nvarchar(max)").IsRequired();
+            entity.Property(x => x.Image).HasMaxLength(500);
         });
         builder.Entity<Article>(entity =>
         {

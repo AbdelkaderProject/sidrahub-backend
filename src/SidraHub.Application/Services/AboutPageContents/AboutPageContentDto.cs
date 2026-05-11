@@ -1,0 +1,27 @@
+namespace SidraHub.Application.Services.AboutPageContents;
+
+public sealed record AboutPageContentDto(
+    int Id,
+    string MainTitleAr,
+    string MainTitleEn,
+    string SubTitleAr,
+    string SubTitleEn,
+    string IntroTextAr,
+    string IntroTextEn,
+    string WhyChooseTitleAr,
+    string WhyChooseTitleEn,
+    string WhyChooseDescriptionAr,
+    string WhyChooseDescriptionEn,
+    string WhatWeOfferTitleAr,
+    string WhatWeOfferTitleEn,
+    string WhatWeOfferDescriptionAr,
+    string WhatWeOfferDescriptionEn,
+    string MissionTitleAr,
+    string MissionTitleEn,
+    string MissionDescriptionAr,
+    string MissionDescriptionEn,
+    string WhereWeWorkTitleAr,
+    string WhereWeWorkTitleEn,
+    string WhereWeWorkDescriptionAr,
+    string WhereWeWorkDescriptionEn,
+    string? Image);
