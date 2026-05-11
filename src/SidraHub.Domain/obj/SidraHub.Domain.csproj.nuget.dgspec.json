@@ -10,7 +10,7 @@
         "projectUniqueName": "C:\\Users\\AbdelKader\\Downloads\\app\\sidrahub-backend\\src\\SidraHub.Domain\\SidraHub.Domain.csproj",
         "projectName": "SidraHub.Domain",
         "projectPath": "C:\\Users\\AbdelKader\\Downloads\\app\\sidrahub-backend\\src\\SidraHub.Domain\\SidraHub.Domain.csproj",
-        "packagesPath": "C:\\Users\\AbdelKader\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\AbdelKader\\Downloads\\app\\sidrahub-backend\\.nuget\\packages",
         "outputPath": "C:\\Users\\AbdelKader\\Downloads\\app\\sidrahub-backend\\src\\SidraHub.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [

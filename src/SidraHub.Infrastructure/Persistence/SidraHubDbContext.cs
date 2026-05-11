@@ -26,6 +26,7 @@ public sealed class SidraHubDbContext : IdentityDbContext<ApplicationUser>, IApp
     public DbSet<ArticleComment> ArticleComments => Set<ArticleComment>();
     public DbSet<Sidebar> Sidebars => Set<Sidebar>();
     public DbSet<CompanyProfile> CompanyProfiles => Set<CompanyProfile>();
+    public DbSet<Customer> Customers => Set<Customer>();
     public DbSet<CustomerReview> CustomerReviews => Set<CustomerReview>();
     public DbSet<Notification> Notifications => Set<Notification>();
     public DbSet<Review> Reviews => Set<Review>();
@@ -210,6 +211,15 @@ public sealed class SidraHubDbContext : IdentityDbContext<ApplicationUser>, IApp
             entity.Property(x => x.URLStr).HasMaxLength(500);
         });
 
+        builder.Entity<Customer>(entity =>
+        {
+            entity.ToTable("Customers");
+            ConfigureAuditableEntity(entity);
+            entity.Property(x => x.NameEn).HasMaxLength(255).IsRequired();
+            entity.Property(x => x.NameAr).HasMaxLength(255).IsRequired();
+            entity.Property(x => x.Logo).HasMaxLength(500);
+        });
+
         builder.Entity<Notification>(entity =>
         {
             entity.ToTable("Notifications");
@@ -248,10 +258,6 @@ public sealed class SidraHubDbContext : IdentityDbContext<ApplicationUser>, IApp
             entity.Property(x => x.TwitterLinkStr).HasMaxLength(500);
             entity.Property(x => x.LinkdInLinkStr).HasMaxLength(500);
             entity.Property(x => x.WhatsApp).HasMaxLength(255);
-            entity.HasOne(x => x.CompanyProfile)
-                .WithMany(x => x.TeamMembers)
-                .HasForeignKey(x => x.CompanyProfileId)
-                .OnDelete(DeleteBehavior.Restrict);
         });
 
         builder.Entity<Partner>(entity =>
@@ -261,10 +267,6 @@ public sealed class SidraHubDbContext : IdentityDbContext<ApplicationUser>, IApp
             entity.Property(x => x.NameEn).HasMaxLength(255).IsRequired();
             entity.Property(x => x.NameAr).HasMaxLength(255).IsRequired();
             entity.Property(x => x.Logo).HasMaxLength(500);
-            entity.HasOne(x => x.CompanyProfile)
-                .WithMany(x => x.Partners)
-                .HasForeignKey(x => x.CompanyProfileId)
-                .OnDelete(DeleteBehavior.Restrict);
         });
 
         builder.Entity<Branch>(entity =>
@@ -276,10 +278,6 @@ public sealed class SidraHubDbContext : IdentityDbContext<ApplicationUser>, IApp
             entity.Property(x => x.AddressEn).HasMaxLength(255).IsRequired();
             entity.Property(x => x.AddressAr).HasMaxLength(255).IsRequired();
             entity.Property(x => x.PhoneNumber).HasMaxLength(255).IsRequired();
-            entity.HasOne(x => x.CompanyProfile)
-                .WithMany(x => x.Branches)
-                .HasForeignKey(x => x.CompanyProfileId)
-                .OnDelete(DeleteBehavior.Restrict);
         });
 
         builder.Entity<ServiceRequest>(entity =>

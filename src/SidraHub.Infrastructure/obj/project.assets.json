@@ -4166,7 +4166,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\AbdelKader\\.nuget\\packages\\": {},
+    "C:\\Users\\AbdelKader\\Downloads\\app\\sidrahub-backend\\.nuget\\packages": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
@@ -4175,7 +4175,7 @@
       "projectUniqueName": "C:\\Users\\AbdelKader\\Downloads\\app\\sidrahub-backend\\src\\SidraHub.Infrastructure\\SidraHub.Infrastructure.csproj",
       "projectName": "SidraHub.Infrastructure",
       "projectPath": "C:\\Users\\AbdelKader\\Downloads\\app\\sidrahub-backend\\src\\SidraHub.Infrastructure\\SidraHub.Infrastructure.csproj",
-      "packagesPath": "C:\\Users\\AbdelKader\\.nuget\\packages\\",
+      "packagesPath": "C:\\Users\\AbdelKader\\Downloads\\app\\sidrahub-backend\\.nuget\\packages",
       "outputPath": "C:\\Users\\AbdelKader\\Downloads\\app\\sidrahub-backend\\src\\SidraHub.Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
@@ -4196,7 +4196,6 @@
       },
       "frameworks": {
         "net10.0": {
-          "framework": "net10.0",
           "targetAlias": "net10.0",
           "projectReferences": {
             "C:\\Users\\AbdelKader\\Downloads\\app\\sidrahub-backend\\src\\SidraHub.Application\\SidraHub.Application.csproj": {
@@ -4222,7 +4221,6 @@
     },
     "frameworks": {
       "net10.0": {
-        "framework": "net10.0",
         "targetAlias": "net10.0",
         "dependencies": {
           "Microsoft.AspNetCore.Authentication.JwtBearer": {

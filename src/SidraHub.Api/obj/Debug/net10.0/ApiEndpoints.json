@@ -158,6 +158,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "SidraHub.Api.Controllers.ArticleCommentsController",
+    "Method": "GetByArticleId",
+    "RelativePath": "api/ArticleComments/article/{articleId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "articleId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "SidraHub.Api.Controllers.ArticlesController",
     "Method": "GetAll",
     "RelativePath": "api/Articles",

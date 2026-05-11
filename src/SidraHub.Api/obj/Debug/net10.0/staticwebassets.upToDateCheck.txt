@@ -1,3 +1,4 @@
+wwwroot\uploads\about-page-content\4fed2352cc5144f585682a7ef232c559.jpeg
 wwwroot\uploads\articles\4e3160101645495c8e9ba9bb9b4e409c.jpg
 wwwroot\uploads\articles\9669c7aaf7e74463813502cc2873982f.png
 wwwroot\uploads\articles\9736a807e5f74fd7b452b5ae123994ff.jpeg
@@ -51,6 +52,7 @@ wwwroot\uploads\sidebars\800ebe85919546f58cf919132081672d.png
 wwwroot\uploads\sidebars\a6f51de43f904427ad36ea6020c5e2db.png
 wwwroot\uploads\sidebars\aa65146cbd0446a88c27a618bb1ca779.png
 wwwroot\uploads\sidebars\c7e4ef046020447e9fad6a0b1af6e24a.png
+wwwroot\uploads\sidebars\d454271c77354cfcb4dc796e62ba28ea.png
 wwwroot\uploads\sidebars\ec0b51d1a8fc4ac0b560a2bc178813b5.png
 wwwroot\uploads\team-members\258ee2a0313b48379d91f94271d20db0.jpeg
 wwwroot\uploads\team-members\dea11c39caea466daf6b17797c6fe89f.jpeg

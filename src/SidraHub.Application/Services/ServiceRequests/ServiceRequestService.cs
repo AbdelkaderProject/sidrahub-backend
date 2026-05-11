@@ -16,24 +16,52 @@ public sealed class ServiceRequestService : IServiceRequestService
 
     public async Task<IReadOnlyList<ServiceRequestDto>> GetAllAsync(CancellationToken cancellationToken = default)
     {
-        return await _context.ServiceRequests
+        var requests = await _context.ServiceRequests
             .AsNoTracking()
-            .Include(request => request.Service)
             .OrderByDescending(request => request.RequestDate)
             .ThenByDescending(request => request.RequestTime)
             .ThenByDescending(request => request.Id)
-            .Select(request => Map(request, request.Service))
+            .Select(request => new ServiceRequestQueryResult(
+                request.Id,
+                EF.Property<string?>(request, nameof(ServiceRequest.Code)) ?? string.Empty,
+                request.ServiceId,
+                request.Service != null ? EF.Property<string?>(request.Service, nameof(Service.NameAr)) ?? string.Empty : string.Empty,
+                request.Service != null ? EF.Property<string?>(request.Service, nameof(Service.NameEn)) ?? string.Empty : string.Empty,
+                request.ServiceSlotId,
+                EF.Property<string?>(request, nameof(ServiceRequest.CustomerName)) ?? string.Empty,
+                EF.Property<string?>(request, nameof(ServiceRequest.CustomerEmail)) ?? string.Empty,
+                EF.Property<string?>(request, nameof(ServiceRequest.CustomerPhone)) ?? string.Empty,
+                EF.Property<string?>(request, nameof(ServiceRequest.Description)) ?? string.Empty,
+                EF.Property<DateOnly?>(request, nameof(ServiceRequest.RequestDate)) ?? default,
+                EF.Property<TimeOnly?>(request, nameof(ServiceRequest.RequestTime)) ?? default,
+                EF.Property<int?>(request, nameof(ServiceRequest.RequestStatus)) ?? (int)ServiceRequestStatus.Submit))
             .ToListAsync(cancellationToken);
+
+        return requests.Select(Map).ToList();
     }
 
     public async Task<ServiceRequestDto?> GetByIdAsync(int id, CancellationToken cancellationToken = default)
     {
-        return await _context.ServiceRequests
+        var request = await _context.ServiceRequests
             .AsNoTracking()
-            .Include(request => request.Service)
             .Where(request => request.Id == id)
-            .Select(request => Map(request, request.Service))
+            .Select(request => new ServiceRequestQueryResult(
+                request.Id,
+                EF.Property<string?>(request, nameof(ServiceRequest.Code)) ?? string.Empty,
+                request.ServiceId,
+                request.Service != null ? EF.Property<string?>(request.Service, nameof(Service.NameAr)) ?? string.Empty : string.Empty,
+                request.Service != null ? EF.Property<string?>(request.Service, nameof(Service.NameEn)) ?? string.Empty : string.Empty,
+                request.ServiceSlotId,
+                EF.Property<string?>(request, nameof(ServiceRequest.CustomerName)) ?? string.Empty,
+                EF.Property<string?>(request, nameof(ServiceRequest.CustomerEmail)) ?? string.Empty,
+                EF.Property<string?>(request, nameof(ServiceRequest.CustomerPhone)) ?? string.Empty,
+                EF.Property<string?>(request, nameof(ServiceRequest.Description)) ?? string.Empty,
+                EF.Property<DateOnly?>(request, nameof(ServiceRequest.RequestDate)) ?? default,
+                EF.Property<TimeOnly?>(request, nameof(ServiceRequest.RequestTime)) ?? default,
+                EF.Property<int?>(request, nameof(ServiceRequest.RequestStatus)) ?? (int)ServiceRequestStatus.Submit))
             .FirstOrDefaultAsync(cancellationToken);
+
+        return request is null ? null : Map(request);
     }
 
     public async Task<ServiceRequestDto?> CreateAsync(
@@ -118,6 +146,44 @@ public sealed class ServiceRequestService : IServiceRequestService
             (int)request.RequestStatus,
             request.RequestStatus.ToString());
     }
+
+    private static ServiceRequestDto Map(ServiceRequestQueryResult request)
+    {
+        var requestStatus = Enum.IsDefined(typeof(ServiceRequestStatus), request.RequestStatus)
+            ? (ServiceRequestStatus)request.RequestStatus
+            : ServiceRequestStatus.Submit;
+
+        return new ServiceRequestDto(
+            request.Id,
+            request.Code,
+            request.ServiceId,
+            request.ServiceNameAr,
+            request.ServiceNameEn,
+            request.ServiceSlotId,
+            request.CustomerName,
+            request.CustomerEmail,
+            request.CustomerPhone,
+            request.Description,
+            request.RequestDate,
+            request.RequestTime,
+            request.RequestStatus,
+            requestStatus.ToString());
+    }
+
+    private sealed record ServiceRequestQueryResult(
+        int Id,
+        string Code,
+        int ServiceId,
+        string ServiceNameAr,
+        string ServiceNameEn,
+        int ServiceSlotId,
+        string CustomerName,
+        string CustomerEmail,
+        string CustomerPhone,
+        string Description,
+        DateOnly RequestDate,
+        TimeOnly RequestTime,
+        int RequestStatus);
 
     private static string GenerateCode()
     {
