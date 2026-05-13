@@ -79,6 +79,16 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "SidraHub.Api.Controllers.AboutPageContentsController",
+    "Method": "GetCurrent",
+    "RelativePath": "api/AboutPageContents/current",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "SidraHub.Api.Controllers.ArticleCommentsController",
     "Method": "GetAll",
     "RelativePath": "api/ArticleComments",
@@ -145,6 +155,54 @@
     "ContainingType": "SidraHub.Api.Controllers.ArticleCommentsController",
     "Method": "Delete",
     "RelativePath": "api/ArticleComments/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SidraHub.Api.Controllers.ArticleCommentsController",
+    "Method": "Approve",
+    "RelativePath": "api/ArticleComments/{id}/approve",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SidraHub.Api.Controllers.ArticleCommentsController",
+    "Method": "Reject",
+    "RelativePath": "api/ArticleComments/{id}/reject",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SidraHub.Api.Controllers.ArticleCommentsController",
+    "Method": "AdminDelete",
+    "RelativePath": "api/ArticleComments/admin/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,

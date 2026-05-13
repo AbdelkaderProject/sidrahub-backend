@@ -19,21 +19,21 @@ build_property.TargetFrameworkIdentifier = .NETCoreApp
 build_property.TargetFrameworkVersion = v10.0
 build_property.RootNamespace = SidraHub.Api
 build_property.RootNamespace = SidraHub.Api
-build_property.ProjectDir = C:\Users\AbdelKader\Downloads\app\sidrahub-backend\src\SidraHub.Api\
+build_property.ProjectDir = E:\Sidrahub\sidrahub-backend\src\SidraHub.Api\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 9.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\AbdelKader\Downloads\app\sidrahub-backend\src\SidraHub.Api
+build_property.MSBuildProjectDirectory = E:\Sidrahub\sidrahub-backend\src\SidraHub.Api
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 10.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/AbdelKader/Downloads/app/sidrahub-backend/src/SidraHub.Api/Resources/Localization.SharedResource.ar.resx]
+[E:/Sidrahub/sidrahub-backend/src/SidraHub.Api/Resources/Localization.SharedResource.ar.resx]
 build_metadata.AdditionalFiles.TargetPath = Resources\Localization.SharedResource.ar.resx
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AbdelKader/Downloads/app/sidrahub-backend/src/SidraHub.Api/Resources/Localization.SharedResource.en.resx]
+[E:/Sidrahub/sidrahub-backend/src/SidraHub.Api/Resources/Localization.SharedResource.en.resx]
 build_metadata.AdditionalFiles.TargetPath = Resources\Localization.SharedResource.en.resx
 build_metadata.AdditionalFiles.CssScope = 

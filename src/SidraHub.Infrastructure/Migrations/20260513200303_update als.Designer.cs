@@ -12,8 +12,8 @@ using SidraHub.Infrastructure.Persistence;
 namespace SidraHub.Infrastructure.Migrations
 {
     [DbContext(typeof(SidraHubDbContext))]
-    [Migration("20260511043216_dsa")]
-    partial class dsa
+    [Migration("20260513200303_update als")]
+    partial class updateals
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -167,8 +167,7 @@ namespace SidraHub.Infrastructure.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("CreatedBy")
-                        .HasMaxLength(450)
-                        .HasColumnType("nvarchar(450)")
+                        .HasColumnType("nvarchar(max)")
                         .HasColumnName("CreateBy");
 
                     b.Property<DateTime>("CreatedDateTime")
@@ -176,8 +175,7 @@ namespace SidraHub.Infrastructure.Migrations
                         .HasColumnName("CreatedDateTime");
 
                     b.Property<string>("DeletedBy")
-                        .HasMaxLength(450)
-                        .HasColumnType("nvarchar(450)")
+                        .HasColumnType("nvarchar(max)")
                         .HasColumnName("DeletedBy");
 
                     b.Property<DateTime?>("DeletedDateTime")
@@ -239,8 +237,7 @@ namespace SidraHub.Infrastructure.Migrations
                         .HasColumnType("nvarchar(255)");
 
                     b.Property<string>("UpdatedBy")
-                        .HasMaxLength(450)
-                        .HasColumnType("nvarchar(450)")
+                        .HasColumnType("nvarchar(max)")
                         .HasColumnName("UpdatedBy");
 
                     b.Property<DateTime?>("UpdatedDateTime")
@@ -315,8 +312,7 @@ namespace SidraHub.Infrastructure.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("CreatedBy")
-                        .HasMaxLength(450)
-                        .HasColumnType("nvarchar(450)")
+                        .HasColumnType("nvarchar(max)")
                         .HasColumnName("CreateBy");
 
                     b.Property<DateTime>("CreatedDateTime")
@@ -324,8 +320,7 @@ namespace SidraHub.Infrastructure.Migrations
                         .HasColumnName("CreatedDateTime");
 
                     b.Property<string>("DeletedBy")
-                        .HasMaxLength(450)
-                        .HasColumnType("nvarchar(450)")
+                        .HasColumnType("nvarchar(max)")
                         .HasColumnName("DeletedBy");
 
                     b.Property<DateTime?>("DeletedDateTime")
@@ -372,8 +367,7 @@ namespace SidraHub.Infrastructure.Migrations
                         .HasColumnType("nvarchar(255)");
 
                     b.Property<string>("UpdatedBy")
-                        .HasMaxLength(450)
-                        .HasColumnType("nvarchar(450)")
+                        .HasColumnType("nvarchar(max)")
                         .HasColumnName("UpdatedBy");
 
                     b.Property<DateTime?>("UpdatedDateTime")
@@ -403,8 +397,7 @@ namespace SidraHub.Infrastructure.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("CreatedBy")
-                        .HasMaxLength(450)
-                        .HasColumnType("nvarchar(450)")
+                        .HasColumnType("nvarchar(max)")
                         .HasColumnName("CreateBy");
 
                     b.Property<DateTime>("CreatedDateTime")
@@ -412,8 +405,7 @@ namespace SidraHub.Infrastructure.Migrations
                         .HasColumnName("CreatedDateTime");
 
                     b.Property<string>("DeletedBy")
-                        .HasMaxLength(450)
-                        .HasColumnType("nvarchar(450)")
+                        .HasColumnType("nvarchar(max)")
                         .HasColumnName("DeletedBy");
 
                     b.Property<DateTime?>("DeletedDateTime")
@@ -425,13 +417,22 @@ namespace SidraHub.Infrastructure.Migrations
                         .HasColumnName("IsDetete");
 
                     b.Property<string>("UpdatedBy")
-                        .HasMaxLength(450)
-                        .HasColumnType("nvarchar(450)")
+                        .HasColumnType("nvarchar(max)")
                         .HasColumnName("UpdatedBy");
 
                     b.Property<DateTime?>("UpdatedDateTime")
                         .HasColumnType("datetime2")
                         .HasColumnName("UpdatedDateTime");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasMaxLength(450)
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("UserName")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
 
                     b.HasKey("Id");
 
@@ -459,8 +460,7 @@ namespace SidraHub.Infrastructure.Migrations
                         .HasColumnType("nvarchar(255)");
 
                     b.Property<string>("CreatedBy")
-                        .HasMaxLength(450)
-                        .HasColumnType("nvarchar(450)")
+                        .HasColumnType("nvarchar(max)")
                         .HasColumnName("CreateBy");
 
                     b.Property<DateTime>("CreatedDateTime")
@@ -468,8 +468,7 @@ namespace SidraHub.Infrastructure.Migrations
                         .HasColumnName("CreatedDateTime");
 
                     b.Property<string>("DeletedBy")
-                        .HasMaxLength(450)
-                        .HasColumnType("nvarchar(450)")
+                        .HasColumnType("nvarchar(max)")
                         .HasColumnName("DeletedBy");
 
                     b.Property<DateTime?>("DeletedDateTime")
@@ -496,8 +495,7 @@ namespace SidraHub.Infrastructure.Migrations
                         .HasColumnType("nvarchar(255)");
 
                     b.Property<string>("UpdatedBy")
-                        .HasMaxLength(450)
-                        .HasColumnType("nvarchar(450)")
+                        .HasColumnType("nvarchar(max)")
                         .HasColumnName("UpdatedBy");
 
                     b.Property<DateTime?>("UpdatedDateTime")
@@ -518,8 +516,7 @@ namespace SidraHub.Infrastructure.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("CreatedBy")
-                        .HasMaxLength(450)
-                        .HasColumnType("nvarchar(450)")
+                        .HasColumnType("nvarchar(max)")
                         .HasColumnName("CreateBy");
 
                     b.Property<DateTime>("CreatedDateTime")
@@ -527,8 +524,7 @@ namespace SidraHub.Infrastructure.Migrations
                         .HasColumnName("CreatedDateTime");
 
                     b.Property<string>("DeletedBy")
-                        .HasMaxLength(450)
-                        .HasColumnType("nvarchar(450)")
+                        .HasColumnType("nvarchar(max)")
                         .HasColumnName("DeletedBy");
 
                     b.Property<DateTime?>("DeletedDateTime")
@@ -587,8 +583,7 @@ namespace SidraHub.Infrastructure.Migrations
                         .HasColumnType("nvarchar(500)");
 
                     b.Property<string>("UpdatedBy")
-                        .HasMaxLength(450)
-                        .HasColumnType("nvarchar(450)")
+                        .HasColumnType("nvarchar(max)")
                         .HasColumnName("UpdatedBy");
 
                     b.Property<DateTime?>("UpdatedDateTime")
@@ -616,8 +611,7 @@ namespace SidraHub.Infrastructure.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("CreatedBy")
-                        .HasMaxLength(450)
-                        .HasColumnType("nvarchar(450)")
+                        .HasColumnType("nvarchar(max)")
                         .HasColumnName("CreateBy");
 
                     b.Property<DateTime>("CreatedDateTime")
@@ -625,8 +619,7 @@ namespace SidraHub.Infrastructure.Migrations
                         .HasColumnName("CreatedDateTime");
 
                     b.Property<string>("DeletedBy")
-                        .HasMaxLength(450)
-                        .HasColumnType("nvarchar(450)")
+                        .HasColumnType("nvarchar(max)")
                         .HasColumnName("DeletedBy");
 
                     b.Property<DateTime?>("DeletedDateTime")
@@ -652,8 +645,7 @@ namespace SidraHub.Infrastructure.Migrations
                         .HasColumnType("nvarchar(255)");
 
                     b.Property<string>("UpdatedBy")
-                        .HasMaxLength(450)
-                        .HasColumnType("nvarchar(450)")
+                        .HasColumnType("nvarchar(max)")
                         .HasColumnName("UpdatedBy");
 
                     b.Property<DateTime?>("UpdatedDateTime")
@@ -674,8 +666,7 @@ namespace SidraHub.Infrastructure.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("CreatedBy")
-                        .HasMaxLength(450)
-                        .HasColumnType("nvarchar(450)")
+                        .HasColumnType("nvarchar(max)")
                         .HasColumnName("CreateBy");
 
                     b.Property<DateTime>("CreatedDateTime")
@@ -683,8 +674,7 @@ namespace SidraHub.Infrastructure.Migrations
                         .HasColumnName("CreatedDateTime");
 
                     b.Property<string>("DeletedBy")
-                        .HasMaxLength(450)
-                        .HasColumnType("nvarchar(450)")
+                        .HasColumnType("nvarchar(max)")
                         .HasColumnName("DeletedBy");
 
                     b.Property<DateTime?>("DeletedDateTime")
@@ -718,8 +708,7 @@ namespace SidraHub.Infrastructure.Migrations
                         .HasColumnType("nvarchar(500)");
 
                     b.Property<string>("UpdatedBy")
-                        .HasMaxLength(450)
-                        .HasColumnType("nvarchar(450)")
+                        .HasColumnType("nvarchar(max)")
                         .HasColumnName("UpdatedBy");
 
                     b.Property<DateTime?>("UpdatedDateTime")
@@ -743,8 +732,7 @@ namespace SidraHub.Infrastructure.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("CreatedBy")
-                        .HasMaxLength(450)
-                        .HasColumnType("nvarchar(450)")
+                        .HasColumnType("nvarchar(max)")
                         .HasColumnName("CreateBy");
 
                     b.Property<DateTime>("CreatedDateTime")
@@ -752,8 +740,7 @@ namespace SidraHub.Infrastructure.Migrations
                         .HasColumnName("CreatedDateTime");
 
                     b.Property<string>("DeletedBy")
-                        .HasMaxLength(450)
-                        .HasColumnType("nvarchar(450)")
+                        .HasColumnType("nvarchar(max)")
                         .HasColumnName("DeletedBy");
 
                     b.Property<DateTime?>("DeletedDateTime")
@@ -777,8 +764,7 @@ namespace SidraHub.Infrastructure.Migrations
                         .HasColumnType("nvarchar(255)");
 
                     b.Property<string>("UpdatedBy")
-                        .HasMaxLength(450)
-                        .HasColumnType("nvarchar(450)")
+                        .HasColumnType("nvarchar(max)")
                         .HasColumnName("UpdatedBy");
 
                     b.Property<DateTime?>("UpdatedDateTime")
@@ -806,8 +792,7 @@ namespace SidraHub.Infrastructure.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("CreatedBy")
-                        .HasMaxLength(450)
-                        .HasColumnType("nvarchar(450)")
+                        .HasColumnType("nvarchar(max)")
                         .HasColumnName("CreateBy");
 
                     b.Property<DateTime>("CreatedDateTime")
@@ -815,8 +800,7 @@ namespace SidraHub.Infrastructure.Migrations
                         .HasColumnName("CreatedDateTime");
 
                     b.Property<string>("DeletedBy")
-                        .HasMaxLength(450)
-                        .HasColumnType("nvarchar(450)")
+                        .HasColumnType("nvarchar(max)")
                         .HasColumnName("DeletedBy");
 
                     b.Property<DateTime?>("DeletedDateTime")
@@ -842,8 +826,7 @@ namespace SidraHub.Infrastructure.Migrations
                         .HasColumnType("nvarchar(255)");
 
                     b.Property<string>("UpdatedBy")
-                        .HasMaxLength(450)
-                        .HasColumnType("nvarchar(450)")
+                        .HasColumnType("nvarchar(max)")
                         .HasColumnName("UpdatedBy");
 
                     b.Property<DateTime?>("UpdatedDateTime")
@@ -871,8 +854,7 @@ namespace SidraHub.Infrastructure.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("CreatedBy")
-                        .HasMaxLength(450)
-                        .HasColumnType("nvarchar(450)")
+                        .HasColumnType("nvarchar(max)")
                         .HasColumnName("CreateBy");
 
                     b.Property<DateTime>("CreatedDateTime")
@@ -880,8 +862,7 @@ namespace SidraHub.Infrastructure.Migrations
                         .HasColumnName("CreatedDateTime");
 
                     b.Property<string>("DeletedBy")
-                        .HasMaxLength(450)
-                        .HasColumnType("nvarchar(450)")
+                        .HasColumnType("nvarchar(max)")
                         .HasColumnName("DeletedBy");
 
                     b.Property<DateTime?>("DeletedDateTime")
@@ -896,8 +877,7 @@ namespace SidraHub.Infrastructure.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("UpdatedBy")
-                        .HasMaxLength(450)
-                        .HasColumnType("nvarchar(450)")
+                        .HasColumnType("nvarchar(max)")
                         .HasColumnName("UpdatedBy");
 
                     b.Property<DateTime?>("UpdatedDateTime")
@@ -925,8 +905,7 @@ namespace SidraHub.Infrastructure.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("CreatedBy")
-                        .HasMaxLength(450)
-                        .HasColumnType("nvarchar(450)")
+                        .HasColumnType("nvarchar(max)")
                         .HasColumnName("CreateBy");
 
                     b.Property<DateTime>("CreatedDateTime")
@@ -934,8 +913,7 @@ namespace SidraHub.Infrastructure.Migrations
                         .HasColumnName("CreatedDateTime");
 
                     b.Property<string>("DeletedBy")
-                        .HasMaxLength(450)
-                        .HasColumnType("nvarchar(450)")
+                        .HasColumnType("nvarchar(max)")
                         .HasColumnName("DeletedBy");
 
                     b.Property<DateTime?>("DeletedDateTime")
@@ -982,8 +960,7 @@ namespace SidraHub.Infrastructure.Migrations
                         .HasColumnType("nvarchar(255)");
 
                     b.Property<string>("UpdatedBy")
-                        .HasMaxLength(450)
-                        .HasColumnType("nvarchar(450)")
+                        .HasColumnType("nvarchar(max)")
                         .HasColumnName("UpdatedBy");
 
                     b.Property<DateTime?>("UpdatedDateTime")
@@ -1006,8 +983,7 @@ namespace SidraHub.Infrastructure.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("CreatedBy")
-                        .HasMaxLength(450)
-                        .HasColumnType("nvarchar(450)")
+                        .HasColumnType("nvarchar(max)")
                         .HasColumnName("CreateBy");
 
                     b.Property<DateTime>("CreatedDateTime")
@@ -1015,8 +991,7 @@ namespace SidraHub.Infrastructure.Migrations
                         .HasColumnName("CreatedDateTime");
 
                     b.Property<string>("DeletedBy")
-                        .HasMaxLength(450)
-                        .HasColumnType("nvarchar(450)")
+                        .HasColumnType("nvarchar(max)")
                         .HasColumnName("DeletedBy");
 
                     b.Property<DateTime?>("DeletedDateTime")
@@ -1038,8 +1013,7 @@ namespace SidraHub.Infrastructure.Migrations
                         .HasColumnType("nvarchar(255)");
 
                     b.Property<string>("UpdatedBy")
-                        .HasMaxLength(450)
-                        .HasColumnType("nvarchar(450)")
+                        .HasColumnType("nvarchar(max)")
                         .HasColumnName("UpdatedBy");
 
                     b.Property<DateTime?>("UpdatedDateTime")
@@ -1064,8 +1038,7 @@ namespace SidraHub.Infrastructure.Migrations
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<string>("CreatedBy")
-                        .HasMaxLength(450)
-                        .HasColumnType("nvarchar(450)")
+                        .HasColumnType("nvarchar(max)")
                         .HasColumnName("CreateBy");
 
                     b.Property<DateTime>("CreatedDateTime")
@@ -1073,8 +1046,7 @@ namespace SidraHub.Infrastructure.Migrations
                         .HasColumnName("CreatedDateTime");
 
                     b.Property<string>("DeletedBy")
-                        .HasMaxLength(450)
-                        .HasColumnType("nvarchar(450)")
+                        .HasColumnType("nvarchar(max)")
                         .HasColumnName("DeletedBy");
 
                     b.Property<DateTime?>("DeletedDateTime")
@@ -1103,8 +1075,7 @@ namespace SidraHub.Infrastructure.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("UpdatedBy")
-                        .HasMaxLength(450)
-                        .HasColumnType("nvarchar(450)")
+                        .HasColumnType("nvarchar(max)")
                         .HasColumnName("UpdatedBy");
 
                     b.Property<DateTime?>("UpdatedDateTime")
@@ -1132,8 +1103,7 @@ namespace SidraHub.Infrastructure.Migrations
                         .HasColumnType("nvarchar(255)");
 
                     b.Property<string>("CreatedBy")
-                        .HasMaxLength(450)
-                        .HasColumnType("nvarchar(450)")
+                        .HasColumnType("nvarchar(max)")
                         .HasColumnName("CreateBy");
 
                     b.Property<DateTime>("CreatedDateTime")
@@ -1142,22 +1112,18 @@ namespace SidraHub.Infrastructure.Migrations
 
                     b.Property<string>("CustomerEmail")
                         .IsRequired()
-                        .HasMaxLength(255)
-                        .HasColumnType("nvarchar(255)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("CustomerName")
                         .IsRequired()
-                        .HasMaxLength(255)
-                        .HasColumnType("nvarchar(255)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("CustomerPhone")
                         .IsRequired()
-                        .HasMaxLength(255)
-                        .HasColumnType("nvarchar(255)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("DeletedBy")
-                        .HasMaxLength(450)
-                        .HasColumnType("nvarchar(450)")
+                        .HasColumnType("nvarchar(max)")
                         .HasColumnName("DeletedBy");
 
                     b.Property<DateTime?>("DeletedDateTime")
@@ -1189,8 +1155,7 @@ namespace SidraHub.Infrastructure.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("UpdatedBy")
-                        .HasMaxLength(450)
-                        .HasColumnType("nvarchar(450)")
+                        .HasColumnType("nvarchar(max)")
                         .HasColumnName("UpdatedBy");
 
                     b.Property<DateTime?>("UpdatedDateTime")
@@ -1221,8 +1186,7 @@ namespace SidraHub.Infrastructure.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("CreatedBy")
-                        .HasMaxLength(450)
-                        .HasColumnType("nvarchar(450)")
+                        .HasColumnType("nvarchar(max)")
                         .HasColumnName("CreateBy");
 
                     b.Property<DateTime>("CreatedDateTime")
@@ -1233,8 +1197,7 @@ namespace SidraHub.Infrastructure.Migrations
                         .HasColumnType("date");
 
                     b.Property<string>("DeletedBy")
-                        .HasMaxLength(450)
-                        .HasColumnType("nvarchar(450)")
+                        .HasColumnType("nvarchar(max)")
                         .HasColumnName("DeletedBy");
 
                     b.Property<DateTime?>("DeletedDateTime")
@@ -1258,8 +1221,7 @@ namespace SidraHub.Infrastructure.Migrations
                         .HasColumnType("time");
 
                     b.Property<string>("UpdatedBy")
-                        .HasMaxLength(450)
-                        .HasColumnType("nvarchar(450)")
+                        .HasColumnType("nvarchar(max)")
                         .HasColumnName("UpdatedBy");
 
                     b.Property<DateTime?>("UpdatedDateTime")
@@ -1282,8 +1244,7 @@ namespace SidraHub.Infrastructure.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("CreatedBy")
-                        .HasMaxLength(450)
-                        .HasColumnType("nvarchar(450)")
+                        .HasColumnType("nvarchar(max)")
                         .HasColumnName("CreateBy");
 
                     b.Property<DateTime>("CreatedDateTime")
@@ -1291,8 +1252,7 @@ namespace SidraHub.Infrastructure.Migrations
                         .HasColumnName("CreatedDateTime");
 
                     b.Property<string>("DeletedBy")
-                        .HasMaxLength(450)
-                        .HasColumnType("nvarchar(450)")
+                        .HasColumnType("nvarchar(max)")
                         .HasColumnName("DeletedBy");
 
                     b.Property<DateTime?>("DeletedDateTime")
@@ -1329,8 +1289,7 @@ namespace SidraHub.Infrastructure.Migrations
                         .HasColumnType("nvarchar(255)");
 
                     b.Property<string>("UpdatedBy")
-                        .HasMaxLength(450)
-                        .HasColumnType("nvarchar(450)")
+                        .HasColumnType("nvarchar(max)")
                         .HasColumnName("UpdatedBy");
 
                     b.Property<DateTime?>("UpdatedDateTime")
@@ -1353,8 +1312,7 @@ namespace SidraHub.Infrastructure.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("CreatedBy")
-                        .HasMaxLength(450)
-                        .HasColumnType("nvarchar(450)")
+                        .HasColumnType("nvarchar(max)")
                         .HasColumnName("CreateBy");
 
                     b.Property<DateTime>("CreatedDateTime")
@@ -1362,8 +1320,7 @@ namespace SidraHub.Infrastructure.Migrations
                         .HasColumnName("CreatedDateTime");
 
                     b.Property<string>("DeletedBy")
-                        .HasMaxLength(450)
-                        .HasColumnType("nvarchar(450)")
+                        .HasColumnType("nvarchar(max)")
                         .HasColumnName("DeletedBy");
 
                     b.Property<DateTime?>("DeletedDateTime")
@@ -1383,8 +1340,7 @@ namespace SidraHub.Infrastructure.Migrations
                         .HasColumnType("nvarchar(500)");
 
                     b.Property<string>("Image")
-                        .HasMaxLength(500)
-                        .HasColumnType("nvarchar(500)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("InsgramLinkStr")
                         .HasMaxLength(500)
@@ -1413,8 +1369,7 @@ namespace SidraHub.Infrastructure.Migrations
                         .HasColumnType("nvarchar(500)");
 
                     b.Property<string>("UpdatedBy")
-                        .HasMaxLength(450)
-                        .HasColumnType("nvarchar(450)")
+                        .HasColumnType("nvarchar(max)")
                         .HasColumnName("UpdatedBy");
 
                     b.Property<DateTime?>("UpdatedDateTime")
@@ -1628,7 +1583,7 @@ namespace SidraHub.Infrastructure.Migrations
                     b.HasOne("SidraHub.Domain.Entities.ServiceSlot", "ServiceSlot")
                         .WithMany()
                         .HasForeignKey("ServiceSlotId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("SidraHub.Infrastructure.Identity.ApplicationUser", null)

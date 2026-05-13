@@ -18,6 +18,17 @@ public sealed class AboutPageContentService : IAboutPageContentService
         return records.OrderBy(item => item.Id).Select(Map).ToList();
     }
 
+    public async Task<AboutPageContentDto?> GetCurrentAsync(CancellationToken cancellationToken = default)
+    {
+        var records = await _unitOfWork.Repository<AboutPageContent>().GetAllAsync(cancellationToken);
+        var record = records
+            .OrderByDescending(item => item.UpdatedDateTime ?? item.CreatedDateTime)
+            .ThenByDescending(item => item.Id)
+            .FirstOrDefault();
+
+        return record is null ? null : Map(record);
+    }
+
     public async Task<AboutPageContentDto?> GetByIdAsync(int id, CancellationToken cancellationToken = default)
     {
         var record = await _unitOfWork.Repository<AboutPageContent>().GetByIdAsync(id, cancellationToken);

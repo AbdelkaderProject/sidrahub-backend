@@ -1,5 +1,7 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SidraHub.Application.Services.AboutPageContents;
+using SidraHub.Infrastructure.Identity;
 
 namespace SidraHub.Api.Controllers;
 
@@ -21,6 +23,13 @@ public sealed class AboutPageContentsController : ControllerBase
         return Ok(records);
     }
 
+    [HttpGet("current")]
+    public async Task<IActionResult> GetCurrent(CancellationToken cancellationToken)
+    {
+        var record = await _aboutPageContentService.GetCurrentAsync(cancellationToken);
+        return record is null ? NotFound() : Ok(record);
+    }
+
     [HttpGet("{id:int}")]
     public async Task<IActionResult> GetById(int id, CancellationToken cancellationToken)
     {
@@ -29,6 +38,7 @@ public sealed class AboutPageContentsController : ControllerBase
     }
 
     [HttpPost]
+    [Authorize(Roles = IdentityRoles.Admin)]
     public async Task<IActionResult> Create(UpsertAboutPageContentRequest request, CancellationToken cancellationToken)
     {
         var record = await _aboutPageContentService.CreateAsync(request, cancellationToken);
@@ -36,6 +46,7 @@ public sealed class AboutPageContentsController : ControllerBase
     }
 
     [HttpPut("{id:int}")]
+    [Authorize(Roles = IdentityRoles.Admin)]
     public async Task<IActionResult> Update(int id, UpsertAboutPageContentRequest request, CancellationToken cancellationToken)
     {
         var updated = await _aboutPageContentService.UpdateAsync(id, request, cancellationToken);
@@ -43,6 +54,7 @@ public sealed class AboutPageContentsController : ControllerBase
     }
 
     [HttpDelete("{id:int}")]
+    [Authorize(Roles = IdentityRoles.Admin)]
     public async Task<IActionResult> Delete(int id, CancellationToken cancellationToken)
     {
         var deleted = await _aboutPageContentService.DeleteAsync(id, cancellationToken);

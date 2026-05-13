@@ -163,6 +163,10 @@ public sealed class SidraHubDbContext : IdentityDbContext<ApplicationUser>, IApp
             entity.Property(x => x.CommentContent).HasColumnType("nvarchar(max)").IsRequired();
             entity.Property(x => x.UserId).HasMaxLength(450).IsRequired();
             entity.Property(x => x.UserName).HasMaxLength(255).IsRequired();
+            entity.Property(x => x.Status)
+                .HasConversion<int>()
+                .HasColumnType("int")
+                .HasDefaultValue(CommentStatus.Pending);
             entity.HasOne(x => x.Article)
                 .WithMany(x => x.Comments)
                 .HasForeignKey(x => x.ArticleId)
@@ -285,7 +289,7 @@ public sealed class SidraHubDbContext : IdentityDbContext<ApplicationUser>, IApp
             entity.ToTable("ServiceRequest");
             ConfigureAuditableEntity(entity);
             entity.Property(x => x.Code).HasMaxLength(255).IsRequired();
-            entity.Property(x => x.UserId).HasMaxLength(450).IsRequired();
+            entity.Property(x => x.UserId).HasMaxLength(450);
             entity.Property(x => x.Description).HasColumnName("Descrption").HasColumnType("nvarchar(max)").IsRequired();
             entity.Property(x => x.RequestDate).HasColumnType("date");
             entity.Property(x => x.RequestTime).HasColumnType("time");
@@ -295,7 +299,8 @@ public sealed class SidraHubDbContext : IdentityDbContext<ApplicationUser>, IApp
             entity.HasOne<ApplicationUser>()
                 .WithMany()
                 .HasForeignKey(x => x.UserId)
-                .OnDelete(DeleteBehavior.Restrict);
+                .OnDelete(DeleteBehavior.Restrict)
+                .IsRequired(false);
             entity.HasOne(x => x.Service)
                 .WithMany(x => x.ServiceRequests)
                 .HasForeignKey(x => x.ServiceId)

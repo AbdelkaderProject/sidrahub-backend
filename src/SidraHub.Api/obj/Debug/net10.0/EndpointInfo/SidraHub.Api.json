@@ -46,6 +46,18 @@
         }
       }
     },
+    "/api/AboutPageContents/current": {
+      "get": {
+        "tags": [
+          "AboutPageContents"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/AboutPageContents/{id}": {
       "get": {
         "tags": [
@@ -257,6 +269,75 @@
         }
       },
       "delete": {
+        "tags": [
+          "ArticleComments"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/ArticleComments/admin/{id}": {
+      "delete": {
+        "tags": [
+          "ArticleComments"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/ArticleComments/{id}/approve": {
+      "patch": {
+        "tags": [
+          "ArticleComments"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/ArticleComments/{id}/reject": {
+      "patch": {
         "tags": [
           "ArticleComments"
         ],

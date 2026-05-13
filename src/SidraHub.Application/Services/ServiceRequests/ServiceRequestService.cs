@@ -80,7 +80,6 @@ public sealed class ServiceRequestService : IServiceRequestService
         var slot = await _context.ServiceSlots
             .FirstOrDefaultAsync(entry =>
                 entry.Id == request.ServiceSlotId
-                && entry.ServiceId == request.ServiceId
                 && entry.IsAvailable,
                 cancellationToken);
         if (slot is null)

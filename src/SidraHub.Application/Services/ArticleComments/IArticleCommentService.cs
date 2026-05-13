@@ -8,4 +8,7 @@ public interface IArticleCommentService
     Task<ArticleCommentDto?> CreateAsync(UpsertArticleCommentRequest request, string userId, string userName, CancellationToken cancellationToken = default);
     Task<bool> UpdateAsync(int id, UpsertArticleCommentRequest request, string userId, CancellationToken cancellationToken = default);
     Task<bool> DeleteAsync(int id, string userId, CancellationToken cancellationToken = default);
+    Task<bool> AdminDeleteAsync(int id, CancellationToken cancellationToken = default);
+    Task<bool> ApproveAsync(int id, CancellationToken cancellationToken = default);
+    Task<bool> RejectAsync(int id, CancellationToken cancellationToken = default);
 }

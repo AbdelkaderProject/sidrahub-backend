@@ -6,11 +6,53 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace SidraHub.Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class das : Migration
+    public partial class updateals : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.CreateTable(
+                name: "AboutPageContent",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    MainTitleAr = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
+                    MainTitleEn = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
+                    SubTitleAr = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
+                    SubTitleEn = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
+                    IntroTextAr = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    IntroTextEn = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    WhyChooseTitleAr = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
+                    WhyChooseTitleEn = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
+                    WhyChooseDescriptionAr = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    WhyChooseDescriptionEn = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    WhatWeOfferTitleAr = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
+                    WhatWeOfferTitleEn = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
+                    WhatWeOfferDescriptionAr = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    WhatWeOfferDescriptionEn = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    MissionTitleAr = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
+                    MissionTitleEn = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
+                    MissionDescriptionAr = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    MissionDescriptionEn = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    WhereWeWorkTitleAr = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
+                    WhereWeWorkTitleEn = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
+                    WhereWeWorkDescriptionAr = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    WhereWeWorkDescriptionEn = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Image = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: true),
+                    CreateBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CreatedDateTime = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    UpdatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    UpdatedDateTime = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    IsDetete = table.Column<bool>(type: "bit", nullable: false),
+                    DeletedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    DeletedDatedTime = table.Column<DateTime>(type: "datetime2", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_AboutPageContent", x => x.Id);
+                });
+
             migrationBuilder.CreateTable(
                 name: "AspNetRoles",
                 columns: table => new
@@ -36,12 +78,12 @@ namespace SidraHub.Infrastructure.Migrations
                     AddressEn = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
                     AddressAr = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
                     PhoneNumber = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
-                    CreateBy = table.Column<string>(type: "nvarchar(450)", maxLength: 450, nullable: true),
+                    CreateBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CreatedDateTime = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    UpdatedBy = table.Column<string>(type: "nvarchar(450)", maxLength: 450, nullable: true),
+                    UpdatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     UpdatedDateTime = table.Column<DateTime>(type: "datetime2", nullable: true),
                     IsDetete = table.Column<bool>(type: "bit", nullable: false),
-                    DeletedBy = table.Column<string>(type: "nvarchar(450)", maxLength: 450, nullable: true),
+                    DeletedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     DeletedDatedTime = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
@@ -69,12 +111,12 @@ namespace SidraHub.Infrastructure.Migrations
                     SuccessStoryNo = table.Column<int>(type: "int", nullable: false),
                     HappyCustomerNo = table.Column<int>(type: "int", nullable: false),
                     TeamMembersNo = table.Column<int>(type: "int", nullable: false),
-                    CreateBy = table.Column<string>(type: "nvarchar(450)", maxLength: 450, nullable: true),
+                    CreateBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CreatedDateTime = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    UpdatedBy = table.Column<string>(type: "nvarchar(450)", maxLength: 450, nullable: true),
+                    UpdatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     UpdatedDateTime = table.Column<DateTime>(type: "datetime2", nullable: true),
                     IsDetete = table.Column<bool>(type: "bit", nullable: false),
-                    DeletedBy = table.Column<string>(type: "nvarchar(450)", maxLength: 450, nullable: true),
+                    DeletedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     DeletedDatedTime = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
@@ -93,12 +135,12 @@ namespace SidraHub.Infrastructure.Migrations
                     OpinionEn = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     OpinionAr = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     URLStr = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: true),
-                    CreateBy = table.Column<string>(type: "nvarchar(450)", maxLength: 450, nullable: true),
+                    CreateBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CreatedDateTime = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    UpdatedBy = table.Column<string>(type: "nvarchar(450)", maxLength: 450, nullable: true),
+                    UpdatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     UpdatedDateTime = table.Column<DateTime>(type: "datetime2", nullable: true),
                     IsDetete = table.Column<bool>(type: "bit", nullable: false),
-                    DeletedBy = table.Column<string>(type: "nvarchar(450)", maxLength: 450, nullable: true),
+                    DeletedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     DeletedDatedTime = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
@@ -115,12 +157,12 @@ namespace SidraHub.Infrastructure.Migrations
                     NameEn = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
                     NameAr = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
                     Logo = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: true),
-                    CreateBy = table.Column<string>(type: "nvarchar(450)", maxLength: 450, nullable: true),
+                    CreateBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CreatedDateTime = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    UpdatedBy = table.Column<string>(type: "nvarchar(450)", maxLength: 450, nullable: true),
+                    UpdatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     UpdatedDateTime = table.Column<DateTime>(type: "datetime2", nullable: true),
                     IsDetete = table.Column<bool>(type: "bit", nullable: false),
-                    DeletedBy = table.Column<string>(type: "nvarchar(450)", maxLength: 450, nullable: true),
+                    DeletedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     DeletedDatedTime = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
@@ -137,12 +179,12 @@ namespace SidraHub.Infrastructure.Migrations
                     NameEn = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
                     NameAr = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
                     Logo = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: true),
-                    CreateBy = table.Column<string>(type: "nvarchar(450)", maxLength: 450, nullable: true),
+                    CreateBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CreatedDateTime = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    UpdatedBy = table.Column<string>(type: "nvarchar(450)", maxLength: 450, nullable: true),
+                    UpdatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     UpdatedDateTime = table.Column<DateTime>(type: "datetime2", nullable: true),
                     IsDetete = table.Column<bool>(type: "bit", nullable: false),
-                    DeletedBy = table.Column<string>(type: "nvarchar(450)", maxLength: 450, nullable: true),
+                    DeletedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     DeletedDatedTime = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
@@ -158,12 +200,12 @@ namespace SidraHub.Infrastructure.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     NameEn = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
                     NameAr = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
-                    CreateBy = table.Column<string>(type: "nvarchar(450)", maxLength: 450, nullable: true),
+                    CreateBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CreatedDateTime = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    UpdatedBy = table.Column<string>(type: "nvarchar(450)", maxLength: 450, nullable: true),
+                    UpdatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     UpdatedDateTime = table.Column<DateTime>(type: "datetime2", nullable: true),
                     IsDetete = table.Column<bool>(type: "bit", nullable: false),
-                    DeletedBy = table.Column<string>(type: "nvarchar(450)", maxLength: 450, nullable: true),
+                    DeletedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     DeletedDatedTime = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
@@ -181,18 +223,18 @@ namespace SidraHub.Infrastructure.Migrations
                     NameAr = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
                     DescriptionEn = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     DescriptionAr = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Image = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: true),
+                    Image = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     InsgramLinkStr = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: true),
                     FacebookLinkStr = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: true),
                     TwitterLinkStr = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: true),
                     LinkdInLinkStr = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: true),
                     WhatsApp = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: true),
-                    CreateBy = table.Column<string>(type: "nvarchar(450)", maxLength: 450, nullable: true),
+                    CreateBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CreatedDateTime = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    UpdatedBy = table.Column<string>(type: "nvarchar(450)", maxLength: 450, nullable: true),
+                    UpdatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     UpdatedDateTime = table.Column<DateTime>(type: "datetime2", nullable: true),
                     IsDetete = table.Column<bool>(type: "bit", nullable: false),
-                    DeletedBy = table.Column<string>(type: "nvarchar(450)", maxLength: 450, nullable: true),
+                    DeletedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     DeletedDatedTime = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
@@ -263,12 +305,12 @@ namespace SidraHub.Infrastructure.Migrations
                     DescriptionEn = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     DescriptionAr = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Image = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: true),
-                    CreateBy = table.Column<string>(type: "nvarchar(450)", maxLength: 450, nullable: true),
+                    CreateBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CreatedDateTime = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    UpdatedBy = table.Column<string>(type: "nvarchar(450)", maxLength: 450, nullable: true),
+                    UpdatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     UpdatedDateTime = table.Column<DateTime>(type: "datetime2", nullable: true),
                     IsDetete = table.Column<bool>(type: "bit", nullable: false),
-                    DeletedBy = table.Column<string>(type: "nvarchar(450)", maxLength: 450, nullable: true),
+                    DeletedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     DeletedDatedTime = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
@@ -296,12 +338,12 @@ namespace SidraHub.Infrastructure.Migrations
                     DescriptionEn = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     DescriptionAr = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Icon = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: true),
-                    CreateBy = table.Column<string>(type: "nvarchar(450)", maxLength: 450, nullable: true),
+                    CreateBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CreatedDateTime = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    UpdatedBy = table.Column<string>(type: "nvarchar(450)", maxLength: 450, nullable: true),
+                    UpdatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     UpdatedDateTime = table.Column<DateTime>(type: "datetime2", nullable: true),
                     IsDetete = table.Column<bool>(type: "bit", nullable: false),
-                    DeletedBy = table.Column<string>(type: "nvarchar(450)", maxLength: 450, nullable: true),
+                    DeletedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     DeletedDatedTime = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
@@ -411,12 +453,12 @@ namespace SidraHub.Infrastructure.Migrations
                     Message = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     IsRead = table.Column<bool>(type: "bit", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    CreateBy = table.Column<string>(type: "nvarchar(450)", maxLength: 450, nullable: true),
+                    CreateBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CreatedDateTime = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    UpdatedBy = table.Column<string>(type: "nvarchar(450)", maxLength: 450, nullable: true),
+                    UpdatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     UpdatedDateTime = table.Column<DateTime>(type: "datetime2", nullable: true),
                     IsDetete = table.Column<bool>(type: "bit", nullable: false),
-                    DeletedBy = table.Column<string>(type: "nvarchar(450)", maxLength: 450, nullable: true),
+                    DeletedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     DeletedDatedTime = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
@@ -440,12 +482,12 @@ namespace SidraHub.Infrastructure.Migrations
                     Rating = table.Column<int>(type: "int", nullable: false),
                     Comment = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    CreateBy = table.Column<string>(type: "nvarchar(450)", maxLength: 450, nullable: true),
+                    CreateBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CreatedDateTime = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    UpdatedBy = table.Column<string>(type: "nvarchar(450)", maxLength: 450, nullable: true),
+                    UpdatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     UpdatedDateTime = table.Column<DateTime>(type: "datetime2", nullable: true),
                     IsDetete = table.Column<bool>(type: "bit", nullable: false),
-                    DeletedBy = table.Column<string>(type: "nvarchar(450)", maxLength: 450, nullable: true),
+                    DeletedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     DeletedDatedTime = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
@@ -467,12 +509,14 @@ namespace SidraHub.Infrastructure.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     ArticleId = table.Column<int>(type: "int", nullable: false),
                     CommentContent = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CreateBy = table.Column<string>(type: "nvarchar(450)", maxLength: 450, nullable: true),
+                    UserId = table.Column<string>(type: "nvarchar(450)", maxLength: 450, nullable: false),
+                    UserName = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
+                    CreateBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CreatedDateTime = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    UpdatedBy = table.Column<string>(type: "nvarchar(450)", maxLength: 450, nullable: true),
+                    UpdatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     UpdatedDateTime = table.Column<DateTime>(type: "datetime2", nullable: true),
                     IsDetete = table.Column<bool>(type: "bit", nullable: false),
-                    DeletedBy = table.Column<string>(type: "nvarchar(450)", maxLength: 450, nullable: true),
+                    DeletedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     DeletedDatedTime = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
@@ -497,12 +541,12 @@ namespace SidraHub.Infrastructure.Migrations
                     NameAr = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
                     Icon = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: true),
                     CostAmount = table.Column<decimal>(type: "decimal(18,2)", precision: 18, scale: 2, nullable: false),
-                    CreateBy = table.Column<string>(type: "nvarchar(450)", maxLength: 450, nullable: true),
+                    CreateBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CreatedDateTime = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    UpdatedBy = table.Column<string>(type: "nvarchar(450)", maxLength: 450, nullable: true),
+                    UpdatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     UpdatedDateTime = table.Column<DateTime>(type: "datetime2", nullable: true),
                     IsDetete = table.Column<bool>(type: "bit", nullable: false),
-                    DeletedBy = table.Column<string>(type: "nvarchar(450)", maxLength: 450, nullable: true),
+                    DeletedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     DeletedDatedTime = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
@@ -527,12 +571,12 @@ namespace SidraHub.Infrastructure.Migrations
                     TimeFrom = table.Column<TimeOnly>(type: "time", nullable: false),
                     TimeTo = table.Column<TimeOnly>(type: "time", nullable: false),
                     IsAvailable = table.Column<bool>(type: "bit", nullable: false),
-                    CreateBy = table.Column<string>(type: "nvarchar(450)", maxLength: 450, nullable: true),
+                    CreateBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CreatedDateTime = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    UpdatedBy = table.Column<string>(type: "nvarchar(450)", maxLength: 450, nullable: true),
+                    UpdatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     UpdatedDateTime = table.Column<DateTime>(type: "datetime2", nullable: true),
                     IsDetete = table.Column<bool>(type: "bit", nullable: false),
-                    DeletedBy = table.Column<string>(type: "nvarchar(450)", maxLength: 450, nullable: true),
+                    DeletedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     DeletedDatedTime = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
@@ -558,12 +602,12 @@ namespace SidraHub.Infrastructure.Migrations
                     DescriptionAr = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Image = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: true),
                     ServiceId = table.Column<int>(type: "int", nullable: false),
-                    CreateBy = table.Column<string>(type: "nvarchar(450)", maxLength: 450, nullable: true),
+                    CreateBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CreatedDateTime = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    UpdatedBy = table.Column<string>(type: "nvarchar(450)", maxLength: 450, nullable: true),
+                    UpdatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     UpdatedDateTime = table.Column<DateTime>(type: "datetime2", nullable: true),
                     IsDetete = table.Column<bool>(type: "bit", nullable: false),
-                    DeletedBy = table.Column<string>(type: "nvarchar(450)", maxLength: 450, nullable: true),
+                    DeletedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     DeletedDatedTime = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
@@ -587,19 +631,19 @@ namespace SidraHub.Infrastructure.Migrations
                     UserId = table.Column<string>(type: "nvarchar(450)", maxLength: 450, nullable: true),
                     ServiceId = table.Column<int>(type: "int", nullable: false),
                     ServiceSlotId = table.Column<int>(type: "int", nullable: false),
-                    CustomerName = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
-                    CustomerEmail = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
-                    CustomerPhone = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
+                    CustomerName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CustomerEmail = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CustomerPhone = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Descrption = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     RequestDate = table.Column<DateOnly>(type: "date", nullable: false),
                     RequestTime = table.Column<TimeOnly>(type: "time", nullable: false),
                     RequestStatus = table.Column<int>(type: "int", nullable: false),
-                    CreateBy = table.Column<string>(type: "nvarchar(450)", maxLength: 450, nullable: true),
+                    CreateBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CreatedDateTime = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    UpdatedBy = table.Column<string>(type: "nvarchar(450)", maxLength: 450, nullable: true),
+                    UpdatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     UpdatedDateTime = table.Column<DateTime>(type: "datetime2", nullable: true),
                     IsDetete = table.Column<bool>(type: "bit", nullable: false),
-                    DeletedBy = table.Column<string>(type: "nvarchar(450)", maxLength: 450, nullable: true),
+                    DeletedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     DeletedDatedTime = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
@@ -610,7 +654,7 @@ namespace SidraHub.Infrastructure.Migrations
                         column: x => x.ServiceSlotId,
                         principalTable: "ServiceSlot",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_ServiceRequest_Service_ServiceId",
                         column: x => x.ServiceId,
@@ -723,6 +767,9 @@ namespace SidraHub.Infrastructure.Migrations
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "AboutPageContent");
+
             migrationBuilder.DropTable(
                 name: "ArticlesComment");
 

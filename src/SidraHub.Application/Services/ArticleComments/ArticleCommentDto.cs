@@ -5,4 +5,6 @@ public sealed record ArticleCommentDto(
     int ArticleId,
     string CommentContent,
     string UserId,
-    string UserName);
+    string UserName,
+    int Status,
+    string StatusName);

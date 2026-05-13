@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
 using System.Security.Claims;
 using SidraHub.Application.Services.ArticleComments;
+using SidraHub.Infrastructure.Identity;
 
 namespace SidraHub.Api.Controllers;
 
@@ -16,13 +17,16 @@ public sealed class ArticleCommentsController : ControllerBase
         _articleCommentService = articleCommentService;
     }
 
+    // Admin: all comments with status
     [HttpGet]
+    [Authorize(Roles = IdentityRoles.Admin)]
     public async Task<IActionResult> GetAll(CancellationToken cancellationToken)
     {
         var comments = await _articleCommentService.GetAllAsync(cancellationToken);
         return Ok(comments);
     }
 
+    // Public: approved comments only
     [HttpGet("article/{articleId:int}")]
     public async Task<IActionResult> GetByArticleId(int articleId, CancellationToken cancellationToken)
     {
@@ -31,6 +35,7 @@ public sealed class ArticleCommentsController : ControllerBase
     }
 
     [HttpGet("{id:int}")]
+    [Authorize(Roles = IdentityRoles.Admin)]
     public async Task<IActionResult> GetById(int id, CancellationToken cancellationToken)
     {
         var comment = await _articleCommentService.GetByIdAsync(id, cancellationToken);
@@ -78,5 +83,30 @@ public sealed class ArticleCommentsController : ControllerBase
 
         var deleted = await _articleCommentService.DeleteAsync(id, userId, cancellationToken);
         return deleted ? NoContent() : Forbid();
+    }
+
+    // Admin actions
+    [HttpDelete("admin/{id:int}")]
+    [Authorize(Roles = IdentityRoles.Admin)]
+    public async Task<IActionResult> AdminDelete(int id, CancellationToken cancellationToken)
+    {
+        var deleted = await _articleCommentService.AdminDeleteAsync(id, cancellationToken);
+        return deleted ? NoContent() : NotFound();
+    }
+
+    [HttpPatch("{id:int}/approve")]
+    [Authorize(Roles = IdentityRoles.Admin)]
+    public async Task<IActionResult> Approve(int id, CancellationToken cancellationToken)
+    {
+        var result = await _articleCommentService.ApproveAsync(id, cancellationToken);
+        return result ? NoContent() : NotFound();
+    }
+
+    [HttpPatch("{id:int}/reject")]
+    [Authorize(Roles = IdentityRoles.Admin)]
+    public async Task<IActionResult> Reject(int id, CancellationToken cancellationToken)
+    {
+        var result = await _articleCommentService.RejectAsync(id, cancellationToken);
+        return result ? NoContent() : NotFound();
     }
 }
