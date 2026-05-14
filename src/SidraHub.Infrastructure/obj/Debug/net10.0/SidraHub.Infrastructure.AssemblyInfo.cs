@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SidraHub.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+762ed3e6fc4f6a34e5176aa2b0d8f0ef6f585330")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6c18b4bf3719e9aefd6b064879af3ffbf7f8a2c2")]
 [assembly: System.Reflection.AssemblyProductAttribute("SidraHub.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SidraHub.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

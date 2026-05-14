@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using SidraHub.Application.Common.Interfaces;
 using SidraHub.Domain.Entities;
 using SidraHub.Domain.Enums;
@@ -7,30 +8,39 @@ namespace SidraHub.Application.Services.ArticleComments;
 public sealed class ArticleCommentService : IArticleCommentService
 {
     private readonly IUnitOfWork _unitOfWork;
+    private readonly IApplicationDbContext _context;
 
-    public ArticleCommentService(IUnitOfWork unitOfWork)
+    public ArticleCommentService(IUnitOfWork unitOfWork, IApplicationDbContext context)
     {
         _unitOfWork = unitOfWork;
+        _context = context;
     }
 
     public async Task<IReadOnlyList<ArticleCommentDto>> GetAllAsync(CancellationToken cancellationToken = default)
     {
-        var comments = await _unitOfWork.Repository<ArticleComment>().GetAllAsync(cancellationToken);
-        return comments.OrderBy(comment => comment.Id).Select(Map).ToList();
+        var comments = await _context.ArticleComments
+            .Include(c => c.Article)
+            .OrderBy(c => c.Id)
+            .ToListAsync(cancellationToken);
+        return comments.Select(Map).ToList();
     }
 
     public async Task<IReadOnlyList<ArticleCommentDto>> GetByArticleIdAsync(int articleId, CancellationToken cancellationToken = default)
     {
         // Public: only approved comments
-        var comments = await _unitOfWork.Repository<ArticleComment>().FindAsync(
-            comment => comment.ArticleId == articleId && comment.Status == CommentStatus.Approved,
-            cancellationToken);
-        return comments.OrderBy(comment => comment.Id).Select(Map).ToList();
+        var comments = await _context.ArticleComments
+            .Include(c => c.Article)
+            .Where(c => c.ArticleId == articleId && c.Status == CommentStatus.Approved)
+            .OrderBy(c => c.Id)
+            .ToListAsync(cancellationToken);
+        return comments.Select(Map).ToList();
     }
 
     public async Task<ArticleCommentDto?> GetByIdAsync(int id, CancellationToken cancellationToken = default)
     {
-        var comment = await _unitOfWork.Repository<ArticleComment>().GetByIdAsync(id, cancellationToken);
+        var comment = await _context.ArticleComments
+            .Include(c => c.Article)
+            .FirstOrDefaultAsync(c => c.Id == id, cancellationToken);
         return comment is null ? null : Map(comment);
     }
 
@@ -52,7 +62,8 @@ public sealed class ArticleCommentService : IArticleCommentService
             CommentContent = request.CommentContent,
             UserId = userId,
             UserName = userName,
-            Status = CommentStatus.Pending
+            Status = CommentStatus.Pending,
+            Article = article
         };
 
         await _unitOfWork.Repository<ArticleComment>().AddAsync(comment, cancellationToken);
@@ -148,6 +159,8 @@ public sealed class ArticleCommentService : IArticleCommentService
         return new ArticleCommentDto(
             comment.Id,
             comment.ArticleId,
+            comment.Article?.TitleEn ?? string.Empty,
+            comment.Article?.TitleAr ?? string.Empty,
             comment.CommentContent,
             comment.UserId,
             comment.UserName,
