@@ -232,6 +232,26 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "SidraHub.Api.Controllers.ArticleCommentsController",
+    "Method": "GetCurrentUserId",
+    "RelativePath": "api/ArticleComments/debug/current-user",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SidraHub.Api.Controllers.ArticleCommentsController",
+    "Method": "GetMyComments",
+    "RelativePath": "api/ArticleComments/my-comments",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "SidraHub.Api.Controllers.ArticlesController",
     "Method": "GetAll",
     "RelativePath": "api/Articles",

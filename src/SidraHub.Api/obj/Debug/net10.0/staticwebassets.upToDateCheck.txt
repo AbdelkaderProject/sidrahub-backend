@@ -34,6 +34,7 @@ wwwroot\uploads\partners\bf05186a976b45ee8a7e802461cb7dd6.png
 wwwroot\uploads\partners\c22109e23a6649b0beb6eb45e543c650.png
 wwwroot\uploads\partners\d747fd3e0132400ab2d6037313783da1.jpg
 wwwroot\uploads\service-packages\0682c6eaee6b489996e5f5f3655707ca.png
+wwwroot\uploads\service-packages\6d312fe209a346e3a5393f64046f69ea.png
 wwwroot\uploads\services\11c70ab5b9e64483960b490cd42616d4.jpg
 wwwroot\uploads\services\5be25fcc9fdc425e9bad4c1259d5f70b.png
 wwwroot\uploads\services\731458408b0447e793fba1a0a193e274.jpeg
@@ -42,6 +43,7 @@ wwwroot\uploads\services\a10f67d0663641b4a7d9bdbccaeaad98.png
 wwwroot\uploads\services\b9bf72623dc8483b87c133ed7f344787.jpeg
 wwwroot\uploads\services\ba0c1533acba4ac3b9d3cd191601701a.png
 wwwroot\uploads\services\d44f70c1e87345249d7d5274d820299d.jpeg
+wwwroot\uploads\services\db3f4827389c4d06a29241ec62f077ad.jpeg
 wwwroot\uploads\services\dbc19df98faa436a9e1c305eb95e8463.jpeg
 wwwroot\uploads\services\e720a9a531294d088c45456b9bc85347.jpeg
 wwwroot\uploads\services\e84d20cf9cc24a89b4634db49dd036a5.jpeg

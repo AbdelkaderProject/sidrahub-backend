@@ -206,6 +206,30 @@
         }
       }
     },
+    "/api/ArticleComments/my-comments": {
+      "get": {
+        "tags": [
+          "ArticleComments"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/ArticleComments/debug/current-user": {
+      "get": {
+        "tags": [
+          "ArticleComments"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/ArticleComments/{id}": {
       "get": {
         "tags": [

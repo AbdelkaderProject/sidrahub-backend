@@ -27,12 +27,57 @@ public sealed class ArticleCommentService : IArticleCommentService
 
     public async Task<IReadOnlyList<ArticleCommentDto>> GetByArticleIdAsync(int articleId, CancellationToken cancellationToken = default)
     {
-        // Public: only approved comments
+        // Public: show all non-rejected comments
         var comments = await _context.ArticleComments
             .Include(c => c.Article)
-            .Where(c => c.ArticleId == articleId && c.Status == CommentStatus.Approved)
+            .Where(c => c.ArticleId == articleId && c.Status != CommentStatus.Rejected)
             .OrderBy(c => c.Id)
             .ToListAsync(cancellationToken);
+        return comments.Select(Map).ToList();
+    }
+
+    public async Task<IReadOnlyList<ArticleCommentDto>> GetByUserIdAsync(string userId, CancellationToken cancellationToken = default)
+    {
+        // User: all their comments (any status)
+        Console.WriteLine($"[DEBUG] GetByUserIdAsync - Searching for userId: '{userId}'");
+        
+        // Case-insensitive comparison
+        var comments = await _context.ArticleComments
+            .Include(c => c.Article)
+            .Where(c => c.UserId != null && c.UserId.ToLower() == userId.ToLower())
+            .OrderByDescending(c => c.Id)
+            .ToListAsync(cancellationToken);
+        
+        Console.WriteLine($"[DEBUG] GetByUserIdAsync - Found {comments.Count} comments");
+        
+        if (comments.Any())
+        {
+            Console.WriteLine($"[DEBUG] First comment UserId: '{comments[0].UserId}'");
+        }
+        
+        return comments.Select(Map).ToList();
+    }
+
+    public async Task<IReadOnlyList<ArticleCommentDto>> GetByUserIdOrNameAsync(string userId, string? userName, CancellationToken cancellationToken = default)
+    {
+        // User: all their comments (any status) - search by userId OR userName
+        Console.WriteLine($"[DEBUG] GetByUserIdOrNameAsync - Searching for userId: '{userId}', userName: '{userName}'");
+        
+        var comments = await _context.ArticleComments
+            .Include(c => c.Article)
+            .Where(c => 
+                (c.UserId != null && c.UserId.ToLower() == userId.ToLower()) ||
+                (!string.IsNullOrEmpty(userName) && c.UserName != null && c.UserName.ToLower() == userName.ToLower()))
+            .OrderByDescending(c => c.Id)
+            .ToListAsync(cancellationToken);
+        
+        Console.WriteLine($"[DEBUG] GetByUserIdOrNameAsync - Found {comments.Count} comments");
+        
+        if (comments.Any())
+        {
+            Console.WriteLine($"[DEBUG] First comment - UserId: '{comments[0].UserId}', UserName: '{comments[0].UserName}'");
+        }
+        
         return comments.Select(Map).ToList();
     }
 
@@ -62,7 +107,7 @@ public sealed class ArticleCommentService : IArticleCommentService
             CommentContent = request.CommentContent,
             UserId = userId,
             UserName = userName,
-            Status = CommentStatus.Pending,
+            Status = CommentStatus.Approved, // Auto-approve comments
             Article = article
         };
 

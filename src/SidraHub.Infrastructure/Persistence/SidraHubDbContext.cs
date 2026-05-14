@@ -1,4 +1,6 @@
 using System.Reflection;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
@@ -12,9 +14,12 @@ namespace SidraHub.Infrastructure.Persistence;
 
 public sealed class SidraHubDbContext : IdentityDbContext<ApplicationUser>, IApplicationDbContext
 {
-    public SidraHubDbContext(DbContextOptions<SidraHubDbContext> options)
+    private readonly IHttpContextAccessor? _httpContextAccessor;
+
+    public SidraHubDbContext(DbContextOptions<SidraHubDbContext> options, IHttpContextAccessor? httpContextAccessor = null)
         : base(options)
     {
+        _httpContextAccessor = httpContextAccessor;
     }
 
     public DbSet<ServiceCategory> ServiceCategories => Set<ServiceCategory>();
@@ -37,12 +42,14 @@ public sealed class SidraHubDbContext : IdentityDbContext<ApplicationUser>, IApp
 
     public override int SaveChanges()
     {
+        ApplyAuditInformation();
         ApplySoftDeleteRules();
         return base.SaveChanges();
     }
 
     public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
     {
+        ApplyAuditInformation();
         ApplySoftDeleteRules();
         return base.SaveChangesAsync(cancellationToken);
     }
@@ -324,15 +331,36 @@ public sealed class SidraHubDbContext : IdentityDbContext<ApplicationUser>, IApp
         entity.Property(x => x.DeletedDateTime).HasColumnName("DeletedDatedTime");
     }
 
+    private void ApplyAuditInformation()
+    {
+        ChangeTracker.DetectChanges();
+
+        var currentUserId = _httpContextAccessor?.HttpContext?.User?.FindFirstValue(ClaimTypes.NameIdentifier);
+        var now = DateTime.UtcNow;
+
+        foreach (var entry in ChangeTracker.Entries<BaseEntity>())
+        {
+            if (entry.State == EntityState.Added)
+            {
+                entry.Entity.CreatedBy = currentUserId;
+                entry.Entity.CreatedDateTime = now;
+            }
+        }
+    }
+
     private void ApplySoftDeleteRules()
     {
         ChangeTracker.DetectChanges();
+
+        var currentUserId = _httpContextAccessor?.HttpContext?.User?.FindFirstValue(ClaimTypes.NameIdentifier);
+        var now = DateTime.UtcNow;
 
         foreach (var entry in ChangeTracker.Entries<BaseEntity>().Where(entry => entry.State == EntityState.Deleted))
         {
             entry.State = EntityState.Modified;
             entry.Entity.IsDeleted = true;
-            entry.Entity.DeletedDateTime ??= DateTime.UtcNow;
+            entry.Entity.DeletedBy = currentUserId;
+            entry.Entity.DeletedDateTime = now;
         }
     }
 

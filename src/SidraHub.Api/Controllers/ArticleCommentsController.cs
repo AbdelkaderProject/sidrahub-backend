@@ -34,6 +34,48 @@ public sealed class ArticleCommentsController : ControllerBase
         return Ok(comments);
     }
 
+    // User: get my comments
+    [HttpGet("my-comments")]
+    [Authorize]
+    public async Task<IActionResult> GetMyComments(CancellationToken cancellationToken)
+    {
+        var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+        var userName = User.FindFirstValue(ClaimTypes.Name) ?? User.Identity?.Name;
+        
+        if (string.IsNullOrWhiteSpace(userId))
+        {
+            return Unauthorized();
+        }
+
+        // Debug: log the userId and userName
+        Console.WriteLine($"[DEBUG] GetMyComments - UserId: '{userId}', UserName: '{userName}'");
+
+        var comments = await _articleCommentService.GetByUserIdOrNameAsync(userId, userName, cancellationToken);
+        
+        // Debug: log the count
+        Console.WriteLine($"[DEBUG] GetMyComments - Found {comments.Count} comments");
+
+        return Ok(comments);
+    }
+
+    // Debug endpoint to check current user ID
+    [HttpGet("debug/current-user")]
+    [Authorize]
+    public IActionResult GetCurrentUserId()
+    {
+        var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+        var userName = User.FindFirstValue(ClaimTypes.Name);
+        var email = User.FindFirstValue(ClaimTypes.Email);
+        
+        return Ok(new
+        {
+            userId,
+            userName,
+            email,
+            allClaims = User.Claims.Select(c => new { c.Type, c.Value }).ToList()
+        });
+    }
+
     [HttpGet("{id:int}")]
     [Authorize(Roles = IdentityRoles.Admin)]
     public async Task<IActionResult> GetById(int id, CancellationToken cancellationToken)
