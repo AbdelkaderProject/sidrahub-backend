@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace SidraHub.Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class updateals : Migration
+    public partial class init : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -100,6 +100,8 @@ namespace SidraHub.Infrastructure.Migrations
                     NameEn = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
                     NameAr = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
                     Logo = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: true),
+                    LogoHeader = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: true),
+                    LogoFooter = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: true),
                     DescriptionEn = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     DescriptionAr = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     InsgramLinkStr = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: true),
@@ -122,6 +124,31 @@ namespace SidraHub.Infrastructure.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_CompanyProfile", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "ContactMessages",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
+                    Email = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
+                    Phone = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    Subject = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
+                    Message = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    IsRead = table.Column<bool>(type: "bit", nullable: false, defaultValue: false),
+                    CreateBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CreatedDateTime = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    UpdatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    UpdatedDateTime = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    IsDetete = table.Column<bool>(type: "bit", nullable: false),
+                    DeletedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    DeletedDatedTime = table.Column<DateTime>(type: "datetime2", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ContactMessages", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -511,6 +538,7 @@ namespace SidraHub.Infrastructure.Migrations
                     CommentContent = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     UserId = table.Column<string>(type: "nvarchar(450)", maxLength: 450, nullable: false),
                     UserName = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
+                    Status = table.Column<int>(type: "int", nullable: false, defaultValue: 0),
                     CreateBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CreatedDateTime = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UpdatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -793,6 +821,9 @@ namespace SidraHub.Infrastructure.Migrations
 
             migrationBuilder.DropTable(
                 name: "CompanyProfile");
+
+            migrationBuilder.DropTable(
+                name: "ContactMessages");
 
             migrationBuilder.DropTable(
                 name: "CustomerReview");

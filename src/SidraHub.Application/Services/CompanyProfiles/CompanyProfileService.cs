@@ -31,6 +31,8 @@ public sealed class CompanyProfileService : ICompanyProfileService
             NameAr = request.NameAr,
             NameEn = request.NameEn,
             Logo = request.Logo,
+            LogoHeader = request.LogoHeader,
+            LogoFooter = request.LogoFooter,
             DescriptionAr = request.DescriptionAr,
             DescriptionEn = request.DescriptionEn,
             InsgramLinkStr = request.InsgramLinkStr,
@@ -61,6 +63,8 @@ public sealed class CompanyProfileService : ICompanyProfileService
         profile.NameAr = request.NameAr;
         profile.NameEn = request.NameEn;
         profile.Logo = request.Logo;
+        profile.LogoHeader = request.LogoHeader;
+        profile.LogoFooter = request.LogoFooter;
         profile.DescriptionAr = request.DescriptionAr;
         profile.DescriptionEn = request.DescriptionEn;
         profile.InsgramLinkStr = request.InsgramLinkStr;
@@ -100,6 +104,8 @@ public sealed class CompanyProfileService : ICompanyProfileService
             profile.NameAr,
             profile.NameEn,
             profile.Logo,
+            profile.LogoHeader,
+            profile.LogoFooter,
             profile.DescriptionAr,
             profile.DescriptionEn,
             profile.InsgramLinkStr,

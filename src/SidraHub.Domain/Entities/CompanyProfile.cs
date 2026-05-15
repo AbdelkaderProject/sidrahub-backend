@@ -7,6 +7,8 @@ public sealed class CompanyProfile : BaseEntity
     public string NameEn { get; set; } = string.Empty;
     public string NameAr { get; set; } = string.Empty;
     public string? Logo { get; set; }
+    public string? LogoHeader { get; set; }
+    public string? LogoFooter { get; set; }
     public string DescriptionEn { get; set; } = string.Empty;
     public string DescriptionAr { get; set; } = string.Empty;
     public string? InsgramLinkStr { get; set; }
@@ -18,5 +20,4 @@ public sealed class CompanyProfile : BaseEntity
     public int SuccessStoryNo { get; set; }
     public int HappyCustomerNo { get; set; }
     public int TeamMembersNo { get; set; }
-
 }

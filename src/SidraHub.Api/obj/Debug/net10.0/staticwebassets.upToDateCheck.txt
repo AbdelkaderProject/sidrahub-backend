@@ -12,7 +12,9 @@ wwwroot\uploads\company-profiles\9dd7c71eb3544c969bd3a54fbf24a0cf.jpeg
 wwwroot\uploads\company-profiles\f42e2c41166d4cc3b492a6b93815e077.png
 wwwroot\uploads\company-profiles\f45c7eaf49584e5e9512f66744e7aa40.jpeg
 wwwroot\uploads\customer-reviews\1a1cc752aa044393bb93fc7da5ee9b07.mp4
+wwwroot\uploads\customer-reviews\831eeb64310d4f46a4b1f1491513dc2e.jpg
 wwwroot\uploads\customer-reviews\b9c1c08db1354030bbb4e18ccb542fca.png
+wwwroot\uploads\customers\130c17e7f142416a84c7ddffe9462071.jpg
 wwwroot\uploads\customers\7d69f2b4a96d433e902c290c20cf26cb.jpeg
 wwwroot\uploads\customers\9c5159927f61464692063ac577272db9.jpeg
 wwwroot\uploads\customers\c1ef612d729e4a568ea46d0d3a2a1533.jpeg
@@ -23,6 +25,7 @@ wwwroot\uploads\partners\27125e74f24744c49528432adb53a26f.jpeg
 wwwroot\uploads\partners\28a6a62bc3a14ec8b074b349e3c141f7.png
 wwwroot\uploads\partners\54882a7b20ad4246ba556822141ccdf7.png
 wwwroot\uploads\partners\59edbe73a21b45a4aa1042f2c41f3250.jpeg
+wwwroot\uploads\partners\68352b34bdbb4cc7ba5b1942108a0390.jpeg
 wwwroot\uploads\partners\7f240dd36f3248d492fdd2f94931aab6.jpg
 wwwroot\uploads\partners\808cde4d08a14f93bc482ea30db4ced0.png
 wwwroot\uploads\partners\8b389b7d847e49878470df43e00c3694.jpeg
@@ -52,6 +55,7 @@ wwwroot\uploads\sidebars\080c696132144a16abe1620c51e39911.png
 wwwroot\uploads\sidebars\142ac59174d64d148ebb18cf29f5f1a0.png
 wwwroot\uploads\sidebars\431f381612224b6fa7da6fb95a1bb3b2.png
 wwwroot\uploads\sidebars\4a6108a1a7434a1abfc68372118d11a6.png
+wwwroot\uploads\sidebars\528ab6c8bbe34308b97b5450528afe1f.jpg
 wwwroot\uploads\sidebars\56e4481aeb644acdb17d1068fe2f0404.png
 wwwroot\uploads\sidebars\6aa97998d32d4295afb00fa04aded6a0.png
 wwwroot\uploads\sidebars\800ebe85919546f58cf919132081672d.png
@@ -61,4 +65,5 @@ wwwroot\uploads\sidebars\c7e4ef046020447e9fad6a0b1af6e24a.png
 wwwroot\uploads\sidebars\d454271c77354cfcb4dc796e62ba28ea.png
 wwwroot\uploads\sidebars\ec0b51d1a8fc4ac0b560a2bc178813b5.png
 wwwroot\uploads\team-members\258ee2a0313b48379d91f94271d20db0.jpeg
+wwwroot\uploads\team-members\6653a2f41f35427cb89ea196f491c367.jpeg
 wwwroot\uploads\team-members\dea11c39caea466daf6b17797c6fe89f.jpeg

@@ -12,8 +12,8 @@ using SidraHub.Infrastructure.Persistence;
 namespace SidraHub.Infrastructure.Migrations
 {
     [DbContext(typeof(SidraHubDbContext))]
-    [Migration("20260515104858_add contentus")]
-    partial class addcontentus
+    [Migration("20260515214303_init")]
+    partial class init
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -564,6 +564,14 @@ namespace SidraHub.Infrastructure.Migrations
                         .HasColumnType("nvarchar(500)");
 
                     b.Property<string>("Logo")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("LogoFooter")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("LogoHeader")
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
 

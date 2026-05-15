@@ -5,6 +5,8 @@ public sealed class UpsertCompanyProfileRequest
     public string NameAr { get; set; } = string.Empty;
     public string NameEn { get; set; } = string.Empty;
     public string? Logo { get; set; }
+    public string? LogoHeader { get; set; }
+    public string? LogoFooter { get; set; }
     public string DescriptionAr { get; set; } = string.Empty;
     public string DescriptionEn { get; set; } = string.Empty;
     public string? InsgramLinkStr { get; set; }

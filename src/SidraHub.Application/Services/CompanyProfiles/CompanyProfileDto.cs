@@ -5,6 +5,8 @@ public sealed record CompanyProfileDto(
     string NameAr,
     string NameEn,
     string? Logo,
+    string? LogoHeader,
+    string? LogoFooter,
     string DescriptionAr,
     string DescriptionEn,
     string? InsgramLinkStr,

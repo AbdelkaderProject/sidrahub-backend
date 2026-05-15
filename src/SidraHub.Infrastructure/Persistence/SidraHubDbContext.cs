@@ -203,6 +203,8 @@ public sealed class SidraHubDbContext : IdentityDbContext<ApplicationUser>, IApp
             entity.Property(x => x.NameEn).HasMaxLength(255).IsRequired();
             entity.Property(x => x.NameAr).HasMaxLength(255).IsRequired();
             entity.Property(x => x.Logo).HasMaxLength(500);
+            entity.Property(x => x.LogoHeader).HasMaxLength(500);
+            entity.Property(x => x.LogoFooter).HasMaxLength(500);
             entity.Property(x => x.DescriptionEn).HasColumnType("nvarchar(max)").IsRequired();
             entity.Property(x => x.DescriptionAr).HasColumnType("nvarchar(max)").IsRequired();
             entity.Property(x => x.InsgramLinkStr).HasMaxLength(500);
