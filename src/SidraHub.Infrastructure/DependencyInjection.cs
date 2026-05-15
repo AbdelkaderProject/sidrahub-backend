@@ -10,6 +10,8 @@ using SidraHub.Application.Common.Interfaces;
 using SidraHub.Application.Services.Auth;
 using SidraHub.Infrastructure.Identity;
 using SidraHub.Infrastructure.Persistence;
+using SidraHub.Infrastructure.Services;
+using SidraHub.Infrastructure.Services;
 
 namespace SidraHub.Infrastructure;
 
@@ -35,6 +37,13 @@ public static class DependencyInjection
         services.AddScoped<IJwtTokenGenerator, JwtTokenGenerator>();
         services.AddScoped<IAuthService, AuthService>();
         services.AddScoped<IdentityDataSeeder>();
+
+        // Email Service
+        services.Configure<EmailOptions>(configuration.GetSection("Email"));
+        services.AddScoped<IEmailService, EmailService>();
+
+        // Notification Service
+        services.AddScoped<INotificationService, NotificationService>();
 
         services.AddIdentity<ApplicationUser, IdentityRole>(options =>
             {

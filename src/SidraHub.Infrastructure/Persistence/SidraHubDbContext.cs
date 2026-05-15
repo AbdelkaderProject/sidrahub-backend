@@ -39,6 +39,7 @@ public sealed class SidraHubDbContext : IdentityDbContext<ApplicationUser>, IApp
     public DbSet<Partner> Partners => Set<Partner>();
     public DbSet<Branch> Branches => Set<Branch>();
     public DbSet<ServiceRequest> ServiceRequests => Set<ServiceRequest>();
+    public DbSet<ContactMessage> ContactMessages => Set<ContactMessage>();
 
     public override int SaveChanges()
     {
@@ -312,6 +313,18 @@ public sealed class SidraHubDbContext : IdentityDbContext<ApplicationUser>, IApp
                 .WithMany(x => x.ServiceRequests)
                 .HasForeignKey(x => x.ServiceId)
                 .OnDelete(DeleteBehavior.Restrict);
+        });
+
+        builder.Entity<ContactMessage>(entity =>
+        {
+            entity.ToTable("ContactMessages");
+            ConfigureAuditableEntity(entity);
+            entity.Property(x => x.Name).HasMaxLength(255).IsRequired();
+            entity.Property(x => x.Email).HasMaxLength(255).IsRequired();
+            entity.Property(x => x.Phone).HasMaxLength(50).IsRequired();
+            entity.Property(x => x.Subject).HasMaxLength(500).IsRequired();
+            entity.Property(x => x.Message).HasColumnType("nvarchar(max)").IsRequired();
+            entity.Property(x => x.IsRead).HasDefaultValue(false);
         });
 
         ApplySoftDeleteQueryFilters(builder);

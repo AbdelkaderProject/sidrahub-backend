@@ -4,6 +4,7 @@ using SidraHub.Application.Services.ArticleComments;
 using SidraHub.Application.Services.Articles;
 using SidraHub.Application.Services.Branches;
 using SidraHub.Application.Services.CompanyProfiles;
+using SidraHub.Application.Services.ContactMessages;
 using SidraHub.Application.Services.Customers;
 using SidraHub.Application.Services.CustomerReviews;
 using SidraHub.Application.Services.Partners;
@@ -36,6 +37,7 @@ public static class DependencyInjection
         services.AddScoped<ITeamMemberService, TeamMemberService>();
         services.AddScoped<IPartnerService, PartnerService>();
         services.AddScoped<IBranchService, BranchService>();
+        services.AddScoped<IContactMessageService, ContactMessageService>();
 
         return services;
     }

@@ -22,6 +22,7 @@ public interface IApplicationDbContext
     DbSet<Partner> Partners { get; }
     DbSet<Branch> Branches { get; }
     DbSet<ServiceRequest> ServiceRequests { get; }
+    DbSet<ContactMessage> ContactMessages { get; }
     Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
 }
 

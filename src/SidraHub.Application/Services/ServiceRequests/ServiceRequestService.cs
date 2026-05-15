@@ -8,10 +8,12 @@ namespace SidraHub.Application.Services.ServiceRequests;
 public sealed class ServiceRequestService : IServiceRequestService
 {
     private readonly IApplicationDbContext _context;
+    private readonly INotificationService _notificationService;
 
-    public ServiceRequestService(IApplicationDbContext context)
+    public ServiceRequestService(IApplicationDbContext context, INotificationService notificationService)
     {
         _context = context;
+        _notificationService = notificationService;
     }
 
     public async Task<IReadOnlyList<ServiceRequestDto>> GetAllAsync(CancellationToken cancellationToken = default)
@@ -106,6 +108,12 @@ public sealed class ServiceRequestService : IServiceRequestService
 
         await _context.ServiceRequests.AddAsync(serviceRequest, cancellationToken);
         await _context.SaveChangesAsync(cancellationToken);
+
+        // Notify admins
+        await _notificationService.NotifyAdminsAsync(
+            "📅 حجز استشارة جديد",
+            $"العميل {request.CustomerName} حجز استشارة في خدمة \"{service.NameAr}\" بتاريخ {slot.Day:yyyy-MM-dd} الساعة {slot.TimeFrom:HH:mm}",
+            cancellationToken);
 
         return Map(serviceRequest, service);
     }
