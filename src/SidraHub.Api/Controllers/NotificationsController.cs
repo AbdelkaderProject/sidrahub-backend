@@ -110,6 +110,11 @@ public sealed class NotificationsController : ControllerBase
         await _context.SaveChangesAsync(cancellationToken);
         return NoContent();
     }
+
+    // POST /api/Notifications - Accept fire-and-forget from frontend (ignored, backend handles it)
+    [HttpPost]
+    [AllowAnonymous]
+    public IActionResult Create() => Ok();
 }
 
 public sealed record MarkAllReadRequest(string? UserId);

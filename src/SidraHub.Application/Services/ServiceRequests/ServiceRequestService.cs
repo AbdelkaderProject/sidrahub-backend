@@ -89,9 +89,15 @@ public sealed class ServiceRequestService : IServiceRequestService
             return null;
         }
 
+        // Generate sequential code FR-00001, FR-00002, ...
+        var lastCode = await _context.ServiceRequests
+            .OrderByDescending(r => r.Id)
+            .Select(r => EF.Property<string?>(r, nameof(ServiceRequest.Code)))
+            .FirstOrDefaultAsync(cancellationToken);
+
         var serviceRequest = new ServiceRequest
         {
-            Code = GenerateCode(),
+            Code = GenerateCode(lastCode),
             UserId = string.IsNullOrWhiteSpace(userId) ? null : userId,
             ServiceId = service.Id,
             ServiceSlotId = slot.Id,
@@ -192,8 +198,17 @@ public sealed class ServiceRequestService : IServiceRequestService
         TimeOnly RequestTime,
         int RequestStatus);
 
-    private static string GenerateCode()
+    private static string GenerateCode(string? lastCode)
     {
-        return $"SR-{DateTime.UtcNow:yyyyMMddHHmmssfff}";
+        // Parse last number from FR-XXXXX format
+        int nextNumber = 1;
+        if (!string.IsNullOrEmpty(lastCode) && lastCode.StartsWith("FR-"))
+        {
+            if (int.TryParse(lastCode[3..], out int lastNumber))
+            {
+                nextNumber = lastNumber + 1;
+            }
+        }
+        return $"FR-{nextNumber:D5}";
     }
 }

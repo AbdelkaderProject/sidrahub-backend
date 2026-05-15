@@ -791,6 +791,16 @@
   },
   {
     "ContainingType": "SidraHub.Api.Controllers.NotificationsController",
+    "Method": "Create",
+    "RelativePath": "api/Notifications",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SidraHub.Api.Controllers.NotificationsController",
     "Method": "Delete",
     "RelativePath": "api/Notifications/{id}",
     "HttpMethod": "DELETE",
